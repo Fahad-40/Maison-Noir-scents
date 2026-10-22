@@ -55,6 +55,7 @@ function renderProductDetail(product) {
         </span>
       </div>
     </div>
+    
 
     <!-- Fragrance Description -->
     <p class="js-product-desc text-sm text-on-surface-variant dark:text-zinc-400 leading-relaxed">
