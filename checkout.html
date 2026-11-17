@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en" class="html">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="web_standard" name="shell-type">
+  <title>Checkout — Maison Noir Haute Parfumerie</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    @layer base {
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main > :first-child {
+        margin-top: 0 !important;
+      }
+
+      main > :last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-error-container": "#93000a",
+            "error-container": "#ffdad6",
+            "primary-fixed": "#e4e1e6",
+            "surface-dim": "#dbdad7",
+            "secondary": "#755a26",
+            "secondary-fixed-dim": "#e5c283",
+            "on-surface": "#1a1c1a",
+            "on-secondary-container": "#785d28",
+            "primary-fixed-dim": "#c8c5ca",
+            "surface-container-low": "#f4f3f1",
+            "on-background": "#1a1c1a",
+            "tertiary-container": "#1a1b22",
+            "surface-variant": "#e3e2e0",
+            "on-primary-fixed-variant": "#47464a",
+            "error": "#ba1a1a",
+            "secondary-fixed": "#ffdea6",
+            "inverse-on-surface": "#f2f1ee",
+            "surface-tint": "#5f5e61",
+            "outline-variant": "#c8c5cb",
+            "on-tertiary": "#ffffff",
+            "inverse-surface": "#2f312f",
+            "secondary-container": "#fdd897",
+            "on-secondary-fixed": "#271900",
+            "background": "#faf9f6",
+            "surface-container": "#efeeeb",
+            "tertiary-fixed": "#e3e1ec",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#858387",
+            "on-primary-fixed": "#1b1b1e",
+            "on-secondary": "#ffffff",
+            "surface-bright": "#faf9f6",
+            "on-tertiary-container": "#83838c",
+            "on-tertiary-fixed": "#1a1b22",
+            "surface": "#faf9f6",
+            "primary-container": "#1b1b1e",
+            "surface-container-highest": "#e3e2e0",
+            "on-surface-variant": "#47464b",
+            "on-secondary-fixed-variant": "#5b4310",
+            "tertiary": "#000000",
+            "tertiary-fixed-dim": "#c6c5cf",
+            "surface-container-lowest": "#ffffff",
+            "primary": "#000000",
+            "surface-container-high": "#e9e8e5",
+            "on-tertiary-fixed-variant": "#46464e",
+            "inverse-primary": "#c8c5ca",
+            "on-error": "#ffffff",
+            "outline": "#77767b"
+          },
+          fontFamily: {
+            serif: ["'Cormorant Garamond'", "Georgia", "serif"],
+            sans: ["'Plus Jakarta Sans'", "-apple-system", "BlinkMacSystemFont", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-surface dark:bg-[#111113] font-sans text-sm text-on-surface dark:text-zinc-100 antialiased transition-colors duration-300" data-mode="connect">
+
+  <!-- HEADER & NAVIGATION -->
+  <header class="fixed top-0 inset-x-0 w-full z-40 bg-surface/95 dark:bg-[#111113]/95 backdrop-blur-md border-b border-outline-variant/40 dark:border-zinc-800 transition-colors">
+    <div class="max-w-7xl mx-auto h-16 sm:h-20 px-4 sm:px-8 lg:px-12 flex items-center justify-between">
+      <!-- FAR LEFT: Logo Wordmark -->
+      <div class="flex items-center">
+        <a class="font-serif text-base sm:text-lg tracking-[0.22em] font-medium text-primary dark:text-white uppercase select-none whitespace-nowrap" data-path="home" href="index.html">
+          MAISON NOIR
+        </a>
+      </div>
+
+      <!-- CENTER (Desktop only): 3 Clean Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8 lg:gap-12" data-active-classes="text-primary dark:text-white font-semibold">
+        <a class="text-xs font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" data-path="fragrances" href="fragrances.html">Fragrances</a>
+        <a class="text-xs font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" data-path="notes" href="notes.html">Notes</a>
+        <a class="text-xs font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" data-path="my-orders" href="orders.html">My Orders</a>
+      </nav>
+
+      <!-- FAR RIGHT: Single Clean Menu Button ONLY -->
+      <div class="flex items-center">
+        <button aria-label="Open Navigation Menu" class="js-menu-toggle flex items-center gap-2 text-xs font-medium uppercase tracking-widest text-on-surface dark:text-zinc-200 hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors py-2 pl-2 focus:outline-none" type="button">
+          <span class="hidden sm:inline">Menu</span>
+          <span class="material-symbols-outlined text-[20px] leading-none">menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- SLIDE-OVER MENU DRAWER (js-nav-drawer) -->
+  <aside aria-hidden="true" class="js-nav-drawer fixed inset-0 z-50 hidden">
+    <!-- Backdrop -->
+    <div class="js-menu-toggle fixed inset-0 bg-black/40 backdrop-blur-xs transition-opacity"></div>
+
+    <!-- Drawer Panel -->
+    <div class="fixed inset-y-0 right-0 w-full max-w-xs sm:max-w-sm bg-surface dark:bg-[#161618] border-l border-outline-variant/40 dark:border-zinc-800 shadow-2xl flex flex-col justify-between p-6 sm:p-8 overflow-y-auto">
+      <div>
+        <!-- Drawer Top Header -->
+        <div class="flex items-center justify-between pb-5 border-b border-outline-variant/30 dark:border-zinc-800">
+          <span class="font-serif text-base tracking-[0.22em] font-medium uppercase text-primary dark:text-white">Maison Noir</span>
+          <button aria-label="Close Navigation Menu" class="js-menu-toggle flex items-center gap-1.5 text-xs font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" type="button">
+            <span>Close</span>
+            <span class="material-symbols-outlined text-[18px] leading-none">close</span>
+          </button>
+        </div>
+
+        <!-- Client Account Strip -->
+        <div class="py-5 border-b border-outline-variant/30 dark:border-zinc-800 flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <span class="js-user-initials w-9 h-9 rounded-full bg-primary dark:bg-zinc-800 text-on-primary dark:text-zinc-100 border border-outline-variant/40 dark:border-zinc-700 flex items-center justify-center text-xs font-semibold uppercase tracking-wider">
+              MN
+            </span>
+            <div class="flex flex-col">
+              <span class="text-[11px] font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400">Client Sanctuary</span>
+              <a class="text-xs font-medium uppercase tracking-widest text-primary dark:text-white hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors mt-0.5 underline underline-offset-4" data-path="login" href="auth.html">
+                Sign In / Account
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Primary Navigation Links -->
+        <nav class="py-5 border-b border-outline-variant/30 dark:border-zinc-800 flex flex-col gap-3.5">
+          <a class="font-serif text-xl font-normal text-primary dark:text-white hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors" data-path="home" href="index.html">Atelier Home</a>
+          <a class="font-serif text-xl font-normal text-primary dark:text-white hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors" data-path="fragrances" href="fragrances.html">Fragrances</a>
+          <a class="font-serif text-xl font-normal text-primary dark:text-white hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors" data-path="notes" href="notes.html">Notes & Botanicals</a>
+          <a class="font-serif text-xl font-normal text-primary dark:text-white hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors" data-path="my-orders" href="orders.html">My Orders</a>
+        </nav>
+
+        <!-- Favorites & Shopping Bag Links -->
+        <div class="py-5 flex flex-col gap-3.5">
+          <a class="flex items-center justify-between text-xs font-medium uppercase tracking-widest text-on-surface dark:text-zinc-200 hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors py-1" href="fragrances.html">
+            <span class="flex items-center gap-2.5">
+              <span class="material-symbols-outlined text-[18px]">favorite</span>
+              <span>Favorites</span>
+            </span>
+            <span class="js-wishlist-count px-2 py-0.5 text-[11px] font-medium bg-surface-container dark:bg-zinc-800 text-on-surface dark:text-zinc-200 rounded-full">0</span>
+          </a>
+
+          <a class="flex items-center justify-between text-xs font-medium uppercase tracking-widest text-on-surface dark:text-zinc-200 hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors py-1" data-path="cart" href="cart.html">
+            <span class="flex items-center gap-2.5">
+              <span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+              <span>Shopping Bag</span>
+            </span>
+            <span class="js-cart-count px-2 py-0.5 text-[11px] font-semibold bg-primary dark:bg-zinc-200 text-on-primary dark:text-zinc-900 rounded-full">2</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Drawer Footer -->
+      <div class="pt-5 border-t border-outline-variant/30 dark:border-zinc-800">
+        <p class="text-[11px] font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-500">Paris • Grasse</p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="w-full pt-16 sm:pt-20 bg-surface dark:bg-[#111113] min-h-[calc(100vh-20rem)] transition-colors">
+
+    <!-- 1. Minimal Page Header & Discreet Progress Indicator -->
+    <section class="relative w-full border-b border-outline-variant/40 dark:border-zinc-800 bg-surface-container-lowest dark:bg-[#151518]">
+      <!-- Dark / Light Mode Toggle -->
+      <button aria-label="Toggle Color Theme" class="js-theme-toggle absolute top-5 right-4 sm:top-7 sm:right-8 lg:right-12 z-20 p-2 bg-surface/90 dark:bg-zinc-900/90 backdrop-blur-md border border-outline-variant/50 dark:border-zinc-700 text-on-surface dark:text-zinc-200 hover:border-secondary dark:hover:border-secondary-fixed-dim transition-colors rounded-full" type="button">
+        <span class="material-symbols-outlined text-[18px] leading-none block dark:hidden">dark_mode</span>
+        <span class="material-symbols-outlined text-[18px] leading-none hidden dark:block">light_mode</span>
+      </button>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-8 sm:py-10">
+        <nav aria-label="Breadcrumb" class="flex items-center flex-wrap gap-2 text-[11px] font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400">
+          <a class="hover:text-primary dark:hover:text-white transition-colors" href="index.html">Home</a>
+          <span class="text-outline-variant dark:text-zinc-700">/</span>
+          <a class="hover:text-primary dark:hover:text-white transition-colors" href="cart.html">Shopping Bag</a>
+          <span class="text-outline-variant dark:text-zinc-700">/</span>
+          <span class="text-secondary dark:text-secondary-fixed-dim">Checkout</span>
+        </nav>
+
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mt-2.5 pr-10">
+          <div>
+            <h1 class="text-3xl sm:text-4xl font-serif font-normal text-primary dark:text-white tracking-tight">
+              Checkout
+            </h1>
+            <p class="text-sm text-on-surface-variant dark:text-zinc-400 mt-1.5">
+              Complete your private dispatch details for bespoke atelier packaging and courier delivery.
+            </p>
+          </div>
+
+          <!-- Discreet 3-Step Checkout Progress Bar -->
+          <div aria-label="Checkout Steps" class="flex items-center gap-3 text-[11px] font-medium uppercase tracking-widest">
+            <a class="text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" href="cart.html">01. Bag</a>
+            <span class="w-4 h-px bg-outline-variant dark:bg-zinc-700"></span>
+            <span class="text-secondary dark:text-secondary-fixed-dim font-semibold">02. Delivery</span>
+            <span class="w-4 h-px bg-outline-variant dark:bg-zinc-700"></span>
+            <span class="text-on-surface-variant/60 dark:text-zinc-600">03. Confirmation</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Auth-Guard Notice (Hidden by default) -->
+    <section class="js-auth-notice hidden max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 pt-8">
+      <div class="p-4 sm:p-5 bg-surface-container-low dark:bg-[#161619] border border-secondary/50 dark:border-secondary-fixed-dim/40 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div class="flex items-start sm:items-center gap-3">
+          <span class="material-symbols-outlined text-[20px] text-secondary dark:text-secondary-fixed-dim shrink-0 mt-0.5 sm:mt-0">lock</span>
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-wider text-primary dark:text-white">Client Sanctuary Access Required</p>
+            <p class="text-xs text-on-surface-variant dark:text-zinc-400 mt-0.5">
+              Please sign in to your Maison Noir account to finalize your order and record it in your personal archive.
+            </p>
+          </div>
+        </div>
+        <a class="px-5 py-2.5 bg-primary dark:bg-zinc-100 text-on-primary dark:text-zinc-950 text-[11px] font-medium uppercase tracking-widest hover:opacity-90 transition-opacity shrink-0 text-center" href="auth.html">
+          Sign In to Continue
+        </a>
+      </div>
+    </section>
+
+    <!-- 3. Main 2-Column Checkout Layout -->
+    <section class="js-checkout-container max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-8 sm:py-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+
+        <!-- Left Column: Delivery Information Form -->
+        <div class="lg:col-span-7 bg-surface-container-lowest dark:bg-[#161619] border border-outline-variant/40 dark:border-zinc-800 p-5 sm:p-8">
+          <div class="pb-5 border-b border-outline-variant/30 dark:border-zinc-800 flex items-center justify-between">
+            <div>
+              <span class="text-[11px] font-medium uppercase tracking-widest text-secondary dark:text-secondary-fixed-dim">Recipient Details</span>
+              <h2 class="font-serif text-2xl font-normal text-primary dark:text-white mt-0.5">Delivery Information</h2>
+            </div>
+            <span class="material-symbols-outlined text-[20px] text-on-surface-variant dark:text-zinc-500">local_shipping</span>
+          </div>
+
+          <form class="js-checkout-form mt-6 space-y-5" novalidate>
+            <!-- Full Name -->
+            <div class="space-y-1.5">
+              <label class="block text-[11px] font-medium uppercase tracking-widest text-on-surface dark:text-zinc-200" for="checkout-name">
+                Full Name <span class="text-secondary dark:text-secondary-fixed-dim">*</span>
+              </label>
+              <input
+                autocomplete="name"
+                class="js-input-name w-full px-3.5 py-2.5 bg-surface dark:bg-zinc-900 border border-outline-variant/60 dark:border-zinc-700 text-sm text-on-surface dark:text-zinc-100 placeholder:text-on-surface-variant/70 dark:placeholder:text-zinc-500 focus:outline-none focus:border-secondary dark:focus:border-secondary-fixed-dim transition-colors"
+                id="checkout-name"
+                name="fullName"
+                placeholder="e.g., Camille Laurent"
+                required
+                type="text">
+              <p class="js-error-msg js-error-name hidden text-xs text-error dark:text-red-400 flex items-center gap-1 pt-0.5">
+                <span class="material-symbols-outlined text-[14px]">error</span>
+                <span>Please enter the recipient’s full name.</span>
+              </p>
+            </div>
+
+            <!-- Delivery Address -->
+            <div class="space-y-1.5">
+              <label class="block text-[11px] font-medium uppercase tracking-widest text-on-surface dark:text-zinc-200" for="checkout-address">
+                Delivery Address <span class="text-secondary dark:text-secondary-fixed-dim">*</span>
+              </label>
+              <textarea
+                autocomplete="street-address"
+                class="js-input-address w-full px-3.5 py-2.5 bg-surface dark:bg-zinc-900 border border-outline-variant/60 dark:border-zinc-700 text-sm text-on-surface dark:text-zinc-100 placeholder:text-on-surface-variant/70 dark:placeholder:text-zinc-500 focus:outline-none focus:border-secondary dark:focus:border-secondary-fixed-dim transition-colors"
+                id="checkout-address"
+                name="address"
+                placeholder="Street address, apartment or suite, city, postal code, country"
+                required
+                rows="3"></textarea>
+              <p class="js-error-msg js-error-address hidden text-xs text-error dark:text-red-400 flex items-center gap-1 pt-0.5">
+                <span class="material-symbols-outlined text-[14px]">error</span>
+                <span>Please provide a complete street and postal address.</span>
+              </p>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="space-y-1.5">
+              <label class="block text-[11px] font-medium uppercase tracking-widest text-on-surface dark:text-zinc-200" for="checkout-phone">
+                Phone Number <span class="text-secondary dark:text-secondary-fixed-dim">*</span>
+              </label>
+              <input
+                autocomplete="tel"
+                class="js-input-phone w-full px-3.5 py-2.5 bg-surface dark:bg-zinc-900 border border-outline-variant/60 dark:border-zinc-700 text-sm text-on-surface dark:text-zinc-100 placeholder:text-on-surface-variant/70 dark:placeholder:text-zinc-500 focus:outline-none focus:border-secondary dark:focus:border-secondary-fixed-dim transition-colors"
+                id="checkout-phone"
+                name="phone"
+                placeholder="+33 1 42 68 55 00"
+                required
+                type="tel">
+              <p class="js-error-msg js-error-phone hidden text-xs text-error dark:text-red-400 flex items-center gap-1 pt-0.5">
+                <span class="material-symbols-outlined text-[14px]">error</span>
+                <span>Please enter a valid contact number for courier coordination.</span>
+              </p>
+            </div>
+
+            <!-- Optional Delivery / Gift Note -->
+            <div class="space-y-1.5">
+              <div class="flex items-center justify-between">
+                <label class="block text-[11px] font-medium uppercase tracking-widest text-on-surface dark:text-zinc-200" for="checkout-note">
+                  Delivery / Gift Note
+                </label>
+                <span class="text-[11px] text-on-surface-variant dark:text-zinc-400">Optional • Complimentary Cotton Card</span>
+              </div>
+              <textarea
+                class="js-input-note w-full px-3.5 py-2.5 bg-surface dark:bg-zinc-900 border border-outline-variant/60 dark:border-zinc-700 text-sm text-on-surface dark:text-zinc-100 placeholder:text-on-surface-variant/70 dark:placeholder:text-zinc-500 focus:outline-none focus:border-secondary dark:focus:border-secondary-fixed-dim transition-colors"
+                id="checkout-note"
+                maxlength="220"
+                name="note"
+                placeholder="Courier access code or personal dedication message..."
+                rows="2"></textarea>
+            </div>
+
+            <!-- Boutique Packaging & Concierge Settlement Strip -->
+            <div class="p-3.5 bg-surface-container-low dark:bg-zinc-900/80 border border-outline-variant/30 dark:border-zinc-800 flex items-center justify-between gap-3">
+              <div class="flex items-center gap-2.5">
+                <span class="material-symbols-outlined text-[18px] text-secondary dark:text-secondary-fixed-dim">featured_seasonal_and_gifts</span>
+                <div>
+                  <span class="text-xs font-medium text-primary dark:text-zinc-100 block">Maison Noir Signature Coffret & Concierge Dispatch</span>
+                  <span class="text-[11px] text-on-surface-variant dark:text-zinc-400">Grosgrain-ribboned presentation box with matching 2ml discovery sample</span>
+                </div>
+              </div>
+              <span class="text-[11px] font-medium uppercase tracking-widest text-secondary dark:text-secondary-fixed-dim shrink-0">Included</span>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="pt-2">
+              <button
+                class="js-place-order w-full py-3.5 px-6 bg-primary dark:bg-zinc-100 text-on-primary dark:text-zinc-950 text-xs font-medium uppercase tracking-widest hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
+                type="submit">
+                <span>Place Order</span>
+                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Right Column: Order Summary Panel -->
+        <aside class="js-checkout-summary lg:col-span-5 bg-surface-container-lowest dark:bg-[#161619] border border-outline-variant/40 dark:border-zinc-800 p-5 sm:p-6 lg:sticky lg:top-28 space-y-5">
+          <div class="pb-4 border-b border-outline-variant/30 dark:border-zinc-800 flex items-baseline justify-between">
+            <div>
+              <span class="text-[11px] font-medium uppercase tracking-widest text-secondary dark:text-secondary-fixed-dim">Your Selection</span>
+              <h2 class="font-serif text-2xl font-normal text-primary dark:text-white mt-0.5">Order Summary</h2>
+            </div>
+            <a class="text-[11px] font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white underline underline-offset-4 transition-colors" href="cart.html">
+              Edit Bag
+            </a>
+          </div>
+
+          <!-- Items List -->
+          <div class="js-checkout-items divide-y divide-outline-variant/25 dark:divide-zinc-800 max-h-80 overflow-y-auto">
+            <!-- Item 1 -->
+            <div class="py-3.5 first:pt-0 flex items-center justify-between gap-3.5">
+              <div class="flex items-center gap-3.5 min-w-0">
+                <div class="w-14 h-14 shrink-0 overflow-hidden bg-surface-container-low dark:bg-zinc-900 border border-outline-variant/30 dark:border-zinc-800">
+                  <img alt="Oud Nocturne Extrait" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSUqYTPhKvMTT0FYSiQ0EzcECiQPvR6zZMSIjJs-EYPmm5HClqcAcujKKgzdk09VxuALs9TZ9YZ20K4200Bi5aUTcc2pLIpA_SgAIqofp0fJyhMWDl6MiiJzi6N3RLefrmFVj2n3PkXiNyiAHsPg-piS5fm_7oMIqaCLi3GaoPImDo22aOm1_zWk8648rNM3u7jFizcI0iiiHHv9lzKjFQNfm7_SEg0RQYVvjNlBGH">
+                </div>
+                <div class="min-w-0">
+                  <h3 class="font-serif text-base font-normal text-primary dark:text-white truncate">Oud Nocturne Extrait</h3>
+                  <div class="flex items-center gap-2 text-[11px] text-on-surface-variant dark:text-zinc-400 mt-0.5">
+                    <span>50ml</span>
+                    <span>•</span>
+                    <span>Qty 1</span>
+                  </div>
+                </div>
+              </div>
+              <span class="text-sm font-medium text-primary dark:text-zinc-100 shrink-0">$195</span>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="py-3.5 last:pb-0 flex items-center justify-between gap-3.5">
+              <div class="flex items-center gap-3.5 min-w-0">
+                <div class="w-14 h-14 shrink-0 overflow-hidden bg-surface-container-low dark:bg-zinc-900 border border-outline-variant/30 dark:border-zinc-800">
+                  <img alt="Santal de Ceylan" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWQAHD2j6d8kfeEp8FoB8wP2wnAifFVdoquOSzFHOVmULc2CiTXA2fisj18dw1cNlTi7G1F3ig08-O4I4riIIs5vwPlkONIsFLnxPmCRtnzVPGE938QwSrPKV_lzIv0uRO1-0kH5z_Cx50jsXJMnQu2nPiuDyKkIf9BWKa9aXowuPIeoXGG7B1lGtHnmVeFW1O0EVBK0yFW7tCxtSCQ9DUU_IgNt7Clr9a1vwd7itR">
+                </div>
+                <div class="min-w-0">
+                  <h3 class="font-serif text-base font-normal text-primary dark:text-white truncate">Santal de Ceylan</h3>
+                  <div class="flex items-center gap-2 text-[11px] text-on-surface-variant dark:text-zinc-400 mt-0.5">
+                    <span>100ml</span>
+                    <span>•</span>
+                    <span>Qty 1</span>
+                  </div>
+                </div>
+              </div>
+              <span class="text-sm font-medium text-primary dark:text-zinc-100 shrink-0">$210</span>
+            </div>
+          </div>
+
+          <!-- Totals Breakdown -->
+          <div class="pt-4 border-t border-outline-variant/30 dark:border-zinc-800 space-y-2.5 text-xs sm:text-sm">
+            <div class="flex items-center justify-between text-on-surface-variant dark:text-zinc-400">
+              <span>Subtotal</span>
+              <span class="js-checkout-subtotal font-medium text-on-surface dark:text-zinc-200">$405.00</span>
+            </div>
+
+            <div class="flex items-center justify-between text-on-surface-variant dark:text-zinc-400">
+              <span>Complimentary Discovery Vial (2ml)</span>
+              <span class="text-xs uppercase tracking-wider text-secondary dark:text-secondary-fixed-dim">Included</span>
+            </div>
+
+            <div class="flex items-center justify-between text-on-surface-variant dark:text-zinc-400">
+              <span>Insured Express Courier</span>
+              <span class="text-xs uppercase tracking-wider text-on-surface dark:text-zinc-200">Complimentary</span>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-outline-variant/40 dark:border-zinc-800 flex items-baseline justify-between">
+            <span class="text-xs font-semibold uppercase tracking-widest text-primary dark:text-white">Total</span>
+            <span class="js-checkout-total font-serif text-2xl font-normal text-primary dark:text-white">$405.00</span>
+          </div>
+
+          <!-- Discreet Authenticity & Security Assurance Footer -->
+          <div class="pt-4 border-t border-outline-variant/25 dark:border-zinc-800/80 grid grid-cols-2 gap-3 text-[11px] text-on-surface-variant dark:text-zinc-400">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-[16px] text-secondary dark:text-secondary-fixed-dim shrink-0">verified</span>
+              <span>Grasse Batch Certified</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-[16px] text-secondary dark:text-secondary-fixed-dim shrink-0">lock</span>
+              <span>Encrypted Dispatch</span>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- 4. Order Success Confirmation State (Hidden by default) -->
+    <section class="js-order-success hidden max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-14 sm:py-20">
+      <div class="max-w-lg mx-auto text-center p-8 sm:p-12 bg-surface-container-lowest dark:bg-[#161619] border border-outline-variant/40 dark:border-zinc-800 space-y-6">
+        <!-- Refined Checkmark Line Icon -->
+        <div class="w-12 h-12 mx-auto rounded-full border border-secondary/50 dark:border-secondary-fixed-dim/50 flex items-center justify-center text-secondary dark:text-secondary-fixed-dim">
+          <span class="material-symbols-outlined text-[24px] font-light">check</span>
+        </div>
+
+        <div class="space-y-2">
+          <span class="text-[11px] font-medium uppercase tracking-widest text-secondary dark:text-secondary-fixed-dim">Atelier Confirmation</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-normal text-primary dark:text-white tracking-tight">
+            Thank You for Your Order
+          </h2>
+        </div>
+
+        <!-- Generated Order Number Badge -->
+        <div class="py-2.5 px-4 bg-surface-container-low dark:bg-zinc-900 border border-outline-variant/30 dark:border-zinc-800 inline-flex items-center gap-2">
+          <span class="text-[11px] font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400">Order Reference:</span>
+          <span class="js-success-order-id text-xs font-semibold uppercase tracking-widest text-primary dark:text-white">#MN-84920</span>
+        </div>
+
+        <p class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 leading-relaxed">
+          Your selection has been recorded in your personal archive and your fragrance bag has been cleared. Our Grasse atelier will prepare your flacons with complimentary sampling shortly.
+        </p>
+
+        <!-- Dual Action Buttons -->
+        <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <a class="w-full sm:w-auto px-6 py-3 bg-primary dark:bg-zinc-100 text-on-primary dark:text-zinc-950 text-xs font-medium uppercase tracking-widest hover:opacity-90 transition-opacity text-center" href="orders.html">
+            View My Orders
+          </a>
+          <a class="w-full sm:w-auto px-6 py-3 border border-outline-variant/60 dark:border-zinc-700 text-on-surface dark:text-zinc-200 hover:border-secondary dark:hover:border-secondary-fixed-dim text-xs font-medium uppercase tracking-widest transition-colors text-center" href="fragrances.html">
+            Continue Exploring
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="w-full bg-surface-container-lowest dark:bg-[#111113] border-t border-outline-variant/40 dark:border-zinc-800 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-10 sm:py-12">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+        <div class="flex flex-col gap-3">
+          <span class="font-serif text-base sm:text-lg tracking-[0.22em] font-medium uppercase text-primary dark:text-white">Maison Noir</span>
+          <p class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 leading-relaxed">
+            Artisanal haute parfumerie conceived between Paris and Grasse. Dedicated to olfactory discipline and raw botanical extractions.
+          </p>
+          <span class="text-[11px] font-medium uppercase tracking-widest text-secondary dark:text-secondary-fixed-dim">Paris • Grasse</span>
+        </div>
+
+        <div class="flex flex-col gap-2.5">
+          <span class="text-xs font-semibold uppercase tracking-wider text-on-surface dark:text-zinc-200">Archive & Maison</span>
+          <div class="flex flex-col gap-2">
+            <a class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" data-path="home" href="index.html">Atelier & Collection</a>
+            <a class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" data-path="my-orders" href="orders.html">My Orders</a>
+            <a class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" data-path="cart" href="cart.html">Shopping Bag</a>
+            <a class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" data-path="login" href="auth.html">Client Sanctuary</a>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-2.5">
+          <span class="text-xs font-semibold uppercase tracking-wider text-on-surface dark:text-zinc-200">Client Services</span>
+          <div class="flex flex-col gap-2">
+            <a class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" data-path="olfactory-consultation" href="#">Olfactory Consultation</a>
+            <a class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" data-path="shipping-returns" href="#">Complimentary Shipping</a>
+            <a class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" data-path="authenticity" href="#">Provenance & Extraction</a>
+            <a class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" data-path="contact" href="#">Contact Concierge</a>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-3">
+          <span class="text-xs font-semibold uppercase tracking-wider text-on-surface dark:text-zinc-200">The Gazette</span>
+          <p class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 leading-relaxed">
+            Receive private invitations to seasonal reserves and olfactive monographs.
+          </p>
+          <form class="flex flex-col sm:flex-row gap-2">
+            <input class="w-full px-3 py-2 bg-surface-container-low dark:bg-zinc-900 border border-outline-variant/60 dark:border-zinc-700 text-xs text-on-surface dark:text-zinc-200 placeholder:text-on-surface-variant dark:placeholder:text-zinc-500 focus:outline-none focus:border-secondary" placeholder="ENTER YOUR EMAIL" type="email">
+            <button class="px-4 py-2 bg-primary dark:bg-zinc-100 text-on-primary dark:text-zinc-950 text-xs font-medium uppercase tracking-widest hover:opacity-90 transition-opacity shrink-0" type="button">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-outline-variant/30 dark:border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] font-medium text-on-surface-variant dark:text-zinc-500 uppercase tracking-wider">
+        <p>© 2025 Maison Noir Haute Parfumerie. All rights reserved.</p>
+        <div class="flex flex-wrap items-center gap-6">
+          <a class="hover:text-primary dark:hover:text-white transition-colors" href="#">Privacy Policy</a>
+          <a class="hover:text-primary dark:hover:text-white transition-colors" href="#">Terms of Sale</a>
+          <a class="hover:text-primary dark:hover:text-white transition-colors" href="#">Legal Notices</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  
+</body>
+<script src="./js/script.js"></script>
+</html>

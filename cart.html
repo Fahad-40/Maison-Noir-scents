@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en" class="html">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="web_standard" name="shell-type">
+  <title>Your Fragrance Bag — Maison Noir Haute Parfumerie</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    @layer base {
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main > :first-child {
+        margin-top: 0 !important;
+      }
+
+      main > :last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    details > summary {
+      list-style: none;
+    }
+
+    details > summary::-webkit-details-marker {
+      display: none;
+    }
+  </style>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-error-container": "#93000a",
+            "error-container": "#ffdad6",
+            "primary-fixed": "#e4e1e6",
+            "surface-dim": "#dbdad7",
+            "secondary": "#755a26",
+            "secondary-fixed-dim": "#e5c283",
+            "on-surface": "#1a1c1a",
+            "on-secondary-container": "#785d28",
+            "primary-fixed-dim": "#c8c5ca",
+            "surface-container-low": "#f4f3f1",
+            "on-background": "#1a1c1a",
+            "tertiary-container": "#1a1b22",
+            "surface-variant": "#e3e2e0",
+            "on-primary-fixed-variant": "#47464a",
+            "error": "#ba1a1a",
+            "secondary-fixed": "#ffdea6",
+            "inverse-on-surface": "#f2f1ee",
+            "surface-tint": "#5f5e61",
+            "outline-variant": "#c8c5cb",
+            "on-tertiary": "#ffffff",
+            "inverse-surface": "#2f312f",
+            "secondary-container": "#fdd897",
+            "on-secondary-fixed": "#271900",
+            "background": "#faf9f6",
+            "surface-container": "#efeeeb",
+            "tertiary-fixed": "#e3e1ec",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#858387",
+            "on-primary-fixed": "#1b1b1e",
+            "on-secondary": "#ffffff",
+            "surface-bright": "#faf9f6",
+            "on-tertiary-container": "#83838c",
+            "on-tertiary-fixed": "#1a1b22",
+            "surface": "#faf9f6",
+            "primary-container": "#1b1b1e",
+            "surface-container-highest": "#e3e2e0",
+            "on-surface-variant": "#47464b",
+            "on-secondary-fixed-variant": "#5b4310",
+            "tertiary": "#000000",
+            "tertiary-fixed-dim": "#c6c5cf",
+            "surface-container-lowest": "#ffffff",
+            "primary": "#000000",
+            "surface-container-high": "#e9e8e5",
+            "on-tertiary-fixed-variant": "#46464e",
+            "inverse-primary": "#c8c5ca",
+            "on-error": "#ffffff",
+            "outline": "#77767b"
+          },
+          fontFamily: {
+            serif: ["'Cormorant Garamond'", "Georgia", "serif"],
+            sans: ["'Plus Jakarta Sans'", "-apple-system", "BlinkMacSystemFont", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-surface dark:bg-[#111113] font-sans text-sm text-on-surface dark:text-zinc-100 antialiased transition-colors duration-300" data-mode="connect">
+
+  <!-- HEADER & NAVIGATION -->
+  <header class="fixed top-0 inset-x-0 w-full z-40 bg-surface/95 dark:bg-[#111113]/95 backdrop-blur-md border-b border-outline-variant/40 dark:border-zinc-800 transition-colors">
+    <div class="max-w-7xl mx-auto h-16 sm:h-20 px-4 sm:px-8 lg:px-12 flex items-center justify-between">
+      <!-- FAR LEFT: Logo Wordmark -->
+      <div class="flex items-center">
+        <a class="font-serif text-base sm:text-lg tracking-[0.22em] font-medium text-primary dark:text-white uppercase select-none whitespace-nowrap" data-path="home" href="index.html">
+          MAISON NOIR
+        </a>
+      </div>
+
+      <!-- CENTER (Desktop only): 3 Clean Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8 lg:gap-12" data-active-classes="text-primary dark:text-white font-semibold">
+        <a class="text-xs font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" data-path="fragrances" href="fragrances.html">Fragrances</a>
+        <a class="text-xs font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" data-path="notes" href="notes.html">Notes</a>
+        <a class="text-xs font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" data-path="my-orders" href="orders.html">My Orders</a>
+      </nav>
+
+      <!-- FAR RIGHT: Single Clean Menu Button ONLY -->
+      <div class="flex items-center">
+        <button aria-label="Open Navigation Menu" class="js-menu-toggle flex items-center gap-2 text-xs font-medium uppercase tracking-widest text-on-surface dark:text-zinc-200 hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors py-2 pl-2 focus:outline-none" type="button">
+          <span class="hidden sm:inline">Menu</span>
+          <span class="material-symbols-outlined text-[20px] leading-none">menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- SLIDE-OVER MENU DRAWER (js-nav-drawer) -->
+  <aside aria-hidden="true" class="js-nav-drawer fixed inset-0 z-50 hidden">
+    <!-- Backdrop -->
+    <div class="js-menu-toggle fixed inset-0 bg-black/40 backdrop-blur-xs transition-opacity"></div>
+
+    <!-- Drawer Panel -->
+    <div class="fixed inset-y-0 right-0 w-full max-w-xs sm:max-w-sm bg-surface dark:bg-[#161618] border-l border-outline-variant/40 dark:border-zinc-800 shadow-2xl flex flex-col justify-between p-6 sm:p-8 overflow-y-auto">
+      <div>
+        <!-- Drawer Top Header -->
+        <div class="flex items-center justify-between pb-5 border-b border-outline-variant/30 dark:border-zinc-800">
+          <span class="font-serif text-base tracking-[0.22em] font-medium uppercase text-primary dark:text-white">Maison Noir</span>
+          <button aria-label="Close Navigation Menu" class="js-menu-toggle flex items-center gap-1.5 text-xs font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" type="button">
+            <span>Close</span>
+            <span class="material-symbols-outlined text-[18px] leading-none">close</span>
+          </button>
+        </div>
+
+        <!-- Client Account Strip -->
+        <div class="py-5 border-b border-outline-variant/30 dark:border-zinc-800 flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <span class="js-user-initials w-9 h-9 rounded-full bg-primary dark:bg-zinc-800 text-on-primary dark:text-zinc-100 border border-outline-variant/40 dark:border-zinc-700 flex items-center justify-center text-xs font-semibold uppercase tracking-wider">
+              MN
+            </span>
+            <div class="flex flex-col">
+              <span class="text-[11px] font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400">Client Sanctuary</span>
+              <a class="text-xs font-medium uppercase tracking-widest text-primary dark:text-white hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors mt-0.5 underline underline-offset-4" data-path="login" href="auth.html">
+                Sign In / Account
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Primary Navigation Links -->
+        <nav class="py-5 border-b border-outline-variant/30 dark:border-zinc-800 flex flex-col gap-3.5">
+          <a class="font-serif text-xl font-normal text-primary dark:text-white hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors" data-path="home" href="index.html">Atelier Home</a>
+          <a class="font-serif text-xl font-normal text-primary dark:text-white hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors" data-path="fragrances" href="fragrances.html">Fragrances</a>
+          <a class="font-serif text-xl font-normal text-primary dark:text-white hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors" data-path="notes" href="notes.html">Notes & Botanicals</a>
+          <a class="font-serif text-xl font-normal text-primary dark:text-white hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors" data-path="my-orders" href="orders.html">My Orders</a>
+        </nav>
+
+        <!-- Favorites & Shopping Bag Links -->
+        <div class="py-5 flex flex-col gap-3.5">
+          <a class="flex items-center justify-between text-xs font-medium uppercase tracking-widest text-on-surface dark:text-zinc-200 hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors py-1" href="fragrances.html">
+            <span class="flex items-center gap-2.5">
+              <span class="material-symbols-outlined text-[18px]">favorite</span>
+              <span>Favorites</span>
+            </span>
+            <span class="js-wishlist-count px-2 py-0.5 text-[11px] font-medium bg-surface-container dark:bg-zinc-800 text-on-surface dark:text-zinc-200 rounded-full">0</span>
+          </a>
+
+          <a class="flex items-center justify-between text-xs font-semibold uppercase tracking-widest text-primary dark:text-white transition-colors py-1" data-path="cart" href="cart.html">
+            <span class="flex items-center gap-2.5">
+              <span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+              <span>Shopping Bag</span>
+            </span>
+            <span class="js-cart-count px-2 py-0.5 text-[11px] font-semibold bg-primary dark:bg-zinc-200 text-on-primary dark:text-zinc-900 rounded-full">2</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Drawer Footer -->
+      <div class="pt-5 border-t border-outline-variant/30 dark:border-zinc-800">
+        <p class="text-[11px] font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-500">Paris • Grasse</p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="w-full pt-16 sm:pt-20 bg-surface dark:bg-[#111113] min-h-[calc(100vh-20rem)] transition-colors">
+
+    <!-- 1. Minimal Page Header -->
+    <section class="relative w-full border-b border-outline-variant/40 dark:border-zinc-800 bg-surface-container-lowest dark:bg-[#151518]">
+      <!-- Dark / Light Mode Toggle -->
+      <button aria-label="Toggle Color Theme" class="js-theme-toggle absolute top-5 right-4 sm:top-7 sm:right-8 lg:right-12 z-20 p-2 bg-surface/90 dark:bg-zinc-900/90 backdrop-blur-md border border-outline-variant/50 dark:border-zinc-700 text-on-surface dark:text-zinc-200 hover:border-secondary dark:hover:border-secondary-fixed-dim transition-colors rounded-full" type="button">
+        <span class="material-symbols-outlined text-[18px] leading-none block dark:hidden">dark_mode</span>
+        <span class="material-symbols-outlined text-[18px] leading-none hidden dark:block">light_mode</span>
+      </button>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-8 sm:py-10">
+        <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-[11px] font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400">
+          <a class="hover:text-primary dark:hover:text-white transition-colors" href="index.html">Home</a>
+          <span class="text-outline-variant dark:text-zinc-700">/</span>
+          <span class="text-secondary dark:text-secondary-fixed-dim">Shopping Bag</span>
+        </nav>
+
+        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mt-2.5 pr-10">
+          <h1 class="text-3xl sm:text-4xl font-serif font-normal text-primary dark:text-white tracking-tight">
+            Your Fragrance Bag
+          </h1>
+          <span class="js-cart-header-count text-xs font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400">
+            2 Creations Selected
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Empty Cart State (Hidden by default) -->
+    <section class="js-empty-cart hidden max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-16 sm:py-24">
+      <div class="max-w-md mx-auto text-center py-12 px-6 bg-surface-container-lowest dark:bg-[#161619] border border-outline-variant/40 dark:border-zinc-800">
+        <span class="material-symbols-outlined text-[32px] font-light text-secondary dark:text-secondary-fixed-dim">shopping_bag</span>
+        <h2 class="font-serif text-2xl font-normal text-primary dark:text-white mt-3">
+          Your fragrance bag is currently empty
+        </h2>
+        <p class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 mt-2 leading-relaxed">
+          Explore our Grasse extraits and rare botanical compositions to curate your personal scent wardrobe.
+        </p>
+        <a class="inline-block mt-6 px-6 py-3 bg-primary dark:bg-zinc-100 text-on-primary dark:text-zinc-950 text-xs font-medium uppercase tracking-widest hover:opacity-90 transition-opacity" href="fragrances.html">
+          Explore Collection
+        </a>
+      </div>
+    </section>
+
+    <!-- 3. Main 2-Column Cart Layout -->
+    <section class="js-cart-container max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-8 sm:py-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+
+        <!-- Left Column: Cart Items List & Complimentary Ritual Options -->
+        <div class="lg:col-span-8 space-y-6">
+          <!-- Cart Items List -->
+          <div class="js-cart-items bg-surface-container-lowest dark:bg-[#161619] border border-outline-variant/40 dark:border-zinc-800 divide-y divide-outline-variant/30 dark:divide-zinc-800">
+
+            <!-- Item Row 1 -->
+            <article class="js-cart-item p-4 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-6" data-id="1" data-price="195" data-size="50ml">
+              <div class="flex items-center gap-4 sm:gap-5">
+                <a class="w-20 h-20 sm:w-24 sm:h-24 shrink-0 overflow-hidden bg-surface-container-low dark:bg-zinc-900 border border-outline-variant/30 dark:border-zinc-800" href="product.html?id=1">
+                  <img alt="Oud Nocturne Extrait" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSUqYTPhKvMTT0FYSiQ0EzcECiQPvR6zZMSIjJs-EYPmm5HClqcAcujKKgzdk09VxuALs9TZ9YZ20K4200Bi5aUTcc2pLIpA_SgAIqofp0fJyhMWDl6MiiJzi6N3RLefrmFVj2n3PkXiNyiAHsPg-piS5fm_7oMIqaCLi3GaoPImDo22aOm1_zWk8648rNM3u7jFizcI0iiiHHv9lzKjFQNfm7_SEg0RQYVvjNlBGH">
+                </a>
+
+                <div class="space-y-1">
+                  <span class="text-[11px] font-medium uppercase tracking-widest text-secondary dark:text-secondary-fixed-dim block">Maison Noir</span>
+                  <h2 class="font-serif text-lg sm:text-xl font-normal text-primary dark:text-white leading-snug">
+                    <a class="hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors" href="product.html?id=1">Oud Nocturne Extrait</a>
+                  </h2>
+                  <div class="flex items-center gap-2.5 pt-0.5">
+                    <span class="px-2 py-0.5 text-[11px] font-medium uppercase tracking-wider bg-surface-container dark:bg-zinc-800 text-on-surface dark:text-zinc-300 border border-outline-variant/40 dark:border-zinc-700">
+                      50ml
+                    </span>
+                    <span class="text-xs text-on-surface-variant dark:text-zinc-400">$195 each</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Stepper, Line Total & Remove -->
+              <div class="flex items-center justify-between sm:justify-end gap-5 sm:gap-6 pt-3 sm:pt-0 border-t sm:border-t-0 border-outline-variant/20 dark:border-zinc-800/80">
+                <div class="inline-flex items-center border border-outline-variant/50 dark:border-zinc-700 bg-surface dark:bg-zinc-900">
+                  <button aria-label="Decrease quantity" class="js-qty-minus w-8 h-8 flex items-center justify-center text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" type="button">
+                    <span class="material-symbols-outlined text-[16px]">remove</span>
+                  </button>
+                  <span class="js-qty-val w-8 text-center text-xs font-medium text-primary dark:text-zinc-100 select-none">1</span>
+                  <button aria-label="Increase quantity" class="js-qty-plus w-8 h-8 flex items-center justify-center text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" type="button">
+                    <span class="material-symbols-outlined text-[16px]">add</span>
+                  </button>
+                </div>
+
+                <span class="js-item-total text-sm font-medium text-primary dark:text-zinc-100 min-w-[3.5rem] text-right">
+                  $195
+                </span>
+
+                <button aria-label="Remove Oud Nocturne Extrait from bag" class="js-remove-item p-1.5 text-on-surface-variant dark:text-zinc-500 hover:text-error dark:hover:text-red-400 transition-colors" type="button">
+                  <span class="material-symbols-outlined text-[18px] leading-none block">close</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- Item Row 2 -->
+            <article class="js-cart-item p-4 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-6" data-id="3" data-price="210" data-size="100ml">
+              <div class="flex items-center gap-4 sm:gap-5">
+                <a class="w-20 h-20 sm:w-24 sm:h-24 shrink-0 overflow-hidden bg-surface-container-low dark:bg-zinc-900 border border-outline-variant/30 dark:border-zinc-800" href="product.html?id=3">
+                  <img alt="Santal de Ceylan" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWQAHD2j6d8kfeEp8FoB8wP2wnAifFVdoquOSzFHOVmULc2CiTXA2fisj18dw1cNlTi7G1F3ig08-O4I4riIIs5vwPlkONIsFLnxPmCRtnzVPGE938QwSrPKV_lzIv0uRO1-0kH5z_Cx50jsXJMnQu2nPiuDyKkIf9BWKa9aXowuPIeoXGG7B1lGtHnmVeFW1O0EVBK0yFW7tCxtSCQ9DUU_IgNt7Clr9a1vwd7itR">
+                </a>
+
+                <div class="space-y-1">
+                  <span class="text-[11px] font-medium uppercase tracking-widest text-secondary dark:text-secondary-fixed-dim block">Maison Noir</span>
+                  <h2 class="font-serif text-lg sm:text-xl font-normal text-primary dark:text-white leading-snug">
+                    <a class="hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors" href="product.html?id=3">Santal de Ceylan</a>
+                  </h2>
+                  <div class="flex items-center gap-2.5 pt-0.5">
+                    <span class="px-2 py-0.5 text-[11px] font-medium uppercase tracking-wider bg-surface-container dark:bg-zinc-800 text-on-surface dark:text-zinc-300 border border-outline-variant/40 dark:border-zinc-700">
+                      100ml
+                    </span>
+                    <span class="text-xs text-on-surface-variant dark:text-zinc-400">$210 each</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Stepper, Line Total & Remove -->
+              <div class="flex items-center justify-between sm:justify-end gap-5 sm:gap-6 pt-3 sm:pt-0 border-t sm:border-t-0 border-outline-variant/20 dark:border-zinc-800/80">
+                <div class="inline-flex items-center border border-outline-variant/50 dark:border-zinc-700 bg-surface dark:bg-zinc-900">
+                  <button aria-label="Decrease quantity" class="js-qty-minus w-8 h-8 flex items-center justify-center text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" type="button">
+                    <span class="material-symbols-outlined text-[16px]">remove</span>
+                  </button>
+                  <span class="js-qty-val w-8 text-center text-xs font-medium text-primary dark:text-zinc-100 select-none">1</span>
+                  <button aria-label="Increase quantity" class="js-qty-plus w-8 h-8 flex items-center justify-center text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" type="button">
+                    <span class="material-symbols-outlined text-[16px]">add</span>
+                  </button>
+                </div>
+
+                <span class="js-item-total text-sm font-medium text-primary dark:text-zinc-100 min-w-[3.5rem] text-right">
+                  $210
+                </span>
+
+                <button aria-label="Remove Santal de Ceylan from bag" class="js-remove-item p-1.5 text-on-surface-variant dark:text-zinc-500 hover:text-error dark:hover:text-red-400 transition-colors" type="button">
+                  <span class="material-symbols-outlined text-[18px] leading-none block">close</span>
+                </button>
+              </div>
+            </article>
+
+          </div>
+
+          <!-- Atelier Ritual Enhancements: Complimentary 2ml Sample & Gift Note -->
+          <div class="bg-surface-container-lowest dark:bg-[#161619] border border-outline-variant/40 dark:border-zinc-800 divide-y divide-outline-variant/30 dark:divide-zinc-800">
+            <!-- Complimentary 2ml Sample Selector -->
+            <div class="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-[20px] text-secondary dark:text-secondary-fixed-dim mt-0.5 shrink-0">science</span>
+                <div>
+                  <h3 class="text-xs font-semibold uppercase tracking-wider text-primary dark:text-white">Complimentary 2ml Discovery Vial</h3>
+                  <p class="text-xs text-on-surface-variant dark:text-zinc-400 mt-0.5">Select an additional formulation sample included with your order.</p>
+                </div>
+              </div>
+              <select aria-label="Choose complimentary 2ml sample" class="js-sample-select bg-surface dark:bg-zinc-900 border border-outline-variant/50 dark:border-zinc-700 px-3 py-1.5 text-xs text-on-surface dark:text-zinc-200 focus:outline-none focus:border-secondary shrink-0">
+                <option value="iris-fauve">Iris Fauve (2ml)</option>
+                <option value="ambre-celeste">Ambre Céleste (2ml)</option>
+                <option value="rose-noire">Rose Noire Absolue (2ml)</option>
+                <option value="vetiver-mineral">Vétiver Minéral (2ml)</option>
+              </select>
+            </div>
+
+            <!-- Collapsible Gift Wrapping & Handwritten Note -->
+            <details class="group p-4 sm:p-5">
+              <summary class="flex items-center justify-between cursor-pointer select-none">
+                <div class="flex items-center gap-3">
+                  <span class="material-symbols-outlined text-[20px] text-secondary dark:text-secondary-fixed-dim shrink-0">featured_seasonal_and_gifts</span>
+                  <span class="text-xs font-semibold uppercase tracking-wider text-primary dark:text-white">Signature Gift Box & Calligraphy Card</span>
+                </div>
+                <span class="text-[11px] font-medium uppercase tracking-widest text-secondary dark:text-secondary-fixed-dim inline-flex items-center gap-1">
+                  <span>Complimentary</span>
+                  <span class="material-symbols-outlined text-[16px] group-open:rotate-180 transition-transform">expand_more</span>
+                </span>
+              </summary>
+              <div class="pt-4 mt-3 border-t border-outline-variant/20 dark:border-zinc-800 space-y-2.5">
+                <label class="block text-[11px] font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400" for="gift-note">
+                  Personal Message (Optional — Printed on Cotton Card)
+                </label>
+                <textarea
+                  class="js-gift-note w-full px-3 py-2 bg-surface dark:bg-zinc-900 border border-outline-variant/50 dark:border-zinc-700 text-xs text-on-surface dark:text-zinc-200 placeholder:text-on-surface-variant dark:placeholder:text-zinc-500 focus:outline-none focus:border-secondary"
+                  id="gift-note"
+                  maxlength="180"
+                  placeholder="Enter your dedication message..."
+                  rows="2"></textarea>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <!-- Right Column: Order Summary Card -->
+        <aside class="js-cart-summary lg:col-span-4 bg-surface-container-lowest dark:bg-[#161619] border border-outline-variant/40 dark:border-zinc-800 p-5 sm:p-6 lg:sticky lg:top-28 space-y-5">
+          <div class="pb-4 border-b border-outline-variant/30 dark:border-zinc-800">
+            <span class="text-[11px] font-medium uppercase tracking-widest text-secondary dark:text-secondary-fixed-dim">Atelier Dispatch</span>
+            <h2 class="font-serif text-2xl font-normal text-primary dark:text-white mt-0.5">Order Summary</h2>
+          </div>
+
+          <div class="space-y-3 text-xs sm:text-sm">
+            <div class="flex items-center justify-between text-on-surface-variant dark:text-zinc-400">
+              <span>Subtotal</span>
+              <span class="js-cart-subtotal font-medium text-on-surface dark:text-zinc-200">$405.00</span>
+            </div>
+
+            <div class="flex items-center justify-between text-on-surface-variant dark:text-zinc-400">
+              <span>2ml Discovery Vial</span>
+              <span class="text-xs uppercase tracking-wider text-secondary dark:text-secondary-fixed-dim">Complimentary</span>
+            </div>
+
+            <div class="flex items-center justify-between text-on-surface-variant dark:text-zinc-400">
+              <span>Express Courier Shipping</span>
+              <span class="text-xs uppercase tracking-wider text-on-surface dark:text-zinc-200">Complimentary</span>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-outline-variant/40 dark:border-zinc-800 flex items-baseline justify-between">
+            <span class="text-xs font-semibold uppercase tracking-widest text-primary dark:text-white">Estimated Total</span>
+            <span class="js-cart-total font-serif text-2xl font-normal text-primary dark:text-white">$405.00</span>
+          </div>
+
+          <div class="pt-1 space-y-3">
+            <a class="js-checkout-btn w-full py-3.5 px-6 bg-primary dark:bg-zinc-100 text-on-primary dark:text-zinc-950 text-xs font-medium uppercase tracking-widest hover:opacity-90 transition-opacity flex items-center justify-center gap-2" href="checkout.html">
+              <span>Proceed to Checkout</span>
+              <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+            </a>
+
+            <a class="w-full py-2 text-center block text-[11px] font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors underline underline-offset-4 decoration-outline-variant dark:decoration-zinc-700" href="fragrances.html">
+              Continue Shopping
+            </a>
+          </div>
+
+          <div class="pt-4 border-t border-outline-variant/25 dark:border-zinc-800/80 flex items-center gap-2.5 text-[11px] text-on-surface-variant dark:text-zinc-400">
+            <span class="material-symbols-outlined text-[16px] text-secondary dark:text-secondary-fixed-dim shrink-0">verified_user</span>
+            <span>Sealed presentation box with 30-day unopened return guarantee.</span>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- 4. Curated "Complete Your Ritual" Mini-Recommendations -->
+    <section class="w-full border-t border-outline-variant/40 dark:border-zinc-800 bg-surface-container-lowest dark:bg-[#151518] py-10 sm:py-14">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between pb-5 border-b border-outline-variant/30 dark:border-zinc-800 gap-2">
+          <div>
+            <span class="text-[11px] font-medium uppercase tracking-widest text-secondary dark:text-secondary-fixed-dim">Layering Suggestions</span>
+            <h2 class="text-2xl sm:text-3xl font-serif font-normal text-primary dark:text-white mt-1">Complete Your Ritual</h2>
+          </div>
+          <a class="text-[11px] font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400 hover:text-secondary dark:hover:text-secondary-fixed-dim inline-flex items-center gap-1 transition-colors" href="fragrances.html">
+            View All Creations <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-6">
+          <!-- Rec Card 1 -->
+          <article class="group bg-surface dark:bg-[#161619] border border-outline-variant/40 dark:border-zinc-800 flex flex-col justify-between hover:border-secondary dark:hover:border-secondary-fixed-dim transition-colors" data-category="unisex" data-id="4" data-name="Ambre Céleste" data-price="175">
+            <div class="relative aspect-square overflow-hidden bg-surface-container-low dark:bg-zinc-900">
+              <a class="block w-full h-full" href="product.html?id=4">
+                <img alt="Ambre Céleste" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkNUJNaoJpN9_wnJPWJVSetRIAOeSNkS-tC_3Vx4qhPSQsCAnzqPWpu-TU0obypBqcYW8UgBWQCjKcNDZh7sHJ__Q-l13_3Qfe5PjGoX4cj8aj7Vm2VUmEo7S2NYMdtyzoa0vwKmuPs2wcqsqhN9aESK-qd9XOJcBEcCFDDv8zUlv_-IUhYHAKWhfzM2xNMDBFSIa9GwzEL-tJCtC94QFx-d3kzdR69j_PfFUW7I5F">
+              </a>
+              <div class="absolute bottom-0 inset-x-0 p-2 bg-surface/95 dark:bg-zinc-950/90 backdrop-blur-sm sm:translate-y-full sm:group-hover:translate-y-0 transition-transform duration-300">
+                <button class="js-quick-add w-full py-2 bg-primary dark:bg-zinc-100 text-on-primary dark:text-zinc-950 text-[11px] font-medium uppercase tracking-widest hover:opacity-90 transition-opacity" type="button">
+                  Add to Bag • $175
+                </button>
+              </div>
+            </div>
+            <div class="p-4 flex flex-col flex-grow justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-2 mb-1">
+                  <span class="text-[11px] font-medium uppercase tracking-widest text-secondary dark:text-secondary-fixed-dim">Maison Noir</span>
+                  <span class="text-[11px] text-on-surface-variant dark:text-zinc-400">50ml</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-serif font-normal text-primary dark:text-white group-hover:text-secondary dark:group-hover:text-secondary-fixed-dim transition-colors">
+                  <a href="product.html?id=4">Ambre Céleste</a>
+                </h3>
+                <p class="text-xs text-on-surface-variant dark:text-zinc-400 mt-1 line-clamp-1">Cistus Labdanum, Benzoin, Vanilla Bourbon</p>
+              </div>
+              <div class="mt-4 pt-3 border-t border-outline-variant/20 dark:border-zinc-800 flex items-center justify-between">
+                <span class="text-sm font-medium text-primary dark:text-zinc-100">$175</span>
+                <a class="text-[11px] font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400 hover:text-secondary dark:hover:text-secondary-fixed-dim inline-flex items-center gap-1" href="product.html?id=4">
+                  Explore <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Rec Card 2 -->
+          <article class="group bg-surface dark:bg-[#161619] border border-outline-variant/40 dark:border-zinc-800 flex flex-col justify-between hover:border-secondary dark:hover:border-secondary-fixed-dim transition-colors" data-category="unisex" data-id="7" data-name="Iris Fauve" data-price="225">
+            <div class="relative aspect-square overflow-hidden bg-surface-container-low dark:bg-zinc-900">
+              <a class="block w-full h-full" href="product.html?id=7">
+                <img alt="Iris Fauve" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGuvR8hyIKHQ2kfsnCPN9Z10pIOhPFHAMCf1tVz48juql2VZ2stgyU97RxPvtuNLpnRvJAWqhco8Gt6UTY9-3Ut7THwYV3yx2-TmsTcqumIB2AB9rmOohQk5s4ve-iAd1i8HkqmzHqkCL3iI5YlvXZ7mSo7hb1zGd2dSF4HI4bWrQ9llR-uFfRx3CHtvSERUBpcfuvCk_0bkWxJAyshWIdA-7W2OpV_Scw2maQD9zZ">
+              </a>
+              <div class="absolute bottom-0 inset-x-0 p-2 bg-surface/95 dark:bg-zinc-950/90 backdrop-blur-sm sm:translate-y-full sm:group-hover:translate-y-0 transition-transform duration-300">
+                <button class="js-quick-add w-full py-2 bg-primary dark:bg-zinc-100 text-on-primary dark:text-zinc-950 text-[11px] font-medium uppercase tracking-widest hover:opacity-90 transition-opacity" type="button">
+                  Add to Bag • $225
+                </button>
+              </div>
+            </div>
+            <div class="p-4 flex flex-col flex-grow justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-2 mb-1">
+                  <span class="text-[11px] font-medium uppercase tracking-widest text-secondary dark:text-secondary-fixed-dim">Maison Noir</span>
+                  <span class="text-[11px] text-on-surface-variant dark:text-zinc-400">100ml</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-serif font-normal text-primary dark:text-white group-hover:text-secondary dark:group-hover:text-secondary-fixed-dim transition-colors">
+                  <a href="product.html?id=7">Iris Fauve</a>
+                </h3>
+                <p class="text-xs text-on-surface-variant dark:text-zinc-400 mt-1 line-clamp-1">Florentine Iris, Orris Butter, White Suede</p>
+              </div>
+              <div class="mt-4 pt-3 border-t border-outline-variant/20 dark:border-zinc-800 flex items-center justify-between">
+                <span class="text-sm font-medium text-primary dark:text-zinc-100">$225</span>
+                <a class="text-[11px] font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400 hover:text-secondary dark:hover:text-secondary-fixed-dim inline-flex items-center gap-1" href="product.html?id=7">
+                  Explore <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Rec Card 3 -->
+          <article class="group bg-surface dark:bg-[#161619] border border-outline-variant/40 dark:border-zinc-800 flex flex-col justify-between hover:border-secondary dark:hover:border-secondary-fixed-dim transition-colors" data-category="men" data-id="5" data-name="Vétiver Minéral" data-price="155">
+            <div class="relative aspect-square overflow-hidden bg-surface-container-low dark:bg-zinc-900">
+              <a class="block w-full h-full" href="product.html?id=5">
+                <img alt="Vétiver Minéral" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOGOLksYzDPuDNFL9Qynb2zNrj66dDXD86A8tS1P3B9NNz6W3hJ1vm11S-va2DWR7VYdfwnvaL-k9ixyoA7mvMlW2qrnKTGOg6mhZVEk7_xzincTNnSgM1yEDV3DNDpswQc7w01tEIxL6DQoazVLeKL5U6Ymvk-PwB103LaTym05hiUY6KnNbl7yKc0MC3mveXHZo6Brv6Yqv6AfoaltQYaNPf0XORV8xL5kQar-S9">
+              </a>
+              <div class="absolute bottom-0 inset-x-0 p-2 bg-surface/95 dark:bg-zinc-950/90 backdrop-blur-sm sm:translate-y-full sm:group-hover:translate-y-0 transition-transform duration-300">
+                <button class="js-quick-add w-full py-2 bg-primary dark:bg-zinc-100 text-on-primary dark:text-zinc-950 text-[11px] font-medium uppercase tracking-widest hover:opacity-90 transition-opacity" type="button">
+                  Add to Bag • $155
+                </button>
+              </div>
+            </div>
+            <div class="p-4 flex flex-col flex-grow justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-2 mb-1">
+                  <span class="text-[11px] font-medium uppercase tracking-widest text-secondary dark:text-secondary-fixed-dim">Maison Noir</span>
+                  <span class="text-[11px] text-on-surface-variant dark:text-zinc-400">50ml</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-serif font-normal text-primary dark:text-white group-hover:text-secondary dark:group-hover:text-secondary-fixed-dim transition-colors">
+                  <a href="product.html?id=5">Vétiver Minéral</a>
+                </h3>
+                <p class="text-xs text-on-surface-variant dark:text-zinc-400 mt-1 line-clamp-1">Haitian Vetiver, Pink Pepper, Sea Salt</p>
+              </div>
+              <div class="mt-4 pt-3 border-t border-outline-variant/20 dark:border-zinc-800 flex items-center justify-between">
+                <span class="text-sm font-medium text-primary dark:text-zinc-100">$155</span>
+                <a class="text-[11px] font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400 hover:text-secondary dark:hover:text-secondary-fixed-dim inline-flex items-center gap-1" href="product.html?id=5">
+                  Explore <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Rec Card 4 -->
+          <article class="group bg-surface dark:bg-[#161619] border border-outline-variant/40 dark:border-zinc-800 flex flex-col justify-between hover:border-secondary dark:hover:border-secondary-fixed-dim transition-colors" data-category="women" data-id="2" data-name="Aurelia Lumière" data-price="165">
+            <div class="relative aspect-square overflow-hidden bg-surface-container-low dark:bg-zinc-900">
+              <a class="block w-full h-full" href="product.html?id=2">
+                <img alt="Aurelia Lumière" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDby4lP2abNQLKKSJtReY-BdgoCGVG3IY0n0xkB5-2-mAQJ5sXnfPq04mSAb9G0cbhEzDczxlMR9UwHWqmGVkxcXGkv6FKYl4ef6elrCBFtmNz3xg-baOfK4MkeEZPaBz6Zmy1ApVnI5FRI1-jDk8j0KwMdGxyc-ktKkW-UsdAnlxU9Z8zoDSk3GfDcNmEoFg7kMbIAhnjQAi9MafEszNnFCstQhwIJZPsG6tiic8N_">
+              </a>
+              <div class="absolute bottom-0 inset-x-0 p-2 bg-surface/95 dark:bg-zinc-950/90 backdrop-blur-sm sm:translate-y-full sm:group-hover:translate-y-0 transition-transform duration-300">
+                <button class="js-quick-add w-full py-2 bg-primary dark:bg-zinc-100 text-on-primary dark:text-zinc-950 text-[11px] font-medium uppercase tracking-widest hover:opacity-90 transition-opacity" type="button">
+                  Add to Bag • $165
+                </button>
+              </div>
+            </div>
+            <div class="p-4 flex flex-col flex-grow justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-2 mb-1">
+                  <span class="text-[11px] font-medium uppercase tracking-widest text-secondary dark:text-secondary-fixed-dim">Maison Noir</span>
+                  <span class="text-[11px] text-on-surface-variant dark:text-zinc-400">50ml</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-serif font-normal text-primary dark:text-white group-hover:text-secondary dark:group-hover:text-secondary-fixed-dim transition-colors">
+                  <a href="product.html?id=2">Aurelia Lumière</a>
+                </h3>
+                <p class="text-xs text-on-surface-variant dark:text-zinc-400 mt-1 line-clamp-1">Bergamot, Neroli, Cashmere Wood</p>
+              </div>
+              <div class="mt-4 pt-3 border-t border-outline-variant/20 dark:border-zinc-800 flex items-center justify-between">
+                <span class="text-sm font-medium text-primary dark:text-zinc-100">$165</span>
+                <a class="text-[11px] font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400 hover:text-secondary dark:hover:text-secondary-fixed-dim inline-flex items-center gap-1" href="product.html?id=2">
+                  Explore <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="w-full bg-surface-container-lowest dark:bg-[#111113] border-t border-outline-variant/40 dark:border-zinc-800 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-10 sm:py-12">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+        <div class="flex flex-col gap-3">
+          <span class="font-serif text-base sm:text-lg tracking-[0.22em] font-medium uppercase text-primary dark:text-white">Maison Noir</span>
+          <p class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 leading-relaxed">
+            Artisanal haute parfumerie conceived between Paris and Grasse. Dedicated to olfactory discipline and raw botanical extractions.
+          </p>
+          <span class="text-[11px] font-medium uppercase tracking-widest text-secondary dark:text-secondary-fixed-dim">Paris • Grasse</span>
+        </div>
+
+        <div class="flex flex-col gap-2.5">
+          <span class="text-xs font-semibold uppercase tracking-wider text-on-surface dark:text-zinc-200">Archive & Maison</span>
+          <div class="flex flex-col gap-2">
+            <a class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" data-path="home" href="index.html">Atelier & Collection</a>
+            <a class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" data-path="my-orders" href="orders.html">My Orders</a>
+            <a class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" data-path="cart" href="cart.html">Shopping Bag</a>
+            <a class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" data-path="login" href="auth.html">Client Sanctuary</a>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-2.5">
+          <span class="text-xs font-semibold uppercase tracking-wider text-on-surface dark:text-zinc-200">Client Services</span>
+          <div class="flex flex-col gap-2">
+            <a class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" data-path="olfactory-consultation" href="#">Olfactory Consultation</a>
+            <a class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" data-path="shipping-returns" href="#">Complimentary Shipping</a>
+            <a class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" data-path="authenticity" href="#">Provenance & Extraction</a>
+            <a class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" data-path="contact" href="#">Contact Concierge</a>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-3">
+          <span class="text-xs font-semibold uppercase tracking-wider text-on-surface dark:text-zinc-200">The Gazette</span>
+          <p class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 leading-relaxed">
+            Receive private invitations to seasonal reserves and olfactive monographs.
+          </p>
+          <form class="flex flex-col sm:flex-row gap-2">
+            <input class="w-full px-3 py-2 bg-surface-container-low dark:bg-zinc-900 border border-outline-variant/60 dark:border-zinc-700 text-xs text-on-surface dark:text-zinc-200 placeholder:text-on-surface-variant dark:placeholder:text-zinc-500 focus:outline-none focus:border-secondary" placeholder="ENTER YOUR EMAIL" type="email">
+            <button class="px-4 py-2 bg-primary dark:bg-zinc-100 text-on-primary dark:text-zinc-950 text-xs font-medium uppercase tracking-widest hover:opacity-90 transition-opacity shrink-0" type="button">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-outline-variant/30 dark:border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] font-medium text-on-surface-variant dark:text-zinc-500 uppercase tracking-wider">
+        <p>© 2025 Maison Noir Haute Parfumerie. All rights reserved.</p>
+        <div class="flex flex-wrap items-center gap-6">
+          <a class="hover:text-primary dark:hover:text-white transition-colors" href="#">Privacy Policy</a>
+          <a class="hover:text-primary dark:hover:text-white transition-colors" href="#">Terms of Sale</a>
+          <a class="hover:text-primary dark:hover:text-white transition-colors" href="#">Legal Notices</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+<script src="./js/script.js"></script>
+
+</html>
