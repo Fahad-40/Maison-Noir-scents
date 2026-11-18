@@ -109,8 +109,7 @@
     data-mode="connect">
 
     <!-- HEADER & NAVIGATION -->
-    <header
-        class="fixed top-0 inset-x-0 w-full z-40 bg-surface/95 dark:bg-[#111113]/95 backdrop-blur-md border-b border-outline-variant/40 dark:border-zinc-800 transition-colors">
+    <header class="fixed top-0 inset-x-0 w-full z-40 bg-surface/95 dark:bg-[#111113]/95 backdrop-blur-md border-b border-outline-variant/40 dark:border-zinc-800 transition-colors">
         <div class="max-w-7xl mx-auto h-16 sm:h-20 px-4 sm:px-8 lg:px-12 flex items-center justify-between">
             <!-- FAR LEFT: Logo Wordmark -->
             <div class="flex items-center">
@@ -267,15 +266,12 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
 
                 <!-- Clean Filter & Sort Bar -->
-                <div
-                    class="p-3.5 sm:p-4 bg-surface-container-lowest dark:bg-[#161619] border border-outline-variant/40 dark:border-zinc-800 space-y-3.5">
+                <div  class="filters-box p-3.5 sm:p-4 bg-surface-container-lowest dark:bg-[#161619] border border-outline-variant/40 dark:border-zinc-800 space-y-3.5">
                     <!-- Top Row: Search Input & Category Filter Pills -->
-                    <div
-                        class="flex flex-col md:flex-row md:items-center justify-between gap-3.5 pb-3.5 border-b border-outline-variant/25 dark:border-zinc-800/80">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-3.5 pb-3.5 border-b border-outline-variant/25 dark:border-zinc-800/80">
                         <!-- Search Input -->
                         <div class="relative w-full md:w-72">
-                            <span
-                                class="material-symbols-outlined text-[18px] text-on-surface-variant dark:text-zinc-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none">search</span>
+                            <span class="material-symbols-outlined text-[18px] text-on-surface-variant dark:text-zinc-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none">search</span>
                             <input aria-label="Search fragrances by name or brand"
                                 class="js-search-input w-full pl-9 pr-3 py-1.5 bg-surface dark:bg-zinc-900 border border-outline-variant/50 dark:border-zinc-700 text-xs text-on-surface dark:text-zinc-200 placeholder:text-on-surface-variant dark:placeholder:text-zinc-500 focus:outline-none focus:border-secondary dark:focus:border-secondary-fixed-dim transition-colors"
                                 placeholder="Search fragrance or brand..." type="search">
@@ -283,31 +279,27 @@
 
                         <!-- Category Filter Pills -->
                         <div class="flex items-center gap-2 flex-wrap">
-                            <button
-                                class="js-category-btn px-3.5 py-1.5 rounded-full text-[11px] font-medium uppercase tracking-wider transition-colors bg-primary dark:bg-zinc-100 text-on-primary dark:text-zinc-950"
+                            <button class="js-category-btn px-3.5 py-1.5 rounded-full text-[11px] font-medium uppercase tracking-wider transition-colors bg-primary dark:bg-zinc-100 text-on-primary dark:text-zinc-950"
                                 data-cat="all" type="button">
                                 All
                             </button>
-                            <button
-                                class="js-category-btn px-3.5 py-1.5 rounded-full text-[11px] font-medium uppercase tracking-wider transition-colors bg-transparent text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white border border-outline-variant/50 dark:border-zinc-700"
+                            <button class="js-category-btn px-3.5 py-1.5 rounded-full text-[11px] font-medium uppercase tracking-wider transition-colors bg-transparent text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white border border-outline-variant/50 dark:border-zinc-700"
                                 data-cat="men" type="button">
                                 Men
                             </button>
-                            <button
-                                class="js-category-btn px-3.5 py-1.5 rounded-full text-[11px] font-medium uppercase tracking-wider transition-colors bg-transparent text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white border border-outline-variant/50 dark:border-zinc-700"
+                            <button class="js-category-btn px-3.5 py-1.5 rounded-full text-[11px] font-medium uppercase tracking-wider transition-colors bg-transparent text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white border border-outline-variant/50 dark:border-zinc-700"
                                 data-cat="women" type="button">
                                 Women
                             </button>
-                            <button
-                                class="js-category-btn px-3.5 py-1.5 rounded-full text-[11px] font-medium uppercase tracking-wider transition-colors bg-transparent text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white border border-outline-variant/50 dark:border-zinc-700"
+                            <button class="js-category-btn px-3.5 py-1.5 rounded-full text-[11px] font-medium uppercase tracking-wider transition-colors bg-transparent text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white border border-outline-variant/50 dark:border-zinc-700"
                                 data-cat="unisex" type="button">
                                 Unisex
                             </button>
                         </div>
-                    </div>
+                      </div>
 
-                    <!-- Bottom Row: Price Range, Favorites Toggle, Sort Dropdown & Results Counter -->
-                    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3.5">
+                     <!-- Bottom Row: Price Range, Favorites Toggle, Sort Dropdown & Results Counter -->
+                     <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3.5">
                         <div class="flex flex-wrap items-center gap-4 sm:gap-6">
                             <!-- Price Range Slider -->
                             <div class="flex items-center gap-2">
@@ -324,10 +316,8 @@
                             <!-- Favorites Only Toggle -->
                             <label class="flex items-center gap-2 cursor-pointer select-none">
                                 <input class="js-favorites-toggle sr-only peer" type="checkbox">
-                                <div
-                                    class="w-4 h-4 border border-outline-variant dark:border-zinc-600 peer-checked:bg-primary dark:peer-checked:bg-zinc-100 peer-checked:border-primary dark:peer-checked:border-zinc-100 flex items-center justify-center transition-colors">
-                                    <span
-                                        class="material-symbols-outlined text-[12px] text-on-primary dark:text-zinc-950 scale-0 peer-checked:scale-100 transition-transform">check</span>
+                                <div class="w-4 h-4 border border-outline-variant dark:border-zinc-600 peer-checked:bg-primary dark:peer-checked:bg-zinc-100 peer-checked:border-primary dark:peer-checked:border-zinc-100 flex items-center justify-center transition-colors">
+                                    <span class="material-symbols-outlined text-[12px] text-on-primary dark:text-zinc-950 scale-0 peer-checked:scale-100 transition-transform">check</span>
                                 </div>
                                 <span
                                     class="text-[11px] font-medium uppercase tracking-wider text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white">Favorites
@@ -357,8 +347,8 @@
                                 Showing 8 of 24 Fragrances
                             </span>
                         </div>
-                    </div>
-                </div>
+                     </div>
+                      </div>
 
                 <!-- 3. 8-Card Luxury Product Grid & UI States -->
                 <div class="js-product-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-6">
@@ -372,14 +362,12 @@
                     </div>
 
                     <!-- Error State (Hidden by default) -->
-                    <div
-                        class="js-error-state hidden col-span-full p-4 bg-error-container text-on-error-container border border-error/30 text-sm">
+                    <div class="js-error-state hidden col-span-full p-4 bg-error-container text-on-error-container border border-error/30 text-sm">
                         An error occurred while loading our olfactory catalog. Please refresh or contact concierge.
                     </div>
 
                     <!-- Empty State (Hidden by default) -->
-                    <div
-                        class="js-empty-state hidden col-span-full py-12 px-4 text-center bg-surface-container-low dark:bg-zinc-900 border border-outline-variant/30 dark:border-zinc-800">
+                    <div class="js-empty-state hidden col-span-full py-12 px-4 text-center bg-surface-container-low dark:bg-zinc-900 border border-outline-variant/30 dark:border-zinc-800">
                         <p class="font-serif text-xl text-primary dark:text-white">No fragrances found</p>
                         <p class="text-sm text-on-surface-variant dark:text-zinc-400 mt-1">Adjust your search, category,
                             or price threshold to explore available reserves.</p>
@@ -420,6 +408,7 @@
         </section>
 
     </main>
+
     <section class="w-full border-t border-outline-variant/30 py-24">
         <div class="max-w-[1440px] mx-auto px-gutter">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -446,6 +435,7 @@
             </div>
         </div>
     </section>
+
     <!-- FOOTER -->
     <footer
         class="w-full bg-surface-container-lowest dark:bg-[#111113] border-t border-outline-variant/40 dark:border-zinc-800 transition-colors">

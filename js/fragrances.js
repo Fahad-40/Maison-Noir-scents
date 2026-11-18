@@ -1,11 +1,10 @@
 import { productsData } from "./productData.js";
 
-console.log("index.js running")
-console.log("Products Data:", productsData);
-
 let ProductGridContainer = document.querySelector(".js-product-grid");
+let filtersBox = document.querySelector(".filters-box");
+let searchBox = document.querySelector(".js-search-input");
 
-function renderFeaturedCards() {
+function renderFeaturedCards(productsData) {
   console.log("index.js running")
   ProductGridContainer.innerHTML = "";
   productsData.forEach(product => {
@@ -51,4 +50,63 @@ function renderFeaturedCards() {
 
 }
 
-renderFeaturedCards();
+renderFeaturedCards(productsData);
+
+let currentSearch = "";
+let showfavourites = false;
+let categoryName = "all";
+
+searchBox.addEventListener("input" , (e) => {
+    currentSearch = e.target.value.toLowerCase().trim();
+    applyFilters();
+})
+
+filtersBox.addEventListener("click", (e) => {
+
+  if (e.target.closest(".js-category-btn")) {
+    let productCategoryBtn = e.target.closest(".js-category-btn");
+    categoryName = productCategoryBtn.dataset.cat;
+    applyFilters()
+  }
+
+  // if (e.target.closest(".js-price-range")) {
+
+  // }
+
+  if (e.target.closest(".js-favorites-toggle")) {
+    showfavourites = !showfavourites;
+    applyFilters()
+  }
+
+})
+
+
+function applyFilters() {
+
+  let filteredArray = productsData;
+
+  // FOR CATEGORY
+  if (categoryName === "all") {
+    renderFeaturedCards(filteredArray);
+  }
+  if (categoryName === "men") {
+    filteredArray = productsData.filter(product => product.category === "men");
+  }
+  if (categoryName === "women") {
+    filteredArray = productsData.filter(product => product.category === "women");
+   
+  }
+  if (categoryName === "unisex") {
+    filteredArray = productsData.filter(product => product.category === "unisex");
+   
+  }
+
+  // FOR FAVOURITES
+  if (showfavourites === true) {
+    filteredArray = filteredArray.filter(product => product.isFavourites === true)
+  }
+
+  filteredArray = filteredArray.filter(product => product.name.toLowerCase().includes(currentSearch));
+  renderFeaturedCards(filteredArray);
+
+}

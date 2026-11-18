@@ -2,6 +2,7 @@ export let productsData = [
   {
     id: "1",
     name: "Oud Nocturne Extrait",
+    isFavourites: false,
     brand: "Maison Noir",
     category: "unisex",
     featured: true,
@@ -26,6 +27,7 @@ export let productsData = [
   {
     id: "2",
     name: "Aurelia Lumière",
+    isFavourites: false,
     brand: "Maison Noir",
     category: "women",
     featured: true,
@@ -50,6 +52,7 @@ export let productsData = [
   {
     id: "3",
     name: "Santal de Ceylan",
+    isFavourites: false,
     brand: "Maison Noir",
     category: "men",
     featured: true,
@@ -74,6 +77,7 @@ export let productsData = [
   {
     id: "4",
     name: "Ambre Céleste",
+    isFavourites: false,
     brand: "Maison Noir",
     category: "unisex",
     featured: true,
@@ -98,9 +102,10 @@ export let productsData = [
   {
     id: "5",
     name: "Vétiver Minéral",
+    isFavourites: false,
     brand: "Maison Noir",
     category: "men",
-     featured: true,
+    featured: true,
     concentration: "Eau de Parfum • 18% Oil",
     image: "Assets/Images/scents_Images/vetiver_pic5.jpg",
     description:
@@ -122,9 +127,10 @@ export let productsData = [
   {
     id: "6",
     name: "Rose Noire Absolue",
+    isFavourites: false,
     brand: "Maison Noir",
     category: "women",
-     featured: true,
+    featured: true,
     concentration: "Eau de Parfum Intense • 25% Oil",
     image: "Assets/Images/scents_Images/roseNoir_pic6.jpg",
     description:
@@ -146,9 +152,10 @@ export let productsData = [
   {
     id: "7",
     name: "Iris Fauve",
+    isFavourites: false,
     brand: "Maison Noir",
     category: "unisex",
-     featured: true,
+    featured: true,
     concentration: "Extrait de Parfum • 30% Oil",
     image: "Assets/Images/scents_Images/iris_pic7.jpg",
     description:
@@ -170,9 +177,10 @@ export let productsData = [
   {
     id: "8",
     name: "Fleur d’Oranger Intense",
+    isFavourites: false,
     brand: "Maison Noir",
     category: "women",
-     featured: true,
+    featured: true,
     concentration: "Eau de Parfum Intense • 22% Oil",
     image: "Assets/Images/scents_Images/fleur_pic8.jpg",
     description:
