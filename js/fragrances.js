@@ -3,6 +3,13 @@ import { productsData } from "./productData.js";
 let ProductGridContainer = document.querySelector(".js-product-grid");
 let filtersBox = document.querySelector(".filters-box");
 let searchBox = document.querySelector(".js-search-input");
+let priceRange = document.querySelector(".js-price-range");
+let priceDisplay = document.querySelector(".js-price-display");
+
+let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+function saveFavorites() {
+  localStorage.setItem("favorites", JSON.stringify(favorites));
+}
 
 function renderFeaturedCards(productsData) {
   console.log("index.js running")
@@ -11,10 +18,10 @@ function renderFeaturedCards(productsData) {
 
     ProductGridContainer.innerHTML += `
 
-<article class="group bg-surface-container-lowest dark:bg-[#161619] border border-outline-variant/40 dark:border-zinc-800 flex flex-col justify-between hover:border-secondary dark:hover:border-secondary-fixed-dim transition-colors" data-category="${product.category}" data-id="${product.id}" data-name="${product.name}" data-price="${product.startingPrice}">
+<article class="productCard group bg-surface-container-lowest dark:bg-[#161619] border border-outline-variant/40 dark:border-zinc-800 flex flex-col justify-between hover:border-secondary dark:hover:border-secondary-fixed-dim transition-colors" data-category="${product.category}" data-id="${product.id}" data-name="${product.name}" data-price="${product.startingPrice}">
   <div class="relative aspect-square overflow-hidden bg-surface-container-low dark:bg-zinc-900">
     <img alt="${product.name}" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" src="${product.image}">
-    <button aria-label="Add to Wishlist" class="js-fav-btn absolute top-3 right-3 p-1.5 bg-surface/85 dark:bg-zinc-900/85 hover:bg-surface dark:hover:bg-zinc-800 text-on-surface dark:text-zinc-200 transition-colors" type="button">
+    <button data-id="${product.id}" aria-label="Add to Wishlist" class="js-fav-btn absolute top-3 right-3 p-1.5 bg-surface/85 dark:bg-zinc-900/85 hover:bg-surface dark:hover:bg-zinc-800 text-on-surface dark:text-zinc-200 transition-colors" type="button">
       <span class="material-symbols-outlined text-[18px] leading-none block">favorite</span>
     </button>
     <div class="absolute bottom-0 inset-x-0 p-2 bg-surface/95 dark:bg-zinc-950/90 backdrop-blur-sm sm:translate-y-full sm:group-hover:translate-y-0 transition-transform duration-300">
@@ -56,9 +63,9 @@ let currentSearch = "";
 let showfavourites = false;
 let categoryName = "all";
 
-searchBox.addEventListener("input" , (e) => {
-    currentSearch = e.target.value.toLowerCase().trim();
-    applyFilters();
+searchBox.addEventListener("input", (e) => {
+  currentSearch = e.target.value.toLowerCase().trim();
+  applyFilters();
 })
 
 filtersBox.addEventListener("click", (e) => {
@@ -69,11 +76,8 @@ filtersBox.addEventListener("click", (e) => {
     applyFilters()
   }
 
-  // if (e.target.closest(".js-price-range")) {
-
-  // }
-
   if (e.target.closest(".js-favorites-toggle")) {
+    console.log("favourite btn clicked!")
     showfavourites = !showfavourites;
     applyFilters()
   }
@@ -86,27 +90,45 @@ function applyFilters() {
   let filteredArray = productsData;
 
   // FOR CATEGORY
-  if (categoryName === "all") {
-    renderFeaturedCards(filteredArray);
-  }
-  if (categoryName === "men") {
-    filteredArray = productsData.filter(product => product.category === "men");
-  }
-  if (categoryName === "women") {
-    filteredArray = productsData.filter(product => product.category === "women");
-   
-  }
-  if (categoryName === "unisex") {
-    filteredArray = productsData.filter(product => product.category === "unisex");
-   
+  if (categoryName !== "all") {
+   filteredArray = productsData.filter(product => product.category === categoryName);
   }
 
   // FOR FAVOURITES
   if (showfavourites === true) {
-    filteredArray = filteredArray.filter(product => product.isFavourites === true)
+    filteredArray = filteredArray.filter(product => favorites.includes(product.id))
   }
+
+  let maxPrice = Number(priceRange.value);
+   filteredArray = filteredArray.filter(product => product.startingPrice <= maxPrice)
 
   filteredArray = filteredArray.filter(product => product.name.toLowerCase().includes(currentSearch));
   renderFeaturedCards(filteredArray);
 
 }
+
+
+ProductGridContainer.addEventListener("click", (e) => {
+
+  if (e.target.closest(".js-fav-btn")) {
+    let product = e.target.closest(".js-fav-btn");
+    let productID = product.dataset.id;
+
+    if (favorites.includes(productID)) {
+      favorites = favorites.filter(favId => favId !== productID);
+
+    } else {
+      favorites.push(productID);
+    }
+
+    saveFavorites();
+    applyFilters();
+  }
+
+})
+
+
+priceRange.addEventListener("input" , () => {
+priceDisplay.textContent = `$${priceRange.value}`
+  applyFilters();
+})
