@@ -1,6 +1,6 @@
 import { productsData } from "./productData.js";
 
-let ProductGridContainer = document.querySelector(".js-product-grid");
+
 
 let filteredProductData = productsData.filter(product => product.featured === true)
 
