@@ -42,12 +42,8 @@ function renderFeaturedCards() {
     </div>
   </div>
 </article>
-
-
 `;
-
-  })
-
+})
 }
 
 renderFeaturedCards();
