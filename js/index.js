@@ -5,11 +5,11 @@ let ProductGridContainer = document.querySelector(".js-product-grid");
 let filteredProductData = productsData.filter(product => product.featured === true)
 
 function renderFeaturedCards() {
-    console.log("index.js running")
-    ProductGridContainer.innerHTML = "";
-filteredProductData.forEach(product => {
+  console.log("index.js running")
+  ProductGridContainer.innerHTML = "";
+  filteredProductData.forEach(product => {
 
-ProductGridContainer.innerHTML += `
+    ProductGridContainer.innerHTML += `
 
 <article class="group bg-surface-container-lowest dark:bg-[#161619] border border-outline-variant/40 dark:border-zinc-800 flex flex-col justify-between hover:border-secondary dark:hover:border-secondary-fixed-dim transition-colors" data-category="${product.category}" data-id="${product.id}" data-name="${product.name}" data-price="${product.startingPrice}">
   <div class="relative aspect-square overflow-hidden bg-surface-container-low dark:bg-zinc-900">
@@ -46,7 +46,7 @@ ProductGridContainer.innerHTML += `
 
 `;
 
-})
+  })
 
 }
 
