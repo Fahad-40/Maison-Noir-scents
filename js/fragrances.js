@@ -5,6 +5,8 @@ let filtersBox = document.querySelector(".filters-box");
 let searchBox = document.querySelector(".js-search-input");
 let priceRange = document.querySelector(".js-price-range");
 let priceDisplay = document.querySelector(".js-price-display");
+let sortSelect = document.querySelector(".js-sort-select");
+let emptyState = document.querySelector(".js-empty-state");
 
 let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 function saveFavorites() {
@@ -84,14 +86,12 @@ filtersBox.addEventListener("click", (e) => {
 
 })
 
-
 function applyFilters() {
 
   let filteredArray = productsData;
-
   // FOR CATEGORY
   if (categoryName !== "all") {
-   filteredArray = productsData.filter(product => product.category === categoryName);
+    filteredArray = productsData.filter(product => product.category === categoryName);
   }
 
   // FOR FAVOURITES
@@ -99,14 +99,37 @@ function applyFilters() {
     filteredArray = filteredArray.filter(product => favorites.includes(product.id))
   }
 
+  // FOR RANGE
   let maxPrice = Number(priceRange.value);
-   filteredArray = filteredArray.filter(product => product.startingPrice <= maxPrice)
+  filteredArray = filteredArray.filter(product => product.startingPrice <= maxPrice)
 
+  // FOR SEARCH
   filteredArray = filteredArray.filter(product => product.name.toLowerCase().includes(currentSearch));
-  renderFeaturedCards(filteredArray);
 
+  // FOR SORT
+  let sortValue = sortSelect.value;
+  filteredArray = [...filteredArray]
+
+  if (sortValue === "price-asc") {
+    filteredArray.sort((a, b) => a.startingPrice - b.startingPrice);
+  }
+  else if (sortValue === "price-desc") {
+    filteredArray.sort((a, b) => b.startingPrice - a.startingPrice);
+  }
+  else if (sortValue === "name-asc") {
+    filteredArray.sort((a, b) => a.name.localeCompare(b.name));
+  }
+
+
+  if (filteredArray.length === 0) {
+  ProductGridContainer.innerHTML = ""; // Purane cards hatane ke liye
+  emptyState.classList.remove("hidden");
+} else {
+  emptyState.classList.add("hidden");
+  renderFeaturedCards(filteredArray);
 }
 
+}
 
 ProductGridContainer.addEventListener("click", (e) => {
 
@@ -127,8 +150,10 @@ ProductGridContainer.addEventListener("click", (e) => {
 
 })
 
-
-priceRange.addEventListener("input" , () => {
-priceDisplay.textContent = `$${priceRange.value}`
+priceRange.addEventListener("input", () => {
+  priceDisplay.textContent = `$${priceRange.value}`
   applyFilters();
 })
+
+sortSelect.addEventListener("change", applyFilters);
+
