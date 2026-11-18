@@ -315,53 +315,7 @@
           </div>
 
           <!-- Clean Filter & Sort Toolbar -->
-          <div class="mt-6 p-3.5 sm:p-4 bg-surface-container-lowest dark:bg-[#161619] border border-outline-variant/40 dark:border-zinc-800 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-            <!-- Category Filter Pills -->
-            <div class="flex items-center gap-2 flex-wrap">
-              <button class="js-category-btn px-3.5 py-1.5 rounded-full text-[11px] font-medium uppercase tracking-wider transition-colors bg-primary dark:bg-zinc-100 text-on-primary dark:text-zinc-950" data-cat="all" type="button">
-                All (8)
-              </button>
-              <button class="js-category-btn px-3.5 py-1.5 rounded-full text-[11px] font-medium uppercase tracking-wider transition-colors bg-transparent text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white border border-outline-variant/50 dark:border-zinc-700" data-cat="men" type="button">
-                Men
-              </button>
-              <button class="js-category-btn px-3.5 py-1.5 rounded-full text-[11px] font-medium uppercase tracking-wider transition-colors bg-transparent text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white border border-outline-variant/50 dark:border-zinc-700" data-cat="women" type="button">
-                Women
-              </button>
-              <button class="js-category-btn px-3.5 py-1.5 rounded-full text-[11px] font-medium uppercase tracking-wider transition-colors bg-transparent text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white border border-outline-variant/50 dark:border-zinc-700" data-cat="unisex" type="button">
-                Unisex
-              </button>
-            </div>
-
-            <!-- Filter Right Controls -->
-            <div class="flex flex-wrap items-center gap-4 sm:gap-6">
-              <!-- Price Range Slider -->
-              <div class="flex items-center gap-2">
-                <label class="text-[11px] font-medium uppercase tracking-wider text-on-surface-variant dark:text-zinc-400 whitespace-nowrap" for="price-range">Max:</label>
-                <input class="js-price-range accent-primary dark:accent-zinc-200 w-24 h-1 bg-surface-container-highest dark:bg-zinc-700 cursor-pointer" id="price-range" max="250" min="150" step="5" type="range" value="250">
-                <span class="js-price-display text-xs text-on-surface dark:text-zinc-200 font-semibold min-w-[2.5rem]">$250</span>
-              </div>
-
-              <!-- Favorites Only Toggle -->
-              <label class="flex items-center gap-2 cursor-pointer select-none">
-                <input class="js-favorites-toggle sr-only peer" type="checkbox">
-                <div class="w-4 h-4 border border-outline-variant dark:border-zinc-600 peer-checked:bg-primary dark:peer-checked:bg-zinc-100 peer-checked:border-primary dark:peer-checked:border-zinc-100 flex items-center justify-center transition-colors">
-                  <span class="material-symbols-outlined text-[12px] text-on-primary dark:text-zinc-950 scale-0 peer-checked:scale-100 transition-transform">check</span>
-                </div>
-                <span class="text-[11px] font-medium uppercase tracking-wider text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white">Favorites</span>
-              </label>
-
-              <!-- Sort Dropdown -->
-              <div class="flex items-center gap-2">
-                <span class="text-[11px] font-medium uppercase tracking-wider text-on-surface-variant dark:text-zinc-400">Sort:</span>
-                <select class="js-sort-select bg-surface dark:bg-zinc-900 border border-outline-variant/50 dark:border-zinc-700 px-2.5 py-1.5 text-[11px] font-medium uppercase tracking-wider text-on-surface dark:text-zinc-200 focus:outline-none focus:border-secondary">
-                  <option value="featured">Featured</option>
-                  <option value="price-asc">Price: Low to High</option>
-                  <option value="price-desc">Price: High to Low</option>
-                  <option value="name-asc">Name: A–Z</option>
-                </select>
-              </div>
-            </div>
-          </div>
+         
 
           <!-- State Containers (Hidden by default) -->
           <div class="js-loading-state hidden w-full py-10 flex justify-center items-center">

@@ -7,6 +7,8 @@ let priceRange = document.querySelector(".js-price-range");
 let priceDisplay = document.querySelector(".js-price-display");
 let sortSelect = document.querySelector(".js-sort-select");
 let emptyState = document.querySelector(".js-empty-state");
+let resetBtn = document.querySelector(".js-reset-filters");
+let favToggleCheckbox = document.querySelector(".js-favorites-toggle");
 
 let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 function saveFavorites() {
@@ -121,14 +123,17 @@ function applyFilters() {
   }
 
 
-  if (filteredArray.length === 0) {
-  ProductGridContainer.innerHTML = ""; // Purane cards hatane ke liye
+if (filteredArray.length === 0) {
+  ProductGridContainer.innerHTML = "";
+  ProductGridContainer.classList.add("hidden"); // Grid ko hide karein taakay khali jagah na le
   emptyState.classList.remove("hidden");
-} else {
+} 
+else {
   emptyState.classList.add("hidden");
+  emptyState.classList.remove("flex");
+  ProductGridContainer.classList.remove("hidden");
   renderFeaturedCards(filteredArray);
 }
-
 }
 
 ProductGridContainer.addEventListener("click", (e) => {
@@ -157,3 +162,17 @@ priceRange.addEventListener("input", () => {
 
 sortSelect.addEventListener("change", applyFilters);
 
+resetBtn.addEventListener("click", () => {
+ 
+  currentSearch = "";
+  showfavourites = false;
+  categoryName = "all";
+
+  searchBox.value = "";
+  favToggleCheckbox.checked = false;
+  priceRange.value = priceRange.max;
+  priceDisplay.textContent = `$${priceRange.max}`;
+  sortSelect.value = "all";
+
+  applyFilters();
+});

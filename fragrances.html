@@ -345,6 +345,16 @@
                      </div>
                       </div>
 
+
+                         <!-- Empty State (Hidden by default) -->
+                    <div class="js-empty-state hidden col-span-full py-12 px-4 text-center bg-surface-container-low dark:bg-zinc-900 border border-outline-variant/30 dark:border-zinc-800">
+                        <p class="font-serif text-xl text-primary dark:text-white">No fragrances found</p>
+                        <p class="text-sm text-on-surface-variant dark:text-zinc-400 mt-1">Adjust your search, category,
+                            or price threshold to explore available reserves.</p>
+                        <button
+                            class="js-reset-filters mt-4 px-4 py-2 bg-primary dark:bg-zinc-100 text-on-primary dark:text-zinc-950 text-xs font-medium uppercase tracking-widest"
+                            type="button">Reset Filters</button>
+                    </div>
                 <!-- 3. 8-Card Luxury Product Grid & UI States -->
                 <div class="js-product-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-6">
                     <!-- Loading State (Hidden by default) -->
@@ -361,15 +371,7 @@
                         An error occurred while loading our olfactory catalog. Please refresh or contact concierge.
                     </div>
 
-                    <!-- Empty State (Hidden by default) -->
-                    <div class="js-empty-state hidden col-span-full py-12 px-4 text-center bg-surface-container-low dark:bg-zinc-900 border border-outline-variant/30 dark:border-zinc-800">
-                        <p class="font-serif text-xl text-primary dark:text-white">No fragrances found</p>
-                        <p class="text-sm text-on-surface-variant dark:text-zinc-400 mt-1">Adjust your search, category,
-                            or price threshold to explore available reserves.</p>
-                        <button
-                            class="js-reset-filters mt-4 px-4 py-2 bg-primary dark:bg-zinc-100 text-on-primary dark:text-zinc-950 text-xs font-medium uppercase tracking-widest"
-                            type="button">Reset Filters</button>
-                    </div>
+                 
 
                     <!-- DISPLAYING CARDS BY JS -->
                
