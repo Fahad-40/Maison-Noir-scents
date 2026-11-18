@@ -6,7 +6,7 @@ let filteredProductData = productsData.filter(product => product.featured === tr
 
 function renderFeaturedCards() {
     console.log("index.js running")
-   
+    ProductGridContainer.innerHTML = "";
 filteredProductData.forEach(product => {
 
 ProductGridContainer.innerHTML += `
