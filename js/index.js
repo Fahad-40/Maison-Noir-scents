@@ -1,4 +1,4 @@
-
+import { productsData } from "./productData.js";
 
 let ProductGridContainer = document.querySelector(".js-product-grid");
 
