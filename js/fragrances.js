@@ -9,6 +9,8 @@ let sortSelect = document.querySelector(".js-sort-select");
 let emptyState = document.querySelector(".js-empty-state");
 let resetBtn = document.querySelector(".js-reset-filters");
 let favToggleCheckbox = document.querySelector(".js-favorites-toggle");
+let currentPage = 1;
+let perPage = 8;
 
 let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 function saveFavorites() {
@@ -131,6 +133,10 @@ function applyFilters() {
     filteredArray.sort((a, b) => a.name.localeCompare(b.name));
   }
 
+  let start = (currentPage - 1) * perPage;
+  let end = start + perPage;
+
+  let paginatedResult = filteredArray.slice(start , end)
 
 if (filteredArray.length === 0) {
   ProductGridContainer.innerHTML = "";
@@ -141,7 +147,7 @@ else {
   emptyState.classList.add("hidden");
   emptyState.classList.remove("flex");
   ProductGridContainer.classList.remove("hidden");
-  renderFeaturedCards(filteredArray);
+  renderFeaturedCards(paginatedResult);
 }
 }
 
