@@ -9,8 +9,19 @@ let sortSelect = document.querySelector(".js-sort-select");
 let emptyState = document.querySelector(".js-empty-state");
 let resetBtn = document.querySelector(".js-reset-filters");
 let favToggleCheckbox = document.querySelector(".js-favorites-toggle");
+let prevBtn = document.querySelector(".prevBtn");
+let nextBtn = document.querySelector(".nextBtn");
 let currentPage = 1;
 let perPage = 8;
+
+prevBtn.addEventListener("click" , () =>{
+  currentPage--;
+  applyFilters();
+})
+nextBtn.addEventListener("click" , () =>{
+  currentPage++;
+  applyFilters();
+})
 
 let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 function saveFavorites() {
@@ -136,11 +147,13 @@ function applyFilters() {
   let start = (currentPage - 1) * perPage;
   let end = start + perPage;
 
+let totalPages = Math.ceil(filteredArray.length / perPage);
+
   let paginatedResult = filteredArray.slice(start , end)
 
 if (filteredArray.length === 0) {
   ProductGridContainer.innerHTML = "";
-  ProductGridContainer.classList.add("hidden"); // Grid ko hide karein taakay khali jagah na le
+  ProductGridContainer.classList.add("hidden"); 
   emptyState.classList.remove("hidden");
 } 
 else {
