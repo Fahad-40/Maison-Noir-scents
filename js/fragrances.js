@@ -72,7 +72,7 @@ let isFav = favorites.includes(product.id);
 
 }
 
-renderFeaturedCards(productsData);
+// renderFeaturedCards(productsData);
 
 let currentSearch = "";
 let showfavourites = false;
@@ -191,3 +191,6 @@ resetBtn.addEventListener("click", () => {
 
   applyFilters();
 });
+
+
+applyFilters();
