@@ -7,7 +7,15 @@ let productID = params.get("id");
 
 let product = productsData.find(item => item.id === productID);
 
-productDetail.innerHTML = `
+if (!product) {
+    return;
+}
+else{
+    renderProductDetail(product)
+}
+
+function renderProductDetail(product) {
+    productDetail.innerHTML = `
 
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start" data-id="${product.id}">
   <!-- Left Column: Studio Perfume Bottle Image -->
@@ -34,7 +42,7 @@ productDetail.innerHTML = `
           ${product.name}
         </h1>
         <span class="js-product-price text-lg sm:text-xl font-medium text-primary dark:text-zinc-100 shrink-0">
-          $${product.price}
+          $${product.startingPrice}
         </span>
       </div>
     </div>
@@ -72,8 +80,10 @@ productDetail.innerHTML = `
           <span class="text-[11px] text-on-surface-variant dark:text-zinc-400">$145</span>
         </button>
         <button aria-checked="true" class="js-size-btn py-2.5 px-3 border-2 border-secondary dark:border-secondary-fixed-dim bg-surface-container-lowest dark:bg-zinc-900 text-primary dark:text-white transition-colors flex flex-col items-center justify-center gap-0.5" data-price="${product.price}" data-size="${product.size}" type="button">
-          <span class="text-xs font-semibold tracking-wider">${product.size}</span>
-          <span class="text-[11px] text-secondary dark:text-secondary-fixed-dim font-medium">$${product.price}</span>
+          <span class="text-xs font-semibold tracking-wider">${product.defaultSize}</span>
+          <span class="text-[11px] text-secondary dark:text-secondary-fixed-dim font-medium">$${product.startingPrice
+
+          }</span>
         </button>
         <button class="js-size-btn py-2.5 px-3 border border-outline-variant/50 dark:border-zinc-700 bg-transparent text-on-surface dark:text-zinc-300 hover:border-secondary dark:hover:border-secondary-fixed-dim transition-colors flex flex-col items-center justify-center gap-0.5" data-price="275" data-size="100ml" type="button">
           <span class="text-xs font-medium tracking-wider">100ml</span>
@@ -119,4 +129,7 @@ productDetail.innerHTML = `
 
 
 `
+
+}
+
 
