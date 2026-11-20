@@ -11,17 +11,26 @@ let resetBtn = document.querySelector(".js-reset-filters");
 let favToggleCheckbox = document.querySelector(".js-favorites-toggle");
 let prevBtn = document.querySelector(".prevBtn");
 let nextBtn = document.querySelector(".nextBtn");
+let paginationDiv = document.querySelector(".pagination-div");
 let currentPage = 1;
 let perPage = 8;
 
-prevBtn.addEventListener("click" , () =>{
-  currentPage--;
+paginationDiv.addEventListener("click", (e) => {
+  const btn = e.target.closest("[data-page]");
+  if (!btn) return;
+
+  const action = btn.dataset.page;
+
+  if (action === "prev") {
+    currentPage--;
+  } else if (action === "next") {
+    currentPage++;
+  } else {
+    currentPage = Number(action);
+  }
+
   applyFilters();
-})
-nextBtn.addEventListener("click" , () =>{
-  currentPage++;
-  applyFilters();
-})
+});
 
 let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 function saveFavorites() {
@@ -34,18 +43,18 @@ function renderFeaturedCards(productsData) {
 
 
   productsData.forEach(product => {
-let isFav = favorites.includes(product.id);
+    let isFav = favorites.includes(product.id);
 
-  const favBtnClass = isFav 
-    ? "bg-surface/95 dark:bg-zinc-900/95 text-secondary dark:text-secondary-fixed-dim shadow-sm"
-    : "bg-surface/85 dark:bg-zinc-900/85 hover:bg-surface dark:hover:bg-zinc-800 text-on-surface-variant dark:text-zinc-200";
-     const fillValue = isFav ? 1 : 0;
-    
-      ProductGridContainer.innerHTML += `
+    const favBtnClass = isFav
+      ? "bg-surface/95 dark:bg-zinc-900/95 text-secondary dark:text-secondary-fixed-dim shadow-sm"
+      : "bg-surface/85 dark:bg-zinc-900/85 hover:bg-surface dark:hover:bg-zinc-800 text-on-surface-variant dark:text-zinc-200";
+    const fillValue = isFav ? 1 : 0;
+
+    ProductGridContainer.innerHTML += `
 
 <article class="productCard group bg-surface-container-lowest dark:bg-[#161619] border border-outline-variant/40 dark:border-zinc-800 flex flex-col justify-between hover:border-secondary dark:hover:border-secondary-fixed-dim transition-colors" data-category="${product.category}" data-id="${product.id}" data-name="${product.name}" data-price="${product.startingPrice}">
   <div class="relative aspect-square overflow-hidden bg-surface-container-low dark:bg-zinc-900">
-    <img alt="${product.name}" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" src="${product.image}">
+  <a href="product.html?id=${product.id}">   <img alt="${product.name}" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" src="${product.image}"></a>
      
           <button data-id="${product.id}" aria-label="Add to Wishlist" class="js-fav-btn absolute top-3 right-3 p-1.5 rounded-full transition-colors ${favBtnClass}" type="button">
             <span class="material-symbols-outlined text-[18px] leading-none block" style="font-variation-settings: 'FILL' ${fillValue};">favorite</span>
@@ -91,6 +100,7 @@ let categoryName = "all";
 
 searchBox.addEventListener("input", (e) => {
   currentSearch = e.target.value.toLowerCase().trim();
+  currentPage = 1;
   applyFilters();
 })
 
@@ -116,11 +126,13 @@ function applyFilters() {
   // FOR CATEGORY
   if (categoryName !== "all") {
     filteredArray = productsData.filter(product => product.category === categoryName);
+    currentPage = 1;
   }
 
   // FOR FAVOURITES
   if (showfavourites === true) {
     filteredArray = filteredArray.filter(product => favorites.includes(product.id))
+    currentPage = 1;
   }
 
   // FOR RANGE
@@ -147,21 +159,24 @@ function applyFilters() {
   let start = (currentPage - 1) * perPage;
   let end = start + perPage;
 
-let totalPages = Math.ceil(filteredArray.length / perPage);
+  let totalPages = Math.ceil(filteredArray.length / perPage);
 
-  let paginatedResult = filteredArray.slice(start , end)
+prevBtn.disabled = currentPage === 1;
+nextBtn.disabled = currentPage === totalPages;
 
-if (filteredArray.length === 0) {
-  ProductGridContainer.innerHTML = "";
-  ProductGridContainer.classList.add("hidden"); 
-  emptyState.classList.remove("hidden");
-} 
-else {
-  emptyState.classList.add("hidden");
-  emptyState.classList.remove("flex");
-  ProductGridContainer.classList.remove("hidden");
-  renderFeaturedCards(paginatedResult);
-}
+  let paginatedResult = filteredArray.slice(start, end)
+
+  if (filteredArray.length === 0) {
+    ProductGridContainer.innerHTML = "";
+    ProductGridContainer.classList.add("hidden");
+    emptyState.classList.remove("hidden");
+  }
+  else {
+    emptyState.classList.add("hidden");
+    emptyState.classList.remove("flex");
+    ProductGridContainer.classList.remove("hidden");
+    renderFeaturedCards(paginatedResult);
+  }
 }
 
 ProductGridContainer.addEventListener("click", (e) => {
@@ -185,17 +200,21 @@ ProductGridContainer.addEventListener("click", (e) => {
 
 priceRange.addEventListener("input", () => {
   priceDisplay.textContent = `$${priceRange.value}`
+  currentPage = 1;
   applyFilters();
 })
 
-sortSelect.addEventListener("change", applyFilters);
+sortSelect.addEventListener("change", () => {
+  currentPage = 1; 
+  applyFilters()
+});
 
 resetBtn.addEventListener("click", () => {
- 
+
   currentSearch = "";
   showfavourites = false;
   categoryName = "all";
-
+currentPage = 1;
   searchBox.value = "";
   favToggleCheckbox.checked = false;
   priceRange.value = priceRange.max;
