@@ -1,6 +1,7 @@
 import { productsData } from "./productData.js";
 
 let productDetail = document.querySelector(".js-product-detail");
+let selectedSize;
 
 let params = new URLSearchParams(window.location.search);
 let productID = params.get("id");
@@ -11,6 +12,7 @@ if (!product) {
     return;
 }
 else{
+    selectedSize = product.defaultSize;
     renderProductDetail(product)
 }
 
@@ -75,10 +77,12 @@ function renderProductDetail(product) {
         <span class="text-[11px] text-on-surface-variant dark:text-zinc-400">Refillable Glass Flacon</span>
       </div>
       <div class="js-size-group grid grid-cols-3 gap-3" role="radiogroup" aria-label="Flacon Volume">
-        <button class="js-size-btn py-2.5 px-3 border border-outline-variant/50 dark:border-zinc-700 bg-transparent text-on-surface dark:text-zinc-300 hover:border-secondary dark:hover:border-secondary-fixed-dim transition-colors flex flex-col items-center justify-center gap-0.5" data-price="145" data-size="30ml" type="button">
+       
+      <button class="js-size-btn py-2.5 px-3 border border-outline-variant/50 dark:border-zinc-700 bg-transparent text-on-surface dark:text-zinc-300 hover:border-secondary dark:hover:border-secondary-fixed-dim transition-colors flex flex-col items-center justify-center gap-0.5" data-price="145" data-size="30ml" type="button">
           <span class="text-xs font-medium tracking-wider">30ml</span>
           <span class="text-[11px] text-on-surface-variant dark:text-zinc-400">$145</span>
         </button>
+       
         <button aria-checked="true" class="js-size-btn py-2.5 px-3 border-2 border-secondary dark:border-secondary-fixed-dim bg-surface-container-lowest dark:bg-zinc-900 text-primary dark:text-white transition-colors flex flex-col items-center justify-center gap-0.5" data-price="${product.price}" data-size="${product.size}" type="button">
           <span class="text-xs font-semibold tracking-wider">${product.defaultSize}</span>
           <span class="text-[11px] text-secondary dark:text-secondary-fixed-dim font-medium">$${product.startingPrice
