@@ -55,6 +55,7 @@ function renderProductDetail(product) {
         </span>
       </div>
     </div>
+
     
 
     <!-- Fragrance Description -->
