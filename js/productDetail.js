@@ -17,13 +17,11 @@ productDetail.addEventListener("click", (e) => {
   productDetail.querySelector(".js-product-price").textContent = `$${product.sizes[selectedSize]}`;
 });
 
-if (!product) {
-  return;
-}
-else {
-  selectedSize = product.defaultSize;
+if (product) {
+   selectedSize = product.defaultSize;
   renderProductDetail(product)
 }
+
 
 function renderProductDetail(product) {
   productDetail.innerHTML = `
@@ -53,7 +51,7 @@ function renderProductDetail(product) {
           ${product.name}
         </h1>
         <span class="js-product-price text-lg sm:text-xl font-medium text-primary dark:text-zinc-100 shrink-0">
-          $${product.startingPrice}
+          $${product.sizes[selectedSize]}
         </span>
       </div>
     </div>
@@ -135,7 +133,7 @@ function getSizeButtonsHTML(product) {
   return Object.entries(product.sizes)
     .map(([size, price]) => {
 
-      let isSelected = size = selectedSize;
+      let isSelected = size === selectedSize;
 
       return `
         <button class="js-size-btn py-2.5 px-3 transition-colors flex flex-col items-center justify-center gap-0.5 ${isSelected
