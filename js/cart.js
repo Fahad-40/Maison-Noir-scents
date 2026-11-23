@@ -7,3 +7,13 @@ function saveCart() {
 export function getCart() {
   return cart;
 }
+
+export function addToCart(productID , size) {
+    let existingItem = cart.find(item => item.productID === productID && item.size === size);
+
+    if (existingItem) {
+        existingItem.quantity++
+    } else {
+        
+    }
+}
