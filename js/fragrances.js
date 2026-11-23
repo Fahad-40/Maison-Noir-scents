@@ -94,6 +94,7 @@ function renderFeaturedCards(productsData) {
 
 }
 
+
 ProductGridContainer.addEventListener("click", (e) => {
   let btn = e.target.closest(".js-quick-add");
 
