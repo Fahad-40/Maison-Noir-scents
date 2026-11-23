@@ -60,7 +60,7 @@ function renderFeaturedCards(productsData) {
             <span class="material-symbols-outlined text-[18px] leading-none block" style="font-variation-settings: 'FILL' ${fillValue};">favorite</span>
           </button>
     <div class="absolute bottom-0 inset-x-0 p-2 bg-surface/95 dark:bg-zinc-950/90 backdrop-blur-sm sm:translate-y-full sm:group-hover:translate-y-0 transition-transform duration-300">
-      <button class="js-quick-add w-full py-2 bg-primary dark:bg-zinc-100 text-on-primary dark:text-zinc-950 text-[11px] font-medium uppercase tracking-widest hover:opacity-90 transition-opacity" type="button">
+      <button data-id="${product.id}" class="js-quick-add w-full py-2 bg-primary dark:bg-zinc-100 text-on-primary dark:text-zinc-950 text-[11px] font-medium uppercase tracking-widest hover:opacity-90 transition-opacity" type="button">
         Quick Add • $${product.startingPrice}
       </button>
     </div>
