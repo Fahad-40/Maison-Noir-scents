@@ -1,5 +1,5 @@
 import { productsData } from "./productData.js";
-import { getCart } from "./cart.js";
+import { getCart, addToCart } from "./cart.js";
 console.log(getCart());
 
 let productDetail = document.querySelector(".js-product-detail");
@@ -154,3 +154,9 @@ function getSizeButtonsHTML(product) {
     .join("");
 }
 
+productDetail.addEventListener("click" , (e) => {
+  let btn = e.target.closest(".js-add-to-cart");
+  if (!btn) return;
+
+ const result = addToCart(btn.dataset.id, selectedSize);
+})

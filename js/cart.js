@@ -13,7 +13,12 @@ export function addToCart(productID , size) {
 
     if (existingItem) {
         existingItem.quantity++
+         saveCart();
+  return "updated";
     } else {
-        
+        cart.push({productID , size , quantity : 1});
+        saveCart();
+return "added";
     }
+   
 }
