@@ -1,4 +1,6 @@
 import { productsData } from "./productData.js";
+import { addToCart } from "./cart.js";
+import { showToast } from "./productDetail.js";
 
 let ProductGridContainer = document.querySelector(".js-product-grid");
 let filtersBox = document.querySelector(".filters-box");
