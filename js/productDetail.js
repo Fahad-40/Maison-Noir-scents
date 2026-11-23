@@ -168,7 +168,7 @@ productDetail.addEventListener("click" , (e) => {
 })
 
 
-function showToast(message) {
+export function showToast(message) {
   let container = document.querySelector(".js-toast-container");
   if (!container) {
     container = document.createElement("div");
