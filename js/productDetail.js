@@ -1,4 +1,6 @@
 import { productsData } from "./productData.js";
+import { getCart } from "./cart.js";
+console.log(getCart());
 
 let productDetail = document.querySelector(".js-product-detail");
 let selectedSize;
@@ -56,7 +58,7 @@ function renderProductDetail(product) {
       </div>
     </div>
 
-    
+
 
     <!-- Fragrance Description -->
     <p class="js-product-desc text-sm text-on-surface-variant dark:text-zinc-400 leading-relaxed">
