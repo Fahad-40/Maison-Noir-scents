@@ -1,4 +1,6 @@
 import { productsData } from "./productData.js";
+import { addToCart } from "./cart.js";
+import { showToast } from "./productDetail.js";
 
 let ProductGridContainer = document.querySelector(".js-product-grid");
 
@@ -41,7 +43,19 @@ function renderFeaturedCards() {
   </div>
 </article>
 `;
-})
+  })
 }
+
+ProductGridContainer.addEventListener("click", (e) => {
+  let btn = e.target.closest(".js-quick-add");
+
+  if (!btn) return;
+
+  let product = productsData.find(item => item.id === btn.dataset.id);
+  let result = addToCart(product.id, product.defaultSize);
+
+  showToast(result === "updated" ? "Already in your cart, quantity increased" : "Added to your cart");
+
+})
 
 renderFeaturedCards();
