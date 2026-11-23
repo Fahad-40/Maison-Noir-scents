@@ -1,6 +1,6 @@
 import { productsData } from "./productData.js";
 import { addToCart } from "./cart.js";
-import { showToast } from "./productDetail.js";
+import { showToast } from "./toast.js" ;
 
 let ProductGridContainer = document.querySelector(".js-product-grid");
 
