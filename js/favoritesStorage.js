@@ -8,3 +8,4 @@ export function saveFavorites(updatedFavorites) {
   favorites = updatedFavorites;
   localStorage.setItem("favorites", JSON.stringify(favorites));
 }
+

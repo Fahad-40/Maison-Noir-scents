@@ -7,7 +7,6 @@ let ProductGridContainer = document.querySelector(".js-favorites-grid");
 let emptyState = document.querySelector(".js-empty-favorites");
 
 function renderFavoritesPage() {
-console.log("render favourires")
 
   if (!ProductGridContainer) return;
 
@@ -64,8 +63,9 @@ console.log("render favourires")
   });
 }
 
-if (ProductGridContainer) {
+
   ProductGridContainer.addEventListener("click", (e) => {
+
     if (e.target.closest(".js-fav-btn")) {
       let btn = e.target.closest(".js-fav-btn");
       let productID = btn.dataset.id;
@@ -84,7 +84,8 @@ if (ProductGridContainer) {
         showToast(result === "updated" ? "Already in your cart, quantity increased" : "Added to your cart");
       }
     }
+    
   });
-}
+
 
 renderFavoritesPage();

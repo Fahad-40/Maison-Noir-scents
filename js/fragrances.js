@@ -1,4 +1,5 @@
 import { productsData } from "./productData.js";
+import { getFavourites, saveFavorites } from "./favoritesStorage.js";
 import { addToCart } from "./cart.js";
 import { showToast } from "./toast.js";
 
@@ -34,15 +35,11 @@ paginationDiv.addEventListener("click", (e) => {
   applyFilters();
 });
 
-let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-export function getFavourites() {
-  return favorites;
-}
-export function saveFavorites() {
-  localStorage.setItem("favorites", JSON.stringify(favorites));
-}
+let favorites = getFavourites();
 
-export function renderFeaturedCards(productsData) {
+
+
+function renderFeaturedCards(productsData) {
 
   ProductGridContainer.innerHTML = "";
 
@@ -207,10 +204,10 @@ ProductGridContainer.addEventListener("click", (e) => {
       favorites = favorites.filter(favId => favId !== productID);
 
     } else {
-      favorites.push(productID);
+     favorites = [...favorites, productID];
     }
 
-    saveFavorites();
+    saveFavorites(favorites);
     applyFilters();
   }
 
