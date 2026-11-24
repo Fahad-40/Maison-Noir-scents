@@ -2,6 +2,7 @@ import { productsData } from "./productData.js";
 import { getFavourites, saveFavorites } from "./favoritesStorage.js";
 import { addToCart } from "./cart.js";
 import { showToast } from "./toast.js";
+import { updateFavBadge } from "./script.js";
 
 let ProductGridContainer = document.querySelector(".js-favorites-grid");
 let emptyState = document.querySelector(".js-empty-favorites");
@@ -73,6 +74,7 @@ function renderFavoritesPage() {
       let updated = getFavourites().filter(id => id !== productID);
       saveFavorites(updated);
       renderFavoritesPage();
+      updateFavBadge()
       showToast("Removed from favorites");
     }
 
@@ -83,8 +85,10 @@ function renderFavoritesPage() {
         let result = addToCart(product.id, product.defaultSize);
         showToast(result === "updated" ? "Already in your cart, quantity increased" : "Added to your cart");
       }
+
+      updateFavBadge()
     }
-    
+
   });
 
 

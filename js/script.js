@@ -216,11 +216,14 @@
 //   });
 // })();
 import { getCart } from "./cart.js";
+import { getFavourites } from "./favoritesStorage.js";
 let html = document.querySelector(".html")
 let ThemeToggleBtn = document.querySelector(".js-theme-toggle");
 let NavDrawer = document.querySelector(".js-nav-drawer");
 let menuToggle = document.querySelector(".js-menu-toggle");
 let CartCount = document.querySelector(".js-cart-count");
+let favCount = document.querySelector(".js-wishlist-count");
+let materialSymbolsOutlined = document.querySelector(".js-nav-fav-icon");
 let screenMode = localStorage.getItem("screenModeLS") || "light";
 
 // SCREEN MODE
@@ -250,6 +253,25 @@ export function updateCartBadge() {
   let cartLength = getCart();
   CartCount.textContent = `${cartLength.length}`
 }
+
+let simpleFavClass = "material-symbols-outlined text-[18px]"
+let coloredFavClass = "material-symbols-outlined text-[18px] icon-filled text-secondary dark:text-secondary-fixed-dim"
+
+
+export function updateFavBadge() {
+  let favLength = getFavourites();
+
+ if (favLength.length > 0) {
+    materialSymbolsOutlined.className = coloredFavClass;
+    materialSymbolsOutlined.style.fontVariationSettings = "'FILL' 1";
+  } else {
+    materialSymbolsOutlined.className = simpleFavClass;
+    materialSymbolsOutlined.style.fontVariationSettings = "'FILL' 0";
+  }
+
+  favCount.textContent = `${favLength.length}`
+}
+updateFavBadge()
 updateCartBadge()
 
 menuToggle.addEventListener("click", () => {
