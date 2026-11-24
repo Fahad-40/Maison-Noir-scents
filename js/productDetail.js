@@ -92,6 +92,11 @@ if (product) {
 
 
 function renderProductDetail(product) {
+  let isFav = favorites.includes(product.id);
+  const favBtnClasses = isFav
+    ? "border-secondary dark:border-secondary-fixed-dim text-secondary dark:text-secondary-fixed-dim bg-surface-container-low dark:bg-zinc-800/80"
+    : "border-outline-variant/60 dark:border-zinc-700 bg-surface-container-lowest dark:bg-zinc-900 text-on-surface dark:text-zinc-200 hover:border-secondary dark:hover:border-secondary-fixed-dim hover:text-secondary dark:hover:text-secondary-fixed-dim";
+  const fillValue = isFav ? 1 : 0;
   productDetail.innerHTML = `
 
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start" data-id="${product.id}">
@@ -164,10 +169,10 @@ function renderProductDetail(product) {
       <button data-id="${product.id}" class="js-add-to-cart flex-1 py-3.5 px-6 bg-primary dark:bg-zinc-100 text-on-primary dark:text-zinc-950 text-xs font-medium uppercase tracking-widest hover:opacity-90 transition-opacity flex items-center justify-center gap-2" type="button">
         <span>Add to Cart</span>
       </button>
-      <button data-id="${product.id}" aria-label="Save to Favorites" class="js-fav-btn  py-3.5 px-4 border border-outline-variant/60 dark:border-zinc-700 bg-surface-container-lowest dark:bg-zinc-900 text-on-surface dark:text-zinc-200 hover:border-secondary dark:hover:border-secondary-fixed-dim hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors flex items-center justify-center gap-2" type="button">
-        <span class="material-symbols-outlined text-[18px] leading-none">favorite</span>
-        <span class="hidden sm:inline text-xs font-medium uppercase tracking-widest">Favorite</span>
-      </button>
+   <button data-id="${product.id}" aria-label="Save to Favorites" class="js-fav-btn py-3.5 px-4 border transition-colors flex items-center justify-center gap-2 ${favBtnClasses}" type="button">
+      <span class="material-symbols-outlined text-[18px] leading-none" style="font-variation-settings: 'FILL' ${fillValue};">favorite</span>
+      <span class="hidden sm:inline text-xs font-medium uppercase tracking-widest">${isFav ? "Favorited" : "Favorite"}</span>
+    </button>
     </div>
 
     <!-- Understated Collapsible Atelier Details -->
@@ -221,7 +226,8 @@ function getSizeButtonsHTML(product) {
 }
 
 productDetail.addEventListener("click" , (e) => {
-  let btn = e.target.closest(".js-add-to-cart");
+  if (e.target.closest(".js-add-to-cart")) {
+     let btn = e.target.closest(".js-add-to-cart");
   if (!btn) return;
 
  const result = addToCart(btn.dataset.id, selectedSize);
@@ -230,6 +236,28 @@ productDetail.addEventListener("click" , (e) => {
 } else {
   showToast("Added to your cart");
 }
+
+  }
+ 
+  if (e.target.closest(".js-fav-btn")) {
+    console.log("fav clicked product detail")
+        let productClicked = e.target.closest(".js-fav-btn");
+        let productID = productClicked.dataset.id;
+    
+        if (favorites.includes(productID)) {
+          favorites = favorites.filter(favId => favId !== productID);
+    
+        } else {
+         favorites = [...favorites, productID];
+        }
+    
+        saveFavorites(favorites);
+        updateFavBadge();
+        renderProductDetail(product);
+       renderRelatedProducts(productID)
+      }
+
+
 
 })
 
@@ -264,26 +292,3 @@ productDetail.addEventListener("click" , (e) => {
     }
 
   });
-
-
-  productDetail.addEventListener("click" , (e) => {
-
-  if (e.target.closest(".js-fav-btn")) {
-    console.log("fav clicked product detail")
-        let product = e.target.closest(".js-fav-btn");
-        let productID = product.dataset.id;
-    
-        if (favorites.includes(productID)) {
-          favorites = favorites.filter(favId => favId !== productID);
-    
-        } else {
-         favorites = [...favorites, productID];
-        }
-    
-        saveFavorites(favorites);
-        updateFavBadge();
-       renderRelatedProducts(productID)
-      }
-
-
-  })
