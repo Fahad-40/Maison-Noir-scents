@@ -215,11 +215,12 @@
 //     });
 //   });
 // })();
-
+import { getCart } from "./cart.js";
 let html = document.querySelector(".html")
 let ThemeToggleBtn = document.querySelector(".js-theme-toggle");
 let NavDrawer = document.querySelector(".js-nav-drawer");
 let menuToggle = document.querySelector(".js-menu-toggle");
+let CartCount = document.querySelector(".js-cart-count");
 let screenMode = localStorage.getItem("screenModeLS") || "light";
 
 // SCREEN MODE
@@ -245,20 +246,26 @@ ThemeToggleBtn.addEventListener("click", () => {
 })
 
 
-menuToggle.addEventListener("click" , () => {
+export function updateCartBadge() {
+  let cartLength = getCart();
+  CartCount.textContent = `${cartLength.length}`
+}
+updateCartBadge()
+
+menuToggle.addEventListener("click", () => {
   NavDrawer.classList.remove("hidden")
 })
 
 
-NavDrawer.addEventListener("click" , (e) => {
+NavDrawer.addEventListener("click", (e) => {
 
   if (e.target.closest(".material-symbols-outlined")) {
-  NavDrawer.classList.add("hidden")
-}
+    NavDrawer.classList.add("hidden")
+  }
 
   if (e.target !== NavDrawer) {
-  NavDrawer.classList.add("hidden")
-}
+    NavDrawer.classList.add("hidden")
+  }
 
 })
 

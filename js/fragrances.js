@@ -1,6 +1,6 @@
 import { productsData } from "./productData.js";
 import { addToCart } from "./cart.js";
-import { showToast } from "./toast.js" ;
+import { showToast } from "./toast.js";
 
 let ProductGridContainer = document.querySelector(".js-product-grid");
 let filtersBox = document.querySelector(".filters-box");
@@ -35,11 +35,14 @@ paginationDiv.addEventListener("click", (e) => {
 });
 
 let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-function saveFavorites() {
+export function getFavourites() {
+  return favorites;
+}
+export function saveFavorites() {
   localStorage.setItem("favorites", JSON.stringify(favorites));
 }
 
-function renderFeaturedCards(productsData) {
+export function renderFeaturedCards(productsData) {
 
   ProductGridContainer.innerHTML = "";
 
@@ -176,8 +179,8 @@ function applyFilters() {
 
   let totalPages = Math.ceil(filteredArray.length / perPage);
 
-prevBtn.disabled = currentPage === 1;
-nextBtn.disabled = currentPage === totalPages;
+  prevBtn.disabled = currentPage === 1;
+  nextBtn.disabled = currentPage === totalPages;
 
   let paginatedResult = filteredArray.slice(start, end)
 
@@ -220,7 +223,7 @@ priceRange.addEventListener("input", () => {
 })
 
 sortSelect.addEventListener("change", () => {
-  currentPage = 1; 
+  currentPage = 1;
   applyFilters()
 });
 
@@ -229,7 +232,7 @@ resetBtn.addEventListener("click", () => {
   currentSearch = "";
   showfavourites = false;
   categoryName = "all";
-currentPage = 1;
+  currentPage = 1;
   searchBox.value = "";
   favToggleCheckbox.checked = false;
   priceRange.value = priceRange.max;

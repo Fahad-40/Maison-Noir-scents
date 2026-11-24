@@ -231,7 +231,7 @@
             Your Fragrance Bag
           </h1>
           <span class="js-cart-header-count text-xs font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400">
-            2 Creations Selected
+            <!-- content by js -->
           </span>
         </div>
       </div>
@@ -351,7 +351,7 @@
           </div>
 
           <!-- Atelier Ritual Enhancements: Complimentary 2ml Sample & Gift Note -->
-          <div class="bg-surface-container-lowest dark:bg-[#161619] border border-outline-variant/40 dark:border-zinc-800 divide-y divide-outline-variant/30 dark:divide-zinc-800">
+          <div class="ritual-enhancements bg-surface-container-lowest dark:bg-[#161619] border border-outline-variant/40 dark:border-zinc-800 divide-y divide-outline-variant/30 dark:divide-zinc-800">
             <!-- Complimentary 2ml Sample Selector -->
             <div class="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div class="flex items-start gap-3">
@@ -397,51 +397,85 @@
         </div>
 
         <!-- Right Column: Order Summary Card -->
-        <aside class="js-cart-summary lg:col-span-4 bg-surface-container-lowest dark:bg-[#161619] border border-outline-variant/40 dark:border-zinc-800 p-5 sm:p-6 lg:sticky lg:top-28 space-y-5">
-          <div class="pb-4 border-b border-outline-variant/30 dark:border-zinc-800">
-            <span class="text-[11px] font-medium uppercase tracking-widest text-secondary dark:text-secondary-fixed-dim">Atelier Dispatch</span>
-            <h2 class="font-serif text-2xl font-normal text-primary dark:text-white mt-0.5">Order Summary</h2>
-          </div>
+       <!-- ORDER SUMMARY CARD (cart.html) -->
+<aside class="js-cart-summary lg:col-span-4 bg-surface-container-lowest dark:bg-[#161619] border border-outline-variant/40 dark:border-zinc-800 p-5 sm:p-6 lg:sticky lg:top-28 space-y-5">
+  <div class="pb-4 border-b border-outline-variant/30 dark:border-zinc-800">
+    <span class="text-[11px] font-medium uppercase tracking-widest text-secondary dark:text-secondary-fixed-dim">Atelier Dispatch</span>
+    <h2 class="font-serif text-2xl font-normal text-primary dark:text-white mt-0.5">Order Summary</h2>
+  </div>
 
-          <div class="space-y-3 text-xs sm:text-sm">
-            <div class="flex items-center justify-between text-on-surface-variant dark:text-zinc-400">
-              <span>Subtotal</span>
-              <span class="js-cart-subtotal font-medium text-on-surface dark:text-zinc-200">$405.00</span>
-            </div>
+  <!-- Optional Promo / Privilege Code -->
+  <div class="pb-4 border-b border-outline-variant/30 dark:border-zinc-800 space-y-2">
+    <label class="block text-[11px] font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400" for="cart-promo-code">
+      Privilege or Gift Code
+    </label>
+    <div class="flex items-stretch gap-2">
+      <input
+        class="js-promo-input w-full px-3 py-2 bg-surface dark:bg-zinc-900 border border-outline-variant/60 dark:border-zinc-700 text-xs text-on-surface dark:text-zinc-100 placeholder:text-on-surface-variant/70 dark:placeholder:text-zinc-500 uppercase tracking-wider focus:outline-none focus:border-secondary dark:focus:border-secondary-fixed-dim transition-colors"
+        id="cart-promo-code"
+        placeholder="ENTER CODE"
+        type="text">
+      <button
+        class="js-apply-promo px-4 py-2 border border-outline-variant/70 dark:border-zinc-700 bg-surface-container-low dark:bg-zinc-900 text-primary dark:text-zinc-200 hover:border-secondary dark:hover:border-secondary-fixed-dim hover:text-secondary dark:hover:text-secondary-fixed-dim text-[11px] font-medium uppercase tracking-widest transition-colors shrink-0"
+        type="button">
+        Apply
+      </button>
+    </div>
+  </div>
 
-            <div class="flex items-center justify-between text-on-surface-variant dark:text-zinc-400">
-              <span>2ml Discovery Vial</span>
-              <span class="text-xs uppercase tracking-wider text-secondary dark:text-secondary-fixed-dim">Complimentary</span>
-            </div>
+  <!-- Financial Breakdown -->
+  <div class="space-y-3 text-xs sm:text-sm">
+    <div class="flex items-center justify-between text-on-surface-variant dark:text-zinc-400">
+      <span>Subtotal</span>
+      <span class="js-cart-subtotal font-medium text-on-surface dark:text-zinc-200">$405.00</span>
+    </div>
 
-            <div class="flex items-center justify-between text-on-surface-variant dark:text-zinc-400">
-              <span>Express Courier Shipping</span>
-              <span class="text-xs uppercase tracking-wider text-on-surface dark:text-zinc-200">Complimentary</span>
-            </div>
-          </div>
+    <div class="flex items-center justify-between text-on-surface-variant dark:text-zinc-400">
+      <span>Estimated Tax (5%)</span>
+      <span class="js-cart-tax font-medium text-on-surface dark:text-zinc-200">$20.25</span>
+    </div>
 
-          <div class="pt-4 border-t border-outline-variant/40 dark:border-zinc-800 flex items-baseline justify-between">
-            <span class="text-xs font-semibold uppercase tracking-widest text-primary dark:text-white">Estimated Total</span>
-            <span class="js-cart-total font-serif text-2xl font-normal text-primary dark:text-white">$405.00</span>
-          </div>
+    <div class="flex items-center justify-between text-on-surface-variant dark:text-zinc-400">
+      <span>Express Courier Shipping</span>
+      <span class="js-cart-shipping text-xs uppercase tracking-wider text-on-surface dark:text-zinc-200">Complimentary</span>
+    </div>
 
-          <div class="pt-1 space-y-3">
-            <a class="js-checkout-btn w-full py-3.5 px-6 bg-primary dark:bg-zinc-100 text-on-primary dark:text-zinc-950 text-xs font-medium uppercase tracking-widest hover:opacity-90 transition-opacity flex items-center justify-center gap-2" href="checkout.html">
-              <span>Proceed to Checkout</span>
-              <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-            </a>
+    <div class="flex items-center justify-between text-on-surface-variant dark:text-zinc-400">
+      <span>Complimentary Gift</span>
+      <span class="text-xs uppercase tracking-wider text-secondary dark:text-secondary-fixed-dim">2ml Discovery Vial</span>
+    </div>
+  </div>
 
-            <a class="w-full py-2 text-center block text-[11px] font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors underline underline-offset-4 decoration-outline-variant dark:decoration-zinc-700" href="fragrances.html">
-              Continue Shopping
-            </a>
-          </div>
+  <!-- Estimated Delivery Window -->
+  <div class="px-3.5 py-2.5  bg-surface-container-low/80 dark:bg-zinc-900/70 border border-outline-variant/30 dark:border-zinc-800 flex items-center justify-center gap-2.5 text-[11px] text-on-surface-variant dark:text-zinc-300">
+    <span class="material-symbols-outlined text-[16px] text-secondary dark:text-secondary-fixed-dim shrink-0">schedule</span>
+    <span>Estimated Delivery: <strong class="font-medium text-primary dark:text-zinc-100">2–4 Business Days</strong></span>
+  </div>
 
-          <div class="pt-4 border-t border-outline-variant/25 dark:border-zinc-800/80 flex items-center gap-2.5 text-[11px] text-on-surface-variant dark:text-zinc-400">
-            <span class="material-symbols-outlined text-[16px] text-secondary dark:text-secondary-fixed-dim shrink-0">verified_user</span>
-            <span>Sealed presentation box with 30-day unopened return guarantee.</span>
-          </div>
-        </aside>
+  <!-- Final Estimated Total -->
+  <div class="pt-4 border-t border-outline-variant/40 dark:border-zinc-800 flex items-baseline justify-between">
+    <span class="text-xs font-semibold uppercase tracking-widest text-primary dark:text-white">Estimated Total</span>
+    <span class="js-cart-total font-serif text-2xl font-normal text-primary dark:text-white">$425.25</span>
+  </div>
 
+  <!-- Action Buttons -->
+  <div class="pt-1 space-y-3">
+    <a class="js-checkout-btn w-full py-3.5 px-6 bg-primary dark:bg-zinc-100 text-on-primary dark:text-zinc-950 text-xs font-medium uppercase tracking-widest hover:opacity-90 transition-opacity flex items-center justify-center gap-2" href="checkout.html">
+      <span>Proceed to Checkout</span>
+      <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+    </a>
+
+    <a class="w-full py-2 text-center block text-[11px] font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors underline underline-offset-4 decoration-outline-variant dark:decoration-zinc-700" href="fragrances.html">
+      Continue Shopping
+    </a>
+  </div>
+
+  <!-- Return Guarantee Note -->
+  <div class="pt-4 border-t border-outline-variant/25 dark:border-zinc-800/80 flex items-center gap-2.5 text-[11px] text-on-surface-variant dark:text-zinc-400">
+    <span class="material-symbols-outlined text-[16px] text-secondary dark:text-secondary-fixed-dim shrink-0">verified_user</span>
+    <span>Sealed presentation box with 30-day unopened return guarantee.</span>
+  </div>
+</aside>
       </div>
     </section>
 
@@ -648,7 +682,7 @@
   </footer>
 
 </body>
-<script src="./js/script.js"></script>
+<script type="module" src="./js/script.js"></script>
 <script type="module" src="./js/cart.js"></script>
 
 </html>
