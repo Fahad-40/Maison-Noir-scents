@@ -14,9 +14,27 @@ export function getCurrentUser() {
 }
 
 
-export function signUp(name , email , password) {
+export function signUp(fName , lName , email , password) {
     
 let cleanEmail = email.trim().toLowerCase();
-let emailExists =  users.find(user => user.email === )
+let emailExists =  users.find(user => user.email === cleanEmail);
 
+if (emailExists) {
+    return {success : false , message : "Email already registered"};
 }
+
+let newUser = {
+id: Date.now().toString(),
+firstName : fName.trim(),
+lastName : lName.trim(),
+email: cleanEmail,
+password: password
+}
+
+users.push(newUser);
+saveUsers();
+return{ success : true}
+}
+
+
+
