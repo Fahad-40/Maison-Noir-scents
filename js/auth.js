@@ -39,6 +39,21 @@ return{ success : true}
 
 function logIn(email , password) {
     
+let cleanEmail = email.trim().toLowerCase();
+let user =  users.find(user => user.email === cleanEmail && user.password === password);
 
-    
+if (user) {
+    currentUser = user;
+    saveCurrentUser();
+   return {success : true }
+}
+else{
+ return   { success: false, message: "Invalid email or password" }
+}
+
+}
+
+function logOut() {
+    currentUser = null;
+    saveCurrentUser();
 }
