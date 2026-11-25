@@ -37,4 +37,8 @@ return{ success : true}
 }
 
 
+function logIn(email , password) {
+    
 
+    
+}
