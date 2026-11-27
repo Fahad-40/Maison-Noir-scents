@@ -51,4 +51,13 @@ const firstName = firstNameInput.value.trim();
     return;
   }
 
+  const result = signUp(firstName, lastName, email, password);
+
+  if (!result.success) {
+    showError(result.message);
+    return;
+  }
+
+  signupForm.reset();
+
 })
