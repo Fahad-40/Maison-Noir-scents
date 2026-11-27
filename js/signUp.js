@@ -1,4 +1,6 @@
-const loginAlertText = document.querySelector(".js-login-alert-text");
+const errorAlertUI = document.querySelector(".js-login-alert-text");
+emailInput.addEventListener("input", () => hideError(loginAlertText));
+
 
 function showError(errorElement, message = "Something went wrong") {
   errorElement.textContent = message;
