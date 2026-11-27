@@ -12,7 +12,7 @@ FirstNameInput.addEventListener("input", () => hideError(errorAlertUI));
 passwordInput.addEventListener("input", () => hideError(errorAlertUI));
 
 function showError(message) {
-  errorAlertUI.textContent = message;
+  errorAlertText.textContent = message;
   errorAlertUI.classList.remove("hidden");
 }
 
