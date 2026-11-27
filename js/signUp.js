@@ -10,9 +10,9 @@ lastNameInput.addEventListener("input", () => hideError(errorAlertUI));
 FirstNameInput.addEventListener("input", () => hideError(errorAlertUI));
 passwordInput.addEventListener("input", () => hideError(errorAlertUI));
 
-function showError(errorElement, message = "Something went wrong") {
-  errorElement.textContent = message;
-  errorElement.classList.remove("hidden");
+function showError(message) {
+  errorAlertUI.textContent = message;
+  errorAlertUI.classList.remove("hidden");
 }
 
 function hideError() {
@@ -22,11 +22,22 @@ function hideError() {
 emailInput.addEventListener("input", () => hideError(loginAlertText));
 
 
-signupForm.addEventListener("click" , (e) => {
+signupForm.addEventListener("submit" , (e) => {
 e.preventDefault();
 hideError()
 
-
+if (!emailInput) {
+    showError("Please enter valid email")
+}
+if (!FirstNameInput) {
+    showError("Please enter your name")
+}
+if (!lastNameInput) {
+    showError("Please enter your name")
+}
+if (!emailInput) {
+    showError("Please enter password")
+}
 
 
 })
