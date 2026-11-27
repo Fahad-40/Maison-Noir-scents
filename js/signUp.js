@@ -1,4 +1,4 @@
-const errorAlertUI = document.querySelector(".js-login-alert-text");
+const errorAlertUI = document.querySelector(".js-login-alert");
 const signupForm = document.querySelector(".js-signup-form");
 const FirstNameInput = document.querySelector(".js-signup-firstname");
 const lastNameInput = document.querySelector(".js-signup-lastname");
@@ -19,18 +19,19 @@ function hideError() {
   errorAlertUI.classList.add("hidden");
 }
 
-emailInput.addEventListener("input", () => hideError(loginAlertText));
+emailInput.addEventListener("input", () => hideError());
 
 
 signupForm.addEventListener("submit" , (e) => {
+    console.log("sign up form clicked!")
 e.preventDefault();
 hideError()
-
-if (!emailInput) {
-    showError("Please enter valid email")
-}
-if (!FirstNameInput) {
+if (FirstNameInput === "") {
     showError("Please enter your name")
+}
+
+if (emailInput === "") {
+    showError("Please enter valid email")
 }
 if (!lastNameInput) {
     showError("Please enter your name")

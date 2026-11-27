@@ -256,14 +256,74 @@
             </div>
 
             <!-- 3. Sign In Form -->
-         <input
+            <form class="js-login-form mt-6 space-y-5" novalidate>
+              <!-- General Auth Feedback Alert (Hidden by default) -->
+              <div class="js-login-alert hidden p-3.5 bg-error-container/70 dark:bg-red-950/50 border border-error/40 dark:border-red-800/60 text-on-error-container dark:text-red-200 text-xs flex items-start gap-2.5" role="alert">
+                <span class="material-symbols-outlined text-[16px] shrink-0 mt-0.5">error</span>
+                <span class="js-login-alert-text">The email address or password entered does not match our client records.</span>
+              </div>
+
+              <!-- Email Address -->
+              <div class="space-y-1.5">
+                <label class="block text-[11px] font-medium uppercase tracking-widest text-on-surface dark:text-zinc-200" for="login-email">
+                  Email Address
+                </label>
+                <input
                   autocomplete="email"
-                  class="js-signup-email w-full px-3.5 py-2.5 bg-surface dark:bg-zinc-900 border border-outline-variant/60 dark:border-zinc-700 text-sm text-on-surface dark:text-zinc-100 placeholder:text-on-surface-variant/70 dark:placeholder:text-zinc-500 focus:outline-none focus:border-secondary dark:focus:border-secondary-fixed-dim transition-colors"
-                  id="signup-email"
+                  class="js-login-email w-full px-3.5 py-2.5 bg-surface dark:bg-zinc-900 border border-outline-variant/60 dark:border-zinc-700 text-sm text-on-surface dark:text-zinc-100 placeholder:text-on-surface-variant/70 dark:placeholder:text-zinc-500 focus:outline-none focus:border-secondary dark:focus:border-secondary-fixed-dim transition-colors"
+                  id="login-email"
                   name="email"
-                  placeholder="camille.laurent@domain.com"
+                  placeholder="client@maisonnoir.com"
                   required
                   type="email">
+                <p class="js-error-msg hidden text-xs text-error dark:text-red-400 flex items-center gap-1 pt-0.5">
+                  <span class="material-symbols-outlined text-[14px]">error</span>
+                  <span>Please enter a valid email address.</span>
+                </p>
+              </div>
+
+              <!-- Password -->
+              <div class="space-y-1.5">
+                <div class="flex items-center justify-between">
+                  <label class="block text-[11px] font-medium uppercase tracking-widest text-on-surface dark:text-zinc-200" for="login-password">
+                    Password
+                  </label>
+                  <a class="text-[11px] text-on-surface-variant dark:text-zinc-400 hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors" href="#">
+                    Forgot password?
+                  </a>
+                </div>
+                <div class="relative">
+                  <input
+                    autocomplete="current-password"
+                    class="js-login-password w-full pl-3.5 pr-10 py-2.5 bg-surface dark:bg-zinc-900 border border-outline-variant/60 dark:border-zinc-700 text-sm text-on-surface dark:text-zinc-100 placeholder:text-on-surface-variant/70 dark:placeholder:text-zinc-500 focus:outline-none focus:border-secondary dark:focus:border-secondary-fixed-dim transition-colors"
+                    id="login-password"
+                    name="password"
+                    placeholder="Enter your password"
+                    required
+                    type="password">
+                  <button
+                    aria-label="Toggle password visibility"
+                    class="js-toggle-password absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors"
+                    type="button">
+                    <span class="material-symbols-outlined text-[18px] leading-none block">visibility</span>
+                  </button>
+                </div>
+                <p class="js-error-msg hidden text-xs text-error dark:text-red-400 flex items-center gap-1 pt-0.5">
+                  <span class="material-symbols-outlined text-[14px]">error</span>
+                  <span>Please enter your account password.</span>
+                </p>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="pt-2">
+                <button
+                  class="js-login-submit w-full py-3.5 px-6 bg-primary dark:bg-zinc-100 text-on-primary dark:text-zinc-950 text-xs font-medium uppercase tracking-widest hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
+                  type="submit">
+                  <span>Sign In</span>
+                  <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                </button>
+              </div>
+            </form>
 
             <!-- 4. Create Account / Signup Form (Hidden by default) -->
             <form class="js-signup-form  mt-6 space-y-5" novalidate>
@@ -505,5 +565,6 @@
  
 </body>
 <script type="module" src="./js/script.js"></script>
-<script type="module" src="./js/productDetail.js"></script>
+<!-- <script type="module" src="./js/productDetail.js"></script> -->
+<script type="module" src="./js/signUp.js"></script>
 </html>
