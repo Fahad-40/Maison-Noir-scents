@@ -1,4 +1,5 @@
 const errorAlertUI = document.querySelector(".js-login-alert-text");
+const signupForm = document.querySelector(".js-signup-form");
 emailInput.addEventListener("input", () => hideError(loginAlertText));
 
 
