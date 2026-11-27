@@ -1,5 +1,6 @@
-const errorAlertUI = document.querySelector(".js-login-alert");
 const signupForm = document.querySelector(".js-signup-form");
+const errorAlertUI = signupForm.querySelector(".js-login-alert");
+const errorAlertText = signupForm.querySelector(".js-login-alert-text");
 const FirstNameInput = document.querySelector(".js-signup-firstname");
 const lastNameInput = document.querySelector(".js-signup-lastname");
 const emailInput = document.querySelector(".js-signup-email");
