@@ -14,6 +14,7 @@
     rel="stylesheet">
   <style>
     @layer base {
+
       html,
       body {
         margin: 0;
@@ -24,11 +25,11 @@
         overscroll-behavior: none;
       }
 
-      main > :first-child {
+      main> :first-child {
         margin-top: 0 !important;
       }
 
-      main > :last-child {
+      main> :last-child {
         margin-bottom: 0 !important;
       }
     }
@@ -104,28 +105,38 @@
   </script>
 </head>
 
-<body class="bg-surface dark:bg-[#111113] font-sans text-sm text-on-surface dark:text-zinc-100 antialiased transition-colors duration-300" data-mode="connect">
+<body
+  class="bg-surface dark:bg-[#111113] font-sans text-sm text-on-surface dark:text-zinc-100 antialiased transition-colors duration-300"
+  data-mode="connect">
 
   <!-- HEADER & NAVIGATION -->
-  <header class="fixed top-0 inset-x-0 w-full z-40 bg-surface/95 dark:bg-[#111113]/95 backdrop-blur-md border-b border-outline-variant/40 dark:border-zinc-800 transition-colors">
+  <header
+    class="fixed top-0 inset-x-0 w-full z-40 bg-surface/95 dark:bg-[#111113]/95 backdrop-blur-md border-b border-outline-variant/40 dark:border-zinc-800 transition-colors">
     <div class="max-w-7xl mx-auto h-16 sm:h-20 px-4 sm:px-8 lg:px-12 flex items-center justify-between">
       <!-- FAR LEFT: Logo Wordmark -->
       <div class="flex items-center">
-        <a class="font-serif text-base sm:text-lg tracking-[0.22em] font-medium text-primary dark:text-white uppercase select-none whitespace-nowrap" data-path="home" href="index.html">
+        <a class="font-serif text-base sm:text-lg tracking-[0.22em] font-medium text-primary dark:text-white uppercase select-none whitespace-nowrap"
+          data-path="home" href="index.html">
           MAISON NOIR
         </a>
       </div>
 
       <!-- CENTER (Desktop only): 3 Clean Navigation Links -->
-      <nav class="hidden md:flex items-center gap-8 lg:gap-12" data-active-classes="text-primary dark:text-white font-semibold">
-        <a class="text-xs font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" data-path="fragrances" href="fragrances.html">Fragrances</a>
-        <a class="text-xs font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" data-path="notes" href="notes.html">Notes</a>
-        <a class="text-xs font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" data-path="my-orders" href="orders.html">My Orders</a>
+      <nav class="hidden md:flex items-center gap-8 lg:gap-12"
+        data-active-classes="text-primary dark:text-white font-semibold">
+        <a class="text-xs font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors"
+          data-path="fragrances" href="fragrances.html">Fragrances</a>
+        <a class="text-xs font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors"
+          data-path="notes" href="notes.html">Notes</a>
+        <a class="text-xs font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors"
+          data-path="my-orders" href="orders.html">My Orders</a>
       </nav>
 
       <!-- FAR RIGHT: Single Clean Menu Button ONLY -->
       <div class="flex items-center">
-        <button aria-label="Open Navigation Menu" class="js-menu-toggle flex items-center gap-2 text-xs font-medium uppercase tracking-widest text-on-surface dark:text-zinc-200 hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors py-2 pl-2 focus:outline-none" type="button">
+        <button aria-label="Open Navigation Menu"
+          class="js-menu-toggle flex items-center gap-2 text-xs font-medium uppercase tracking-widest text-on-surface dark:text-zinc-200 hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors py-2 pl-2 focus:outline-none"
+          type="button">
           <span class="hidden sm:inline">Menu</span>
           <span class="material-symbols-outlined text-[20px] leading-none">menu</span>
         </button>
@@ -139,12 +150,16 @@
     <div class="js-menu-toggle fixed inset-0 bg-black/40 backdrop-blur-xs transition-opacity"></div>
 
     <!-- Drawer Panel -->
-    <div class="fixed inset-y-0 right-0 w-full max-w-xs sm:max-w-sm bg-surface dark:bg-[#161618] border-l border-outline-variant/40 dark:border-zinc-800 shadow-2xl flex flex-col justify-between p-6 sm:p-8 overflow-y-auto">
+    <div
+      class="fixed inset-y-0 right-0 w-full max-w-xs sm:max-w-sm bg-surface dark:bg-[#161618] border-l border-outline-variant/40 dark:border-zinc-800 shadow-2xl flex flex-col justify-between p-6 sm:p-8 overflow-y-auto">
       <div>
         <!-- Drawer Top Header -->
         <div class="flex items-center justify-between pb-5 border-b border-outline-variant/30 dark:border-zinc-800">
-          <span class="font-serif text-base tracking-[0.22em] font-medium uppercase text-primary dark:text-white">Maison Noir</span>
-          <button aria-label="Close Navigation Menu" class="js-menu-toggle flex items-center gap-1.5 text-xs font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" type="button">
+          <span class="font-serif text-base tracking-[0.22em] font-medium uppercase text-primary dark:text-white">Maison
+            Noir</span>
+          <button aria-label="Close Navigation Menu"
+            class="js-menu-toggle flex items-center gap-1.5 text-xs font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors"
+            type="button">
             <span>Close</span>
             <span class="material-symbols-outlined text-[18px] leading-none">close</span>
           </button>
@@ -153,12 +168,16 @@
         <!-- Client Account Strip -->
         <div class="py-5 border-b border-outline-variant/30 dark:border-zinc-800 flex items-center justify-between">
           <div class="flex items-center gap-3">
-            <span class="js-user-initials w-9 h-9 rounded-full bg-primary dark:bg-zinc-800 text-on-primary dark:text-zinc-100 border border-outline-variant/40 dark:border-zinc-700 flex items-center justify-center text-xs font-semibold uppercase tracking-wider">
+            <span
+              class="js-user-initials w-9 h-9 rounded-full bg-primary dark:bg-zinc-800 text-on-primary dark:text-zinc-100 border border-outline-variant/40 dark:border-zinc-700 flex items-center justify-center text-xs font-semibold uppercase tracking-wider">
               MN
             </span>
             <div class="flex flex-col">
-              <span class="text-[11px] font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400">Client Sanctuary</span>
-              <a class="text-xs font-medium uppercase tracking-widest text-primary dark:text-white hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors mt-0.5 underline underline-offset-4" data-path="login" href="auth.html">
+              <span
+                class="text-[11px] font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400">Client
+                Sanctuary</span>
+              <a class="text-xs font-medium uppercase tracking-widest text-primary dark:text-white hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors mt-0.5 underline underline-offset-4"
+                data-path="login" href="auth.html">
                 Sign In / Account
               </a>
             </div>
@@ -167,35 +186,44 @@
 
         <!-- Primary Navigation Links -->
         <nav class="py-5 border-b border-outline-variant/30 dark:border-zinc-800 flex flex-col gap-3.5">
-          <a class="font-serif text-xl font-normal text-primary dark:text-white hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors" data-path="home" href="index.html">Atelier Home</a>
-          <a class="font-serif text-xl font-normal text-primary dark:text-white hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors" data-path="fragrances" href="fragrances.html">Fragrances</a>
-          <a class="font-serif text-xl font-normal text-primary dark:text-white hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors" data-path="notes" href="notes.html">Notes & Botanicals</a>
-          <a class="font-serif text-xl font-normal text-primary dark:text-white hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors" data-path="my-orders" href="orders.html">My Orders</a>
+          <a class="font-serif text-xl font-normal text-primary dark:text-white hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors"
+            data-path="home" href="index.html">Atelier Home</a>
+          <a class="font-serif text-xl font-normal text-primary dark:text-white hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors"
+            data-path="fragrances" href="fragrances.html">Fragrances</a>
+          <a class="font-serif text-xl font-normal text-primary dark:text-white hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors"
+            data-path="notes" href="notes.html">Notes & Botanicals</a>
+          <a class="font-serif text-xl font-normal text-primary dark:text-white hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors"
+            data-path="my-orders" href="orders.html">My Orders</a>
         </nav>
 
         <!-- Favorites & Shopping Bag Links -->
         <div class="py-5 flex flex-col gap-3.5">
-          <a class="flex items-center justify-between text-xs font-medium uppercase tracking-widest text-on-surface dark:text-zinc-200 hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors py-1" href="fragrances.html">
+          <a class="flex items-center justify-between text-xs font-medium uppercase tracking-widest text-on-surface dark:text-zinc-200 hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors py-1"
+            href="fragrances.html">
             <span class="flex items-center gap-2.5">
               <span class="js-nav-fav-icon">favorite</span>
               <span>Favorites</span>
             </span>
-            <span class="js-wishlist-count px-2 py-0.5 text-[11px] font-medium bg-surface-container dark:bg-zinc-800 text-on-surface dark:text-zinc-200 rounded-full">0</span>
+            <span
+              class="js-wishlist-count px-2 py-0.5 text-[11px] font-medium bg-surface-container dark:bg-zinc-800 text-on-surface dark:text-zinc-200 rounded-full">0</span>
           </a>
 
-          <a class="flex items-center justify-between text-xs font-medium uppercase tracking-widest text-on-surface dark:text-zinc-200 hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors py-1" data-path="cart" href="cart.html">
+          <a class="flex items-center justify-between text-xs font-medium uppercase tracking-widest text-on-surface dark:text-zinc-200 hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors py-1"
+            data-path="cart" href="cart.html">
             <span class="flex items-center gap-2.5">
               <span class="material-symbols-outlined text-[18px]">shopping_bag</span>
               <span>Shopping Bag</span>
             </span>
-            <span class="js-cart-count px-2 py-0.5 text-[11px] font-semibold bg-primary dark:bg-zinc-200 text-on-primary dark:text-zinc-900 rounded-full">0</span>
+            <span
+              class="js-cart-count px-2 py-0.5 text-[11px] font-semibold bg-primary dark:bg-zinc-200 text-on-primary dark:text-zinc-900 rounded-full">0</span>
           </a>
         </div>
       </div>
 
       <!-- Drawer Footer -->
       <div class="pt-5 border-t border-outline-variant/30 dark:border-zinc-800">
-        <p class="text-[11px] font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-500">Paris • Grasse</p>
+        <p class="text-[11px] font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-500">Paris •
+          Grasse</p>
       </div>
     </div>
   </aside>
@@ -204,21 +232,26 @@
   <main class="w-full pt-16 sm:pt-20 bg-surface dark:bg-[#111113] min-h-[calc(100vh-20rem)] transition-colors">
 
     <!-- 1. Minimal Page Header / Breadcrumb -->
-    <section class="relative w-full border-b border-outline-variant/40 dark:border-zinc-800 bg-surface-container-lowest dark:bg-[#151518]">
+    <section
+      class="relative w-full border-b border-outline-variant/40 dark:border-zinc-800 bg-surface-container-lowest dark:bg-[#151518]">
       <!-- Dark / Light Mode Toggle -->
-      <button aria-label="Toggle Color Theme" class="js-theme-toggle absolute top-5 right-4 sm:top-7 sm:right-8 lg:right-12 z-20 p-2 bg-surface/90 dark:bg-zinc-900/90 backdrop-blur-md border border-outline-variant/50 dark:border-zinc-700 text-on-surface dark:text-zinc-200 hover:border-secondary dark:hover:border-secondary-fixed-dim transition-colors rounded-full" type="button">
+      <button aria-label="Toggle Color Theme"
+        class="js-theme-toggle absolute top-5 right-4 sm:top-7 sm:right-8 lg:right-12 z-20 p-2 bg-surface/90 dark:bg-zinc-900/90 backdrop-blur-md border border-outline-variant/50 dark:border-zinc-700 text-on-surface dark:text-zinc-200 hover:border-secondary dark:hover:border-secondary-fixed-dim transition-colors rounded-full"
+        type="button">
         <span class="material-symbols-outlined text-[18px] leading-none block dark:hidden">dark_mode</span>
         <span class="material-symbols-outlined text-[18px] leading-none hidden dark:block">light_mode</span>
       </button>
 
       <div class="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-8 sm:py-10">
-        <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-[11px] font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400">
+        <nav aria-label="Breadcrumb"
+          class="flex items-center gap-2 text-[11px] font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400">
           <a class="hover:text-primary dark:hover:text-white transition-colors" href="index.html">Home</a>
           <span class="text-outline-variant dark:text-zinc-700">/</span>
           <span class="text-secondary dark:text-secondary-fixed-dim">Account</span>
         </nav>
 
-        <h1 class="text-3xl sm:text-4xl font-serif font-normal text-primary dark:text-white tracking-tight mt-2.5 pr-10">
+        <h1
+          class="text-3xl sm:text-4xl font-serif font-normal text-primary dark:text-white tracking-tight mt-2.5 pr-10">
           Maison Noir Account
         </h1>
         <p class="text-sm text-on-surface-variant dark:text-zinc-400 mt-1.5 max-w-xl">
@@ -232,25 +265,21 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch max-w-5xl mx-auto">
 
         <!-- Left Column: Authentication Card (Tabs + Sign In + Create Account) -->
-        <div class="lg:col-span-7 bg-surface-container-lowest dark:bg-[#161619] border border-outline-variant/40 dark:border-zinc-800 p-6 sm:p-8 flex flex-col justify-between">
+        <div
+          class="lg:col-span-7 bg-surface-container-lowest dark:bg-[#161619] border border-outline-variant/40 dark:border-zinc-800 p-6 sm:p-8 flex flex-col justify-between">
           <div>
             <!-- Clean Auth Mode Tabs -->
-            <div class="js-auth-tabs grid grid-cols-2 border-b border-outline-variant/40 dark:border-zinc-800" role="tablist">
-              <button
-                aria-selected="true"
+            <div class="js-auth-tabs grid grid-cols-2 border-b border-outline-variant/40 dark:border-zinc-800"
+              role="tablist">
+              <button aria-selected="true"
                 class="js-tab-login pb-3.5 text-xs font-semibold uppercase tracking-widest text-primary dark:text-white border-b-2 border-secondary dark:border-secondary-fixed-dim transition-colors text-center"
-                data-tab="login"
-                role="tab"
-                type="button">
+                data-tab="login" role="tab" type="button">
                 Sign In
               </button>
 
-              <button
-                aria-selected="false"
+              <button aria-selected="false"
                 class="js-tab-signup pb-3.5 text-xs font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white border-b-2 border-transparent transition-colors text-center"
-                data-tab="signup"
-                role="tab"
-                type="button">
+                data-tab="signup" role="tab" type="button">
                 Create Account
               </button>
             </div>
@@ -258,24 +287,24 @@
             <!-- 3. Sign In Form -->
             <form class="js-login-form mt-6 space-y-5" novalidate>
               <!-- General Auth Feedback Alert (Hidden by default) -->
-              <div class="js-login-alert hidden p-3.5 bg-error-container/70 dark:bg-red-950/50 border border-error/40 dark:border-red-800/60 text-on-error-container dark:text-red-200 text-xs flex items-start gap-2.5" role="alert">
+              <div
+                class="js-login-alert hidden p-3.5 bg-error-container/70 dark:bg-red-950/50 border border-error/40 dark:border-red-800/60 text-on-error-container dark:text-red-200 text-xs flex items-start gap-2.5"
+                role="alert">
                 <span class="material-symbols-outlined text-[16px] shrink-0 mt-0.5">error</span>
-                <span class="js-login-alert-text">The email address or password entered does not match our client records.</span>
+                <span class="js-login-alert-text">The email address or password entered does not match our client
+                  records.</span>
               </div>
 
               <!-- Email Address -->
               <div class="space-y-1.5">
-                <label class="block text-[11px] font-medium uppercase tracking-widest text-on-surface dark:text-zinc-200" for="login-email">
+                <label
+                  class="block text-[11px] font-medium uppercase tracking-widest text-on-surface dark:text-zinc-200"
+                  for="login-email">
                   Email Address
                 </label>
-                <input
-                  autocomplete="email"
+                <input autocomplete="email"
                   class="js-login-email w-full px-3.5 py-2.5 bg-surface dark:bg-zinc-900 border border-outline-variant/60 dark:border-zinc-700 text-sm text-on-surface dark:text-zinc-100 placeholder:text-on-surface-variant/70 dark:placeholder:text-zinc-500 focus:outline-none focus:border-secondary dark:focus:border-secondary-fixed-dim transition-colors"
-                  id="login-email"
-                  name="email"
-                  placeholder="client@maisonnoir.com"
-                  required
-                  type="email">
+                  id="login-email" name="email" placeholder="client@maisonnoir.com" required type="email">
                 <p class="js-error-msg hidden text-xs text-error dark:text-red-400 flex items-center gap-1 pt-0.5">
                   <span class="material-symbols-outlined text-[14px]">error</span>
                   <span>Please enter a valid email address.</span>
@@ -285,24 +314,21 @@
               <!-- Password -->
               <div class="space-y-1.5">
                 <div class="flex items-center justify-between">
-                  <label class="block text-[11px] font-medium uppercase tracking-widest text-on-surface dark:text-zinc-200" for="login-password">
+                  <label
+                    class="block text-[11px] font-medium uppercase tracking-widest text-on-surface dark:text-zinc-200"
+                    for="login-password">
                     Password
                   </label>
-                  <a class="text-[11px] text-on-surface-variant dark:text-zinc-400 hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors" href="#">
+                  <a class="text-[11px] text-on-surface-variant dark:text-zinc-400 hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors"
+                    href="#">
                     Forgot password?
                   </a>
                 </div>
                 <div class="relative">
-                  <input
-                    autocomplete="current-password"
+                  <input autocomplete="current-password"
                     class="js-login-password w-full pl-3.5 pr-10 py-2.5 bg-surface dark:bg-zinc-900 border border-outline-variant/60 dark:border-zinc-700 text-sm text-on-surface dark:text-zinc-100 placeholder:text-on-surface-variant/70 dark:placeholder:text-zinc-500 focus:outline-none focus:border-secondary dark:focus:border-secondary-fixed-dim transition-colors"
-                    id="login-password"
-                    name="password"
-                    placeholder="Enter your password"
-                    required
-                    type="password">
-                  <button
-                    aria-label="Toggle password visibility"
+                    id="login-password" name="password" placeholder="Enter your password" required type="password">
+                  <button aria-label="Toggle password visibility"
                     class="js-toggle-password absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors"
                     type="button">
                     <span class="material-symbols-outlined text-[18px] leading-none block">visibility</span>
@@ -328,26 +354,26 @@
             <!-- 4. Create Account / Signup Form (Hidden by default) -->
             <form class="js-signup-form  mt-6 space-y-5" novalidate>
 
-                <!-- General Auth Feedback Alert (Hidden by default) -->
-              <div class="js-login-alert p-3.5 bg-error-container/70 dark:bg-red-950/50 border border-error/40 dark:border-red-800/60 text-on-error-container dark:text-red-200 text-xs flex items-start gap-2.5" role="alert">
+              <!-- General Auth Feedback Alert (Hidden by default) -->
+              <div
+                class="js-login-alert p-3.5 bg-error-container/70 dark:bg-red-950/50 border border-error/40 dark:border-red-800/60 text-on-error-container dark:text-red-200 text-xs flex items-start gap-2.5"
+                role="alert">
                 <span class="material-symbols-outlined text-[16px] shrink-0 mt-0.5">error</span>
-                <span class="js-login-alert-text">The email address or password entered does not match our client records.</span>
+                <span class="js-login-alert-text">The email address or password entered does not match our client
+                  records.</span>
               </div>
 
               <!-- First Name & Last Name Side-by-Side on Desktop -->
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div class="space-y-1.5">
-                  <label class="block text-[11px] font-medium uppercase tracking-widest text-on-surface dark:text-zinc-200" for="signup-firstname">
+                  <label
+                    class="block text-[11px] font-medium uppercase tracking-widest text-on-surface dark:text-zinc-200"
+                    for="signup-firstname">
                     First Name
                   </label>
-                  <input
-                    autocomplete="given-name"
+                  <input autocomplete="given-name"
                     class="js-signup-firstname w-full px-3.5 py-2.5 bg-surface dark:bg-zinc-900 border border-outline-variant/60 dark:border-zinc-700 text-sm text-on-surface dark:text-zinc-100 placeholder:text-on-surface-variant/70 dark:placeholder:text-zinc-500 focus:outline-none focus:border-secondary dark:focus:border-secondary-fixed-dim transition-colors"
-                    id="signup-firstname"
-                    name="firstName"
-                    placeholder="Camille"
-                    required
-                    type="text">
+                    id="signup-firstname" name="firstName" placeholder="Camille" required type="text">
                   <p class="js-error-msg hidden text-xs text-error dark:text-red-400 flex items-center gap-1 pt-0.5">
                     <span class="material-symbols-outlined text-[14px]">error</span>
                     <span>First name is required.</span>
@@ -355,17 +381,14 @@
                 </div>
 
                 <div class="space-y-1.5">
-                  <label class="block text-[11px] font-medium uppercase tracking-widest text-on-surface dark:text-zinc-200" for="signup-lastname">
+                  <label
+                    class="block text-[11px] font-medium uppercase tracking-widest text-on-surface dark:text-zinc-200"
+                    for="signup-lastname">
                     Last Name
                   </label>
-                  <input
-                    autocomplete="family-name"
+                  <input autocomplete="family-name"
                     class="js-signup-lastname w-full px-3.5 py-2.5 bg-surface dark:bg-zinc-900 border border-outline-variant/60 dark:border-zinc-700 text-sm text-on-surface dark:text-zinc-100 placeholder:text-on-surface-variant/70 dark:placeholder:text-zinc-500 focus:outline-none focus:border-secondary dark:focus:border-secondary-fixed-dim transition-colors"
-                    id="signup-lastname"
-                    name="lastName"
-                    placeholder="Laurent"
-                    required
-                    type="text">
+                    id="signup-lastname" name="lastName" placeholder="Laurent" required type="text">
                   <p class="js-error-msg hidden text-xs text-error dark:text-red-400 flex items-center gap-1 pt-0.5">
                     <span class="material-symbols-outlined text-[14px]">error</span>
                     <span>Last name is required.</span>
@@ -375,17 +398,14 @@
 
               <!-- Email Address -->
               <div class="space-y-1.5">
-                <label class="block text-[11px] font-medium uppercase tracking-widest text-on-surface dark:text-zinc-200" for="signup-email">
+                <label
+                  class="block text-[11px] font-medium uppercase tracking-widest text-on-surface dark:text-zinc-200"
+                  for="signup-email">
                   Email Address
                 </label>
-                <input
-                  autocomplete="email"
+                <input autocomplete="email"
                   class="js-signup-email w-full px-3.5 py-2.5 bg-surface dark:bg-zinc-900 border border-outline-variant/60 dark:border-zinc-700 text-sm text-on-surface dark:text-zinc-100 placeholder:text-on-surface-variant/70 dark:placeholder:text-zinc-500 focus:outline-none focus:border-secondary dark:focus:border-secondary-fixed-dim transition-colors"
-                  id="signup-email"
-                  name="email"
-                  placeholder="camille.laurent@domain.com"
-                  required
-                  type="email">
+                  id="signup-email" name="email" placeholder="camille.laurent@domain.com" required type="email">
                 <p class="js-error-msg hidden text-xs text-error dark:text-red-400 flex items-center gap-1 pt-0.5">
                   <span class="material-symbols-outlined text-[14px]">error</span>
                   <span>Please enter a valid email address.</span>
@@ -394,20 +414,16 @@
 
               <!-- Password -->
               <div class="space-y-1.5">
-                <label class="block text-[11px] font-medium uppercase tracking-widest text-on-surface dark:text-zinc-200" for="signup-password">
+                <label
+                  class="block text-[11px] font-medium uppercase tracking-widest text-on-surface dark:text-zinc-200"
+                  for="signup-password">
                   Password
                 </label>
                 <div class="relative">
-                  <input
-                    autocomplete="new-password"
+                  <input autocomplete="new-password"
                     class="js-signup-password w-full pl-3.5 pr-10 py-2.5 bg-surface dark:bg-zinc-900 border border-outline-variant/60 dark:border-zinc-700 text-sm text-on-surface dark:text-zinc-100 placeholder:text-on-surface-variant/70 dark:placeholder:text-zinc-500 focus:outline-none focus:border-secondary dark:focus:border-secondary-fixed-dim transition-colors"
-                    id="signup-password"
-                    name="password"
-                    placeholder="Minimum 6 characters"
-                    required
-                    type="password">
-                  <button
-                    aria-label="Toggle password visibility"
+                    id="signup-password" name="password" placeholder="Minimum 6 characters" required type="password">
+                  <button aria-label="Toggle password visibility"
                     class="js-toggle-password absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors"
                     type="button">
                     <span class="material-symbols-outlined text-[18px] leading-none block">visibility</span>
@@ -431,43 +447,47 @@
             </form>
           </div>
 
-<!-- SIGNUP SUCCESS CONFIRMATION STATE (auth.html) -->
-<div class="js-signup-success hidden py-8 sm:py-10 text-center space-y-6" role="status" aria-live="polite">
-  <!-- Minimalist Fine-Line Checkmark Icon with Gold Accent -->
-  <div class="w-12 h-12 mx-auto rounded-full border border-secondary/50 dark:border-secondary-fixed-dim/50 flex items-center justify-center text-secondary dark:text-secondary-fixed-dim">
-    <span class="material-symbols-outlined text-[24px] font-light">check</span>
-  </div>
+          <!-- SIGNUP SUCCESS CONFIRMATION STATE (auth.html) -->
+          <div class="js-signup-success hidden py-8 sm:py-10 text-center space-y-6" role="status" aria-live="polite">
+            <!-- Minimalist Fine-Line Checkmark Icon with Gold Accent -->
+            <div
+              class="w-12 h-12 mx-auto rounded-full border border-secondary/50 dark:border-secondary-fixed-dim/50 flex items-center justify-center text-secondary dark:text-secondary-fixed-dim">
+              <span class="material-symbols-outlined text-[24px] font-light">check</span>
+            </div>
 
-  <!-- Editorial Headline & Sub-label -->
-  <div class="space-y-2">
-    <span class="text-[11px] font-medium uppercase tracking-widest text-secondary dark:text-secondary-fixed-dim block">
-      Client Sanctuary Registry
-    </span>
-    <h2 class="font-serif text-3xl sm:text-4xl font-normal text-primary dark:text-white tracking-tight">
-      Welcome to Maison Noir
-    </h2>
-  </div>
+            <!-- Editorial Headline & Sub-label -->
+            <div class="space-y-2">
+              <span
+                class="text-[11px] font-medium uppercase tracking-widest text-secondary dark:text-secondary-fixed-dim block">
+                Client Sanctuary Registry
+              </span>
+              <h2 class="font-serif text-3xl sm:text-4xl font-normal text-primary dark:text-white tracking-tight">
+                Welcome to Maison Noir
+              </h2>
+            </div>
 
-  <!-- Concise Confirmation Message -->
-  <p class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 leading-relaxed max-w-sm mx-auto">
-    Your profile has been created. Please sign in to access your saved fragrances and order history.
-  </p>
+            <!-- Concise Confirmation Message -->
+            <p class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 leading-relaxed max-w-sm mx-auto">
+              Your profile has been created. Please sign in to access your saved fragrances and order history.
+            </p>
 
-  <!-- Primary Action Button -->
-  <div class="pt-2">
-    <button
-      class="js-go-to-login w-full py-3.5 px-6 bg-primary dark:bg-zinc-100 text-on-primary dark:text-zinc-950 text-xs font-medium uppercase tracking-widest hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
-      type="button">
-      <span>Sign In to Your Account</span>
-      <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-    </button>
-  </div>
-</div>
+            <!-- Primary Action Button -->
+            <div class="pt-2">
+              <button
+                class="js-go-to-login w-full py-3.5 px-6 bg-primary dark:bg-zinc-100 text-on-primary dark:text-zinc-950 text-xs font-medium uppercase tracking-widest hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
+                type="button">
+                <span>Sign In to Your Account</span>
+                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </button>
+            </div>
+          </div>
 
           <!-- Discreet Privacy Footnote -->
-          <div class="mt-8 pt-4 border-t border-outline-variant/25 dark:border-zinc-800/80 flex items-center justify-between text-[11px] text-on-surface-variant dark:text-zinc-400">
+          <div
+            class="mt-8 pt-4 border-t border-outline-variant/25 dark:border-zinc-800/80 flex items-center justify-between text-[11px] text-on-surface-variant dark:text-zinc-400">
             <span class="inline-flex items-center gap-1.5">
-              <span class="material-symbols-outlined text-[15px] text-secondary dark:text-secondary-fixed-dim">verified_user</span>
+              <span
+                class="material-symbols-outlined text-[15px] text-secondary dark:text-secondary-fixed-dim">verified_user</span>
               <span>Private & Encrypted Client Ledger</span>
             </span>
             <span class="uppercase tracking-wider">Paris • Grasse</span>
@@ -475,16 +495,17 @@
         </div>
 
         <!-- Right Column: Editorial Sanctuary Card & Member Privileges -->
-        <aside class="lg:col-span-5 bg-surface-container-low dark:bg-[#151518] border border-outline-variant/40 dark:border-zinc-800 flex flex-col justify-between overflow-hidden">
+        <aside
+          class="lg:col-span-5 bg-surface-container-low dark:bg-[#151518] border border-outline-variant/40 dark:border-zinc-800 flex flex-col justify-between overflow-hidden">
           <!-- Compact Editorial Bottle Visual -->
-          <div class="relative h-48 sm:h-56 overflow-hidden bg-surface-container dark:bg-zinc-900 border-b border-outline-variant/30 dark:border-zinc-800">
-            <img
-              alt="Maison Noir Grasse Atelier Flacon"
-              class="w-full h-full object-cover object-center"
+          <div
+            class="relative h-48 sm:h-56 overflow-hidden bg-surface-container dark:bg-zinc-900 border-b border-outline-variant/30 dark:border-zinc-800">
+            <img alt="Maison Noir Grasse Atelier Flacon" class="w-full h-full object-cover object-center"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSUqYTPhKvMTT0FYSiQ0EzcECiQPvR6zZMSIjJs-EYPmm5HClqcAcujKKgzdk09VxuALs9TZ9YZ20K4200Bi5aUTcc2pLIpA_SgAIqofp0fJyhMWDl6MiiJzi6N3RLefrmFVj2n3PkXiNyiAHsPg-piS5fm_7oMIqaCLi3GaoPImDo22aOm1_zWk8648rNM3u7jFizcI0iiiHHv9lzKjFQNfm7_SEg0RQYVvjNlBGH">
             <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent flex items-end p-5">
               <div>
-                <span class="text-[10px] font-medium uppercase tracking-widest text-secondary-fixed-dim block">Private Registry</span>
+                <span class="text-[10px] font-medium uppercase tracking-widest text-secondary-fixed-dim block">Private
+                  Registry</span>
                 <p class="font-serif text-xl text-white font-normal mt-0.5">The Client Sanctuary</p>
               </div>
             </div>
@@ -493,13 +514,15 @@
           <!-- Discreet Member Privileges -->
           <div class="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-6">
             <div class="space-y-4">
-              <span class="text-[11px] font-medium uppercase tracking-widest text-secondary dark:text-secondary-fixed-dim block">
+              <span
+                class="text-[11px] font-medium uppercase tracking-widest text-secondary dark:text-secondary-fixed-dim block">
                 Sanctuary Privileges
               </span>
 
               <ul class="space-y-3.5 text-xs text-on-surface-variant dark:text-zinc-400">
                 <li class="flex items-start gap-3">
-                  <span class="material-symbols-outlined text-[17px] text-secondary dark:text-secondary-fixed-dim shrink-0 mt-0.5">science</span>
+                  <span
+                    class="material-symbols-outlined text-[17px] text-secondary dark:text-secondary-fixed-dim shrink-0 mt-0.5">science</span>
                   <div>
                     <span class="font-medium text-primary dark:text-zinc-100 block">Bespoke Discovery Vials</span>
                     <span>Complimentary 2ml atelier sample with every full-flacon dispatch.</span>
@@ -507,7 +530,8 @@
                 </li>
 
                 <li class="flex items-start gap-3">
-                  <span class="material-symbols-outlined text-[17px] text-secondary dark:text-secondary-fixed-dim shrink-0 mt-0.5">history_edu</span>
+                  <span
+                    class="material-symbols-outlined text-[17px] text-secondary dark:text-secondary-fixed-dim shrink-0 mt-0.5">history_edu</span>
                   <div>
                     <span class="font-medium text-primary dark:text-zinc-100 block">Olfactory Ledger & Reordering</span>
                     <span>Maintain a permanent record of past acquisitions and batch vintages.</span>
@@ -515,7 +539,8 @@
                 </li>
 
                 <li class="flex items-start gap-3">
-                  <span class="material-symbols-outlined text-[17px] text-secondary dark:text-secondary-fixed-dim shrink-0 mt-0.5">favorite</span>
+                  <span
+                    class="material-symbols-outlined text-[17px] text-secondary dark:text-secondary-fixed-dim shrink-0 mt-0.5">favorite</span>
                   <div>
                     <span class="font-medium text-primary dark:text-zinc-100 block">Curated Scent Wardrobe</span>
                     <span>Save rare raw formulations to your personal favorites archive.</span>
@@ -528,7 +553,8 @@
               <p class="font-serif italic text-base text-on-surface dark:text-zinc-300 leading-snug">
                 “Perfume is the unseen architecture of memory.”
               </p>
-              <span class="text-[10px] font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-500 mt-1 block">
+              <span
+                class="text-[10px] font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-500 mt-1 block">
                 — Henri Delacroix, Maître Parfumeur
               </span>
             </div>
@@ -541,50 +567,72 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="w-full bg-surface-container-lowest dark:bg-[#111113] border-t border-outline-variant/40 dark:border-zinc-800 transition-colors">
+  <footer
+    class="w-full bg-surface-container-lowest dark:bg-[#111113] border-t border-outline-variant/40 dark:border-zinc-800 transition-colors">
     <div class="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-10 sm:py-12">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
         <div class="flex flex-col gap-3">
-          <span class="font-serif text-base sm:text-lg tracking-[0.22em] font-medium uppercase text-primary dark:text-white">Maison Noir</span>
+          <span
+            class="font-serif text-base sm:text-lg tracking-[0.22em] font-medium uppercase text-primary dark:text-white">Maison
+            Noir</span>
           <p class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 leading-relaxed">
-            Artisanal haute parfumerie conceived between Paris and Grasse. Dedicated to olfactory discipline and raw botanical extractions.
+            Artisanal haute parfumerie conceived between Paris and Grasse. Dedicated to olfactory discipline and raw
+            botanical extractions.
           </p>
-          <span class="text-[11px] font-medium uppercase tracking-widest text-secondary dark:text-secondary-fixed-dim">Paris • Grasse</span>
+          <span
+            class="text-[11px] font-medium uppercase tracking-widest text-secondary dark:text-secondary-fixed-dim">Paris
+            • Grasse</span>
         </div>
 
         <div class="flex flex-col gap-2.5">
-          <span class="text-xs font-semibold uppercase tracking-wider text-on-surface dark:text-zinc-200">Archive & Maison</span>
+          <span class="text-xs font-semibold uppercase tracking-wider text-on-surface dark:text-zinc-200">Archive &
+            Maison</span>
           <div class="flex flex-col gap-2">
-            <a class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" data-path="home" href="index.html">Atelier & Collection</a>
-            <a class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" data-path="my-orders" href="orders.html">My Orders</a>
-            <a class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" data-path="cart" href="cart.html">Shopping Bag</a>
-            <a class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" data-path="login" href="auth.html">Client Sanctuary</a>
+            <a class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors"
+              data-path="home" href="index.html">Atelier & Collection</a>
+            <a class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors"
+              data-path="my-orders" href="orders.html">My Orders</a>
+            <a class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors"
+              data-path="cart" href="cart.html">Shopping Bag</a>
+            <a class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors"
+              data-path="login" href="auth.html">Client Sanctuary</a>
           </div>
         </div>
 
         <div class="flex flex-col gap-2.5">
-          <span class="text-xs font-semibold uppercase tracking-wider text-on-surface dark:text-zinc-200">Client Services</span>
+          <span class="text-xs font-semibold uppercase tracking-wider text-on-surface dark:text-zinc-200">Client
+            Services</span>
           <div class="flex flex-col gap-2">
-            <a class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" data-path="olfactory-consultation" href="#">Olfactory Consultation</a>
-            <a class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" data-path="shipping-returns" href="#">Complimentary Shipping</a>
-            <a class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" data-path="authenticity" href="#">Provenance & Extraction</a>
-            <a class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors" data-path="contact" href="#">Contact Concierge</a>
+            <a class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors"
+              data-path="olfactory-consultation" href="#">Olfactory Consultation</a>
+            <a class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors"
+              data-path="shipping-returns" href="#">Complimentary Shipping</a>
+            <a class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors"
+              data-path="authenticity" href="#">Provenance & Extraction</a>
+            <a class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-white transition-colors"
+              data-path="contact" href="#">Contact Concierge</a>
           </div>
         </div>
 
         <div class="flex flex-col gap-3">
-          <span class="text-xs font-semibold uppercase tracking-wider text-on-surface dark:text-zinc-200">The Gazette</span>
+          <span class="text-xs font-semibold uppercase tracking-wider text-on-surface dark:text-zinc-200">The
+            Gazette</span>
           <p class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 leading-relaxed">
             Receive private invitations to seasonal reserves and olfactive monographs.
           </p>
           <form class="flex flex-col sm:flex-row gap-2">
-            <input class="w-full px-3 py-2 bg-surface-container-low dark:bg-zinc-900 border border-outline-variant/60 dark:border-zinc-700 text-xs text-on-surface dark:text-zinc-200 placeholder:text-on-surface-variant dark:placeholder:text-zinc-500 focus:outline-none focus:border-secondary" placeholder="ENTER YOUR EMAIL" type="email">
-            <button class="px-4 py-2 bg-primary dark:bg-zinc-100 text-on-primary dark:text-zinc-950 text-xs font-medium uppercase tracking-widest hover:opacity-90 transition-opacity shrink-0" type="button">Join</button>
+            <input
+              class="w-full px-3 py-2 bg-surface-container-low dark:bg-zinc-900 border border-outline-variant/60 dark:border-zinc-700 text-xs text-on-surface dark:text-zinc-200 placeholder:text-on-surface-variant dark:placeholder:text-zinc-500 focus:outline-none focus:border-secondary"
+              placeholder="ENTER YOUR EMAIL" type="email">
+            <button
+              class="px-4 py-2 bg-primary dark:bg-zinc-100 text-on-primary dark:text-zinc-950 text-xs font-medium uppercase tracking-widest hover:opacity-90 transition-opacity shrink-0"
+              type="button">Join</button>
           </form>
         </div>
       </div>
 
-      <div class="mt-8 pt-6 border-t border-outline-variant/30 dark:border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] font-medium text-on-surface-variant dark:text-zinc-500 uppercase tracking-wider">
+      <div
+        class="mt-8 pt-6 border-t border-outline-variant/30 dark:border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] font-medium text-on-surface-variant dark:text-zinc-500 uppercase tracking-wider">
         <p>© 2025 Maison Noir Haute Parfumerie. All rights reserved.</p>
         <div class="flex flex-wrap items-center gap-6">
           <a class="hover:text-primary dark:hover:text-white transition-colors" href="#">Privacy Policy</a>
@@ -595,9 +643,10 @@
     </div>
   </footer>
 
- 
+
 </body>
 <script type="module" src="./js/script.js"></script>
 <!-- <script type="module" src="./js/productDetail.js"></script> -->
 <script type="module" src="./js/signUp.js"></script>
+
 </html>
