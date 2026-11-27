@@ -1,3 +1,5 @@
+import { signUp } from "./auth.js";
+
 const signupForm = document.querySelector(".js-signup-form");
 const errorAlertUI = signupForm.querySelector(".js-login-alert");
 const errorAlertText = signupForm.querySelector(".js-login-alert-text");
