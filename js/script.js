@@ -257,31 +257,30 @@ ThemeToggleBtn.addEventListener("click", () => {
 export function updateAuthUi() {
   let signOutBtnChecker = getCurrentUser()
   if (signOutBtnChecker === null) {
-  logoutTrigger.classList.add("hidden")
-}
-else{
-  logoutTrigger.classList.remove("hidden")
-
-}
+    logoutTrigger.classList.add("hidden")
+  }
+  else {
+    logoutTrigger.classList.remove("hidden")
+  }
 }
 updateAuthUi()
 
-logoutTrigger.addEventListener("click" , () => {
-logoutModal.classList.remove("hidden")
+logoutTrigger.addEventListener("click", () => {
+  logoutModal.classList.remove("hidden")
 
 })
 
-logoutModal.addEventListener("click" , (e) => {
+logoutModal.addEventListener("click", (e) => {
   if (e.target.closest(".js-logout-cancel")) {
     logoutModal.classList.add("hidden")
     return;
   }
   if (e.target.closest(".js-logout-confirm")) {
-    logoutModal.classList.add("hidden")
+    logoutModal.classList.add("hidden");
     logOut();
     updateAuthUi()
   }
- 
+
 })
 
 
@@ -297,7 +296,7 @@ let coloredFavClass = "material-symbols-outlined text-[18px] icon-filled text-se
 export function updateFavBadge() {
   let favLength = getFavourites();
 
- if (favLength.length > 0) {
+  if (favLength.length > 0) {
     materialSymbolsOutlined.className = coloredFavClass;
     materialSymbolsOutlined.style.fontVariationSettings = "'FILL' 1";
   } else {
