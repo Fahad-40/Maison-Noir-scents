@@ -218,6 +218,7 @@
 import { getCart } from "./cart.js";
 import { getFavourites } from "./favoritesStorage.js";
 import { getCurrentUser } from "./authShared.js";
+import { logOut } from "./authShared.js";
 let html = document.querySelector(".html")
 let ThemeToggleBtn = document.querySelector(".js-theme-toggle");
 let NavDrawer = document.querySelector(".js-nav-drawer");
@@ -225,6 +226,7 @@ let menuToggle = document.querySelector(".js-menu-toggle");
 let CartCount = document.querySelector(".js-cart-count");
 let favCount = document.querySelector(".js-wishlist-count");
 let logoutTrigger = document.querySelector(".js-logout-trigger");
+let logoutModal = document.querySelector(".js-logout-modal");
 let materialSymbolsOutlined = document.querySelector(".js-nav-fav-icon");
 let screenMode = localStorage.getItem("screenModeLS") || "light";
 
@@ -252,7 +254,7 @@ ThemeToggleBtn.addEventListener("click", () => {
 
 
 
-function updateAuthUi() {
+export function updateAuthUi() {
   let signOutBtnChecker = getCurrentUser()
   if (signOutBtnChecker === null) {
   logoutTrigger.classList.add("hidden")
@@ -262,7 +264,25 @@ else{
 
 }
 }
+updateAuthUi()
 
+logoutTrigger.addEventListener("click" , () => {
+logoutModal.classList.remove("hidden")
+
+})
+
+logoutModal.addEventListener("click" , (e) => {
+  if (e.target.closest(".js-logout-cancel")) {
+    logoutModal.classList.add("hidden")
+    return;
+  }
+  if (e.target.closest(".js-logout-confirm")) {
+    logoutModal.classList.add("hidden")
+    logOut();
+    updateAuthUi()
+  }
+ 
+})
 
 
 export function updateCartBadge() {

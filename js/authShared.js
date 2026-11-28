@@ -53,7 +53,7 @@ export function logIn(email, password) {
 
 }
 
-function logOut() {
+export function logOut() {
   currentUser = null;
   saveCurrentUser();
 }
