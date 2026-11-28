@@ -134,6 +134,8 @@
   </header>
 
   <!-- SLIDE-OVER MENU DRAWER (js-nav-drawer) -->
+  <!-- SLIDE-OVER MENU DRAWER (js-nav-drawer) -->
+
   <aside aria-hidden="true" class="js-nav-drawer fixed inset-0 z-50 hidden">
     <!-- Backdrop -->
     <div class="js-menu-toggle fixed inset-0 bg-black/40 backdrop-blur-xs transition-opacity"></div>
@@ -151,33 +153,42 @@
         </div>
 
         <!-- Client Account Strip -->
-        <div class="py-5 border-b border-outline-variant/30 dark:border-zinc-800 flex items-center justify-between">
-          <div class="flex items-center gap-3">
-            <span class="js-user-initials w-9 h-9 rounded-full bg-primary dark:bg-zinc-800 text-on-primary dark:text-zinc-100 border border-outline-variant/40 dark:border-zinc-700 flex items-center justify-center text-xs font-semibold uppercase tracking-wider">
+        <div class="py-5 border-b border-outline-variant/30 dark:border-zinc-800 flex items-center justify-between gap-3">
+          <div class="flex items-center gap-3 min-w-0">
+            <span class="js-user-initials w-9 h-9 shrink-0 rounded-full bg-primary dark:bg-zinc-800 text-on-primary dark:text-zinc-100 border border-outline-variant/40 dark:border-zinc-700 flex items-center justify-center text-xs font-semibold uppercase tracking-wider">
               MN
             </span>
-            <div class="flex flex-col">
-              <span class="text-[11px] font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400">Client Sanctuary</span>
-              <a class="text-xs font-medium uppercase tracking-widest text-primary dark:text-white hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors mt-0.5 underline underline-offset-4" data-path="login" href="auth.html">
+            <div class="flex flex-col min-w-0">
+              <span class="js-user-greeting text-[11px] font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400 truncate">Client Sanctuary</span>
+              <a class="js-login-link text-xs font-medium uppercase tracking-widest text-primary dark:text-white hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors mt-0.5 underline underline-offset-4" data-path="login" href="auth.html">
                 Sign In / Account
               </a>
             </div>
           </div>
+
+          <!-- Discreet Sign Out Trigger (Hidden when logged out) -->
+          <button
+            aria-label="Sign Out of Account"
+            class="js-logout-trigger  shrink-0 inline-flex items-center gap-1 text-[11px] font-medium uppercase tracking-widest text-on-surface-variant dark:text-zinc-400 hover:text-error dark:hover:text-red-400 transition-colors py-1"
+            type="button">
+            <span>Sign Out</span>
+            <span class="material-symbols-outlined text-[15px] leading-none">logout</span>
+          </button>
         </div>
 
         <!-- Primary Navigation Links -->
         <nav class="py-5 border-b border-outline-variant/30 dark:border-zinc-800 flex flex-col gap-3.5">
           <a class="font-serif text-xl font-normal text-primary dark:text-white hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors" data-path="home" href="index.html">Atelier Home</a>
           <a class="font-serif text-xl font-normal text-primary dark:text-white hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors" data-path="fragrances" href="fragrances.html">Fragrances</a>
-          <a class="font-serif text-xl font-normal text-primary dark:text-white hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors" data-path="notes" href="notes.html">Notes & Botanicals</a>
+          <a class="font-serif text-xl font-normal text-primary dark:text-white hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors" data-path="notes" href="#notes-archive">Notes & Botanicals</a>
           <a class="font-serif text-xl font-normal text-primary dark:text-white hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors" data-path="my-orders" href="orders.html">My Orders</a>
         </nav>
 
         <!-- Favorites & Shopping Bag Links -->
         <div class="py-5 flex flex-col gap-3.5">
-          <a class="flex items-center justify-between text-xs font-medium uppercase tracking-widest text-on-surface dark:text-zinc-200 hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors py-1" href="fragrances.html">
+          <a class="flex items-center justify-between text-xs font-medium uppercase tracking-widest text-on-surface dark:text-zinc-200 hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors py-1" href="favorites.html">
             <span class="flex items-center gap-2.5">
-              <span class="js-nav-fav-icon">favorite</span>
+              <span class="js-nav-fav-icon material-symbols-outlined text-[18px]">favorite</span>
               <span>Favorites</span>
             </span>
             <span class="js-wishlist-count px-2 py-0.5 text-[11px] font-medium bg-surface-container dark:bg-zinc-800 text-on-surface dark:text-zinc-200 rounded-full">0</span>
@@ -200,6 +211,51 @@
     </div>
   </aside>
 
+<!-- LOGOUT CONFIRMATION MODAL (js-logout-modal) -->
+  <div aria-labelledby="logout-modal-title" aria-modal="true" class="js-logout-modal fixed inset-0 z-50 hidden" role="dialog">
+    <!-- Soft Blurred Backdrop -->
+    <div class="js-logout-cancel fixed inset-0 bg-black/45 backdrop-blur-xs transition-opacity"></div>
+
+    <!-- Centered Modal Container -->
+    <div class="fixed inset-0 flex items-center justify-center p-4 pointer-events-none">
+      <div class="pointer-events-auto relative w-full max-w-md bg-surface-container-lowest dark:bg-[#161619] border border-outline-variant/50 dark:border-zinc-800 shadow-2xl p-6 sm:p-8 text-center space-y-6">
+        <!-- Top-Right Close Button -->
+
+        <!-- Minimalist Exit Icon -->
+        <div class="w-11 h-11 mx-auto rounded-full border border-secondary/40 dark:border-secondary-fixed-dim/40 bg-surface-container-low/60 dark:bg-zinc-900 flex items-center justify-center text-secondary dark:text-secondary-fixed-dim">
+          <span class="material-symbols-outlined text-[20px] font-light">logout</span>
+        </div>
+
+        <!-- Editorial Title & Reassurance Copy -->
+        <div class="space-y-2">
+          <span class="text-[10px] font-medium uppercase tracking-widest text-secondary dark:text-secondary-fixed-dim block">
+            Client Sanctuary
+          </span>
+          <h2 class="font-serif text-2xl sm:text-3xl font-normal text-primary dark:text-white tracking-tight" id="logout-modal-title">
+            Sign Out of Maison Noir?
+          </h2>
+          <p class="text-xs sm:text-sm text-on-surface-variant dark:text-zinc-400 leading-relaxed max-w-xs mx-auto pt-0.5">
+            Your saved wishlist and bag items will remain safe on this device.
+          </p>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="pt-2 border-t border-outline-variant/25 dark:border-zinc-800/80 grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <button
+            class="js-logout-cancel w-full py-3 px-4 border border-outline-variant/60 dark:border-zinc-700 bg-transparent text-on-surface dark:text-zinc-200 hover:border-secondary dark:hover:border-secondary-fixed-dim text-xs font-medium uppercase tracking-widest transition-colors"
+            type="button">
+            Stay Signed In
+          </button>
+
+          <button
+            class="js-logout-confirm w-full py-3 px-4 bg-primary dark:bg-zinc-100 text-on-primary dark:text-zinc-950 hover:opacity-90 text-xs font-medium uppercase tracking-widest transition-opacity"
+            type="button">
+            Sign Out
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- MAIN CONTENT -->
   <main class="w-full pt-16 sm:pt-20 bg-surface dark:bg-[#111113] min-h-[calc(100vh-20rem)] transition-colors">
 
