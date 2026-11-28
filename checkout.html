@@ -261,7 +261,7 @@
   <main class="w-full pt-16 sm:pt-20 bg-surface dark:bg-[#111113] min-h-[calc(100vh-20rem)] transition-colors">
 
     <!-- 1. Minimal Page Header & Discreet Progress Indicator -->
-    <section class="relative w-full border-b border-outline-variant/40 dark:border-zinc-800 bg-surface-container-lowest dark:bg-[#151518]">
+    <section class="ProgressIndicator relative w-full border-b border-outline-variant/40 dark:border-zinc-800 bg-surface-container-lowest dark:bg-[#151518]">
       <!-- Dark / Light Mode Toggle -->
       <button aria-label="Toggle Color Theme" class="js-theme-toggle absolute top-5 right-4 sm:top-7 sm:right-8 lg:right-12 z-20 p-2 bg-surface/90 dark:bg-zinc-900/90 backdrop-blur-md border border-outline-variant/50 dark:border-zinc-700 text-on-surface dark:text-zinc-200 hover:border-secondary dark:hover:border-secondary-fixed-dim transition-colors rounded-full" type="button">
         <span class="material-symbols-outlined text-[18px] leading-none block dark:hidden">dark_mode</span>
@@ -315,6 +315,7 @@
           Sign In to Continue
         </a>
       </div>
+    
     </section>
 
     <!-- 3. Main 2-Column Checkout Layout -->
@@ -330,6 +331,13 @@
             </div>
             <span class="material-symbols-outlined text-[20px] text-on-surface-variant dark:text-zinc-500">local_shipping</span>
           </div>
+
+            <div class="js-error-alert hidden p-3.5 bg-error-container/70 dark:bg-red-950/50 border border-error/40 dark:border-red-800/60 text-on-error-container dark:text-red-200 text-xs flex items-start gap-2.5"
+                role="alert">
+                <span class="material-symbols-outlined text-[16px] shrink-0 mt-0.5">error</span>
+                <span class="js-error-alert-text">The email address or password entered does not match our client
+                  records.</span>
+              </div>
 
           <form class="js-checkout-form mt-6 space-y-5" novalidate>
             <!-- Full Name -->
@@ -444,41 +452,8 @@
 
           <!-- Items List -->
           <div class="js-checkout-items divide-y divide-outline-variant/25 dark:divide-zinc-800 max-h-80 overflow-y-auto">
-            <!-- Item 1 -->
-            <div class="py-3.5 first:pt-0 flex items-center justify-between gap-3.5">
-              <div class="flex items-center gap-3.5 min-w-0">
-                <div class="w-14 h-14 shrink-0 overflow-hidden bg-surface-container-low dark:bg-zinc-900 border border-outline-variant/30 dark:border-zinc-800">
-                  <img alt="Oud Nocturne Extrait" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSUqYTPhKvMTT0FYSiQ0EzcECiQPvR6zZMSIjJs-EYPmm5HClqcAcujKKgzdk09VxuALs9TZ9YZ20K4200Bi5aUTcc2pLIpA_SgAIqofp0fJyhMWDl6MiiJzi6N3RLefrmFVj2n3PkXiNyiAHsPg-piS5fm_7oMIqaCLi3GaoPImDo22aOm1_zWk8648rNM3u7jFizcI0iiiHHv9lzKjFQNfm7_SEg0RQYVvjNlBGH">
-                </div>
-                <div class="min-w-0">
-                  <h3 class="font-serif text-base font-normal text-primary dark:text-white truncate">Oud Nocturne Extrait</h3>
-                  <div class="flex items-center gap-2 text-[11px] text-on-surface-variant dark:text-zinc-400 mt-0.5">
-                    <span>50ml</span>
-                    <span>•</span>
-                    <span>Qty 1</span>
-                  </div>
-                </div>
-              </div>
-              <span class="text-sm font-medium text-primary dark:text-zinc-100 shrink-0">$195</span>
-            </div>
-
-            <!-- Item 2 -->
-            <div class="py-3.5 last:pb-0 flex items-center justify-between gap-3.5">
-              <div class="flex items-center gap-3.5 min-w-0">
-                <div class="w-14 h-14 shrink-0 overflow-hidden bg-surface-container-low dark:bg-zinc-900 border border-outline-variant/30 dark:border-zinc-800">
-                  <img alt="Santal de Ceylan" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWQAHD2j6d8kfeEp8FoB8wP2wnAifFVdoquOSzFHOVmULc2CiTXA2fisj18dw1cNlTi7G1F3ig08-O4I4riIIs5vwPlkONIsFLnxPmCRtnzVPGE938QwSrPKV_lzIv0uRO1-0kH5z_Cx50jsXJMnQu2nPiuDyKkIf9BWKa9aXowuPIeoXGG7B1lGtHnmVeFW1O0EVBK0yFW7tCxtSCQ9DUU_IgNt7Clr9a1vwd7itR">
-                </div>
-                <div class="min-w-0">
-                  <h3 class="font-serif text-base font-normal text-primary dark:text-white truncate">Santal de Ceylan</h3>
-                  <div class="flex items-center gap-2 text-[11px] text-on-surface-variant dark:text-zinc-400 mt-0.5">
-                    <span>100ml</span>
-                    <span>•</span>
-                    <span>Qty 1</span>
-                  </div>
-                </div>
-              </div>
-              <span class="text-sm font-medium text-primary dark:text-zinc-100 shrink-0">$210</span>
-            </div>
+        
+       
           </div>
 
           <!-- Totals Breakdown -->

@@ -3,6 +3,7 @@ import { showToast } from "./toast.js" ;
 import { getFavourites, saveFavorites } from "./favoritesStorage.js";
 import { getCart, addToCart } from "./cart.js";
 import { updateFavBadge } from "./script.js";
+import { updateCartBadge } from "./script.js";
 
 let productDetail = document.querySelector(".js-product-detail");
 let relatedGrid = document.querySelector(".js-related-grid");
@@ -10,6 +11,8 @@ let selectedSize;
  let favorites = getFavourites();
 let params = new URLSearchParams(window.location.search);
 let productID = params.get("id");
+
+updateCartBadge();
 
 renderRelatedProducts(productID)
 function renderRelatedProducts(productID) {
@@ -236,8 +239,9 @@ productDetail.addEventListener("click" , (e) => {
 } else {
   showToast("Added to your cart");
 }
-
+updateCartBadge()
   }
+
  
   if (e.target.closest(".js-fav-btn")) {
     console.log("fav clicked product detail")

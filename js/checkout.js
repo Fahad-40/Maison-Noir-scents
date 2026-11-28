@@ -1,12 +1,43 @@
 import { calculateTotals } from "./cartShared.js";
 import { calculateSubtotal } from "./cartShared.js";
 import { getCartItems } from "./cartShared.js";
+import { getCurrentUser } from "./authShared.js";
 
 let subTotalDisplay = document.querySelector(".js-checkout-subtotal");
 let taxDisplay = document.querySelector(".js-checkout-tax");
 let shippingDisplay = document.querySelector(".js-checkout-shipping");
 let totalDisplay = document.querySelector(".js-checkout-total");
 let checkoutItemsContainer = document.querySelector(".js-checkout-items");
+let orderSuccessUI = document.querySelector(".js-order-success");
+let placeOrderBtn = document.querySelector(".js-place-order");
+let checkoutForm = document.querySelector(".js-checkout-form");
+let checkoutMainContainer = document.querySelector(".js-checkout-container");
+let ProgressIndicator = document.querySelector(".ProgressIndicator");
+let errorAlert = document.querySelector(".js-error-alert");
+let errorAlertText = document.querySelector(".js-error-alert-text");
+let authNotice = document.querySelector(".js-auth-notice");
+
+let inputName = document.querySelector(".js-input-name");
+let inputAddress = document.querySelector(".js-input-address");
+let inputPhone = document.querySelector(".js-input-phone");
+
+blockError();
+
+let user = getCurrentUser ();
+
+if (user === null) {
+  authNotice.classList.remove("hidden");
+  return;
+}
+
+function showError(msg) {
+    errorAlert.classList.remove("hidden");
+    errorAlertText.textContent = `${msg}`
+}
+
+function blockError() {
+    errorAlert.classList.add("hidden");
+}
 
 function updateCheckoutUi() {
     let data = calculateTotals(calculateSubtotal());
@@ -47,3 +78,24 @@ function renderCheckoutItmes() {
         `;
     });
 }
+
+checkoutForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let inputNameValue = inputName.value;
+    let inputAddressValue = inputAddress.value;
+    let inputPhoneValue = inputPhone.value;
+    if (!inputNameValue || !inputAddressValue || !inputPhoneValue) {
+        return showError("Please Fill all credentials!")
+    }
+
+    orderSuccessUI.classList.remove("hidden");
+    checkoutMainContainer.classList.add("hidden");
+    ProgressIndicator.classList.add("hidden");
+
+})
+
+// placeOrderBtn.addEventListener("click", () => {
+//     orderSuccessUI.classList.remove("hidden");
+//     checkoutMainContainer.classList.add("hidden");
+//     ProgressIndicator.classList.add("hidden");
+// }) 

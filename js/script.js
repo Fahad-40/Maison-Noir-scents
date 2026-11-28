@@ -253,8 +253,6 @@ ThemeToggleBtn.addEventListener("click", () => {
   }
 })
 
-
-
 export function updateAuthUi() {
   let signOutBtnChecker = getCurrentUser()
   if (signOutBtnChecker === null) {
@@ -286,7 +284,6 @@ logoutModal.addEventListener("click", (e) => {
   }
 
 })
-
 
 export function updateCartBadge() {
   let cartLength = getCart();
