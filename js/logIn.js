@@ -1,4 +1,4 @@
-import { logIn } from "./auth.js";
+import { logIn } from "./authShared.js";
 const loginEmailInput = document.querySelector(".js-login-email");
 const loginPasswordInput = document.querySelector(".js-login-password");
 const togglePasswordBtn = document.querySelector(".js-toggle-password");
@@ -38,5 +38,5 @@ if (!result.success) {
 
 loginForm.reset();
 
-
+window.location.href = "index.html"
 })

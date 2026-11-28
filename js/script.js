@@ -217,12 +217,14 @@
 // })();
 import { getCart } from "./cart.js";
 import { getFavourites } from "./favoritesStorage.js";
+import { getCurrentUser } from "./authShared.js";
 let html = document.querySelector(".html")
 let ThemeToggleBtn = document.querySelector(".js-theme-toggle");
 let NavDrawer = document.querySelector(".js-nav-drawer");
 let menuToggle = document.querySelector(".js-menu-toggle");
 let CartCount = document.querySelector(".js-cart-count");
 let favCount = document.querySelector(".js-wishlist-count");
+let logoutTrigger = document.querySelector(".js-logout-trigger");
 let materialSymbolsOutlined = document.querySelector(".js-nav-fav-icon");
 let screenMode = localStorage.getItem("screenModeLS") || "light";
 
@@ -247,6 +249,20 @@ ThemeToggleBtn.addEventListener("click", () => {
     screenModeLS()
   }
 })
+
+
+
+function updateAuthUi() {
+  let signOutBtnChecker = getCurrentUser()
+  if (signOutBtnChecker === null) {
+  logoutTrigger.classList.add("hidden")
+}
+else{
+  logoutTrigger.classList.remove("hidden")
+
+}
+}
+
 
 
 export function updateCartBadge() {
