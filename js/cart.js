@@ -1,11 +1,15 @@
 import { productsData } from "./productData.js";
 import { updateCartBadge } from "./script.js";
+import { calculateTotals } from "./cartShared.js";
+import { calculateSubtotal } from "./cartShared.js";
 
 let cartItemsDisplay = document.querySelector(".js-cart-items");
 let emptyCart = document.querySelector(".js-empty-cart");
 let cartHeaderCount = document.querySelector(".js-cart-header-count");
 let cartSubtotal = document.querySelector(".js-cart-subtotal");
 let cartTotal = document.querySelector(".js-cart-total");
+let cartTax = document.querySelector(".js-cart-tax");
+let cartShipping = document.querySelector(".js-cart-shipping");
 
 // let ritualEnhancements = document.querySelector(".ritual-enhancements");
 let subTotal;
@@ -127,7 +131,7 @@ if(e.target.closest(".js-qty-plus")) {
 saveCart()
 renderCartItems();
 updateCartBadge();
-calculateSubtotal();
+updateCart()
   }
 
   if (e.target.closest(".js-qty-minus")) {
@@ -144,11 +148,14 @@ calculateSubtotal();
     saveCart()
 renderCartItems();
 updateCartBadge();
-calculateSubtotal();
+updateCart()
  }
  else{
      fullProduct.quantity--;
-
+   saveCart()
+renderCartItems();
+updateCartBadge();
+updateCart()
  }
 
 saveCart()
@@ -160,15 +167,19 @@ renderCartItems();
 }
 
 
-function calculateSubtotal() {
-    subTotal = getCartItems().reduce((total , item) => {
-        return total + item.price * item.quantity
-    } , 0)
-cartSubtotal.textContent = `$${subTotal}`
-cartTotal.textContent = `$${subTotal}`
 
+
+function updateCart() {
+  if (!cartSubtotal) return;
+  let data = calculateTotals(calculateSubtotal());
+
+cartSubtotal.textContent = `$${data.subtotal}`
+cartTotal.textContent = `$${data.total}`
+cartShipping.textContent = `$${data.shipping}`
+cartTax.textContent = `$${data.tax}`
 }
 
+updateCart()
 
 
 // function quantityController(productId , productSize , productQuantity) {
