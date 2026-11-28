@@ -259,17 +259,19 @@ export function updateAuthUi() {
   let signOutBtnChecker = getCurrentUser()
   if (signOutBtnChecker === null) {
     logoutTrigger.classList.add("hidden")
+     userInitials.textContent = `MN`
   }
   else {
     logoutTrigger.classList.remove("hidden")
-
+    let firstName = signOutBtnChecker.firstName.charAt(0).toUpperCase(); 
+    let lastName = signOutBtnChecker.lastName.charAt(0).toUpperCase(); 
+    userInitials.textContent = `${firstName}${lastName}`
   }
 }
 updateAuthUi()
 
 logoutTrigger.addEventListener("click", () => {
   logoutModal.classList.remove("hidden")
-
 })
 
 logoutModal.addEventListener("click", (e) => {
