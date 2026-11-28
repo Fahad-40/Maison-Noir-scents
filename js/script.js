@@ -227,6 +227,7 @@ let CartCount = document.querySelector(".js-cart-count");
 let favCount = document.querySelector(".js-wishlist-count");
 let logoutTrigger = document.querySelector(".js-logout-trigger");
 let logoutModal = document.querySelector(".js-logout-modal");
+let userInitials = document.querySelector(".js-user-initials");
 let materialSymbolsOutlined = document.querySelector(".js-nav-fav-icon");
 let screenMode = localStorage.getItem("screenModeLS") || "light";
 
@@ -261,6 +262,7 @@ export function updateAuthUi() {
   }
   else {
     logoutTrigger.classList.remove("hidden")
+
   }
 }
 updateAuthUi()
