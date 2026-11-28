@@ -7,10 +7,11 @@ const firstNameInput = document.querySelector(".js-signup-firstname");
 const lastNameInput = document.querySelector(".js-signup-lastname");
 const emailInput = document.querySelector(".js-signup-email");
 const passwordInput = document.querySelector(".js-signup-password");
+const signupSuccessUI = document.querySelector(".js-signup-success");
 
-emailInput.addEventListener("input", () => hideError(errorAlertUI));
 lastNameInput.addEventListener("input", () => hideError(errorAlertUI));
 firstNameInput.addEventListener("input", () => hideError(errorAlertUI));
+emailInput.addEventListener("input", () => hideError(errorAlertUI));
 passwordInput.addEventListener("input", () => hideError(errorAlertUI));
 
 function showError(message) {
@@ -59,5 +60,6 @@ const firstName = firstNameInput.value.trim();
   }
 
   signupForm.reset();
-
+  signupForm.classList.add("hidden")
+signupSuccessUI.classList.remove("hidden")
 })

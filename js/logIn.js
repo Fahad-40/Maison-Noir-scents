@@ -4,10 +4,13 @@ const loginPasswordInput = document.querySelector(".js-login-password");
 const togglePasswordBtn = document.querySelector(".js-toggle-password");
 const loginSubmitBtn = document.querySelector(".js-login-submit");
 
-const errorAlertUI = signupForm.querySelector(".js-login-alert");
-const errorAlertText = signupForm.querySelector(".js-login-alert-text");
-
 const loginForm = document.querySelector(".js-login-form");
+
+const errorAlertUI = loginForm.querySelector(".js-login-alert");
+const errorAlertText = loginForm.querySelector(".js-login-alert-text");
+
+loginEmailInput.addEventListener("input", () => hideError(errorAlertUI));
+loginPasswordInput.addEventListener("input", () => hideError(errorAlertUI));
 
 function showError(message) {
     errorAlertText.textContent = message;
@@ -21,6 +24,7 @@ function hideError() {
 errorAlertUI.classList.add("hidden");
 
 loginForm.addEventListener("submit", (e) => {
+    e.preventDefault()
 
     const email = loginEmailInput.value.trim();
     const password = loginPasswordInput.value.trim();
@@ -29,8 +33,10 @@ loginForm.addEventListener("submit", (e) => {
 let result = logIn(email , password)
 
 if (!result.success) {
-    showError(result.message);
+ return  showError(result.message);
 }
 
 loginForm.reset();
+
+
 })
