@@ -299,7 +299,8 @@ let coloredFavClass = "material-symbols-outlined text-[18px] icon-filled text-se
 
 export function updateFavBadge() {
   let favLength = getFavourites();
-
+  
+  favCount.textContent = `${favLength.length}`
   if (favLength.length > 0) {
     materialSymbolsOutlined.className = coloredFavClass;
     materialSymbolsOutlined.style.fontVariationSettings = "'FILL' 1";
@@ -308,7 +309,6 @@ export function updateFavBadge() {
     materialSymbolsOutlined.style.fontVariationSettings = "'FILL' 0";
   }
 
-  favCount.textContent = `${favLength.length}`
 }
 updateFavBadge()
 updateCartBadge()

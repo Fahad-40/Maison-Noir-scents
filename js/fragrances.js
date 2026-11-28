@@ -2,6 +2,7 @@ import { productsData } from "./productData.js";
 import { getFavourites, saveFavorites } from "./favoritesStorage.js";
 import { addToCart } from "./cart.js";
 import { showToast } from "./toast.js";
+import { updateFavBadge } from "./script.js";
 
 let ProductGridContainer = document.querySelector(".js-product-grid");
 let filtersBox = document.querySelector(".filters-box");
@@ -36,8 +37,6 @@ paginationDiv.addEventListener("click", (e) => {
 });
 
 let favorites = getFavourites();
-
-
 
 function renderFeaturedCards(productsData) {
 
@@ -94,6 +93,7 @@ function renderFeaturedCards(productsData) {
 
 }
 
+updateFavBadge()
 
 ProductGridContainer.addEventListener("click", (e) => {
   let btn = e.target.closest(".js-quick-add");
@@ -205,9 +205,10 @@ ProductGridContainer.addEventListener("click", (e) => {
 
     } else {
      favorites = [...favorites, productID];
+  
     }
-
     saveFavorites(favorites);
+    updateFavBadge()
     applyFilters();
   }
 
